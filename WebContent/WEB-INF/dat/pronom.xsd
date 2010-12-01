@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!-- Generated using Flame-Ware Solutions XML-2-XSD v2.0 at http://www.flame-ware.com/Products/XML-2-XSD/ -->
+<xs:schema id="PRONOM-Report" targetNamespace="http://pronom.nationalarchives.gov.uk" xmlns:mstns="http://pronom.nationalarchives.gov.uk" xmlns="http://pronom.nationalarchives.gov.uk" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="PRONOM-Report" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="report_format_detail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SearchCriteria" type="xs:string" minOccurs="0" />
+              <xs:element name="FileFormat" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FormatID" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatName" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatVersion" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatAliases" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatFamilies" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatTypes" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatDisclosure" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatDescription" type="xs:string" minOccurs="0" />
+                    <xs:element name="BinaryFileFormat" type="xs:string" minOccurs="0" />
+                    <xs:element name="ByteOrders" type="xs:string" minOccurs="0" />
+                    <xs:element name="ReleaseDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="WithdrawnDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProvenanceSourceID" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProvenanceName" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProvenanceSourceDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="ProvenanceDescription" type="xs:string" minOccurs="0" />
+                    <xs:element name="LastUpdatedDate" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatNote" type="xs:string" minOccurs="0" />
+                    <xs:element name="FormatRisk" type="xs:string" minOccurs="0" />
+                    <xs:element name="TechnicalEnvironment" type="xs:string" minOccurs="0" />
+                    <xs:element name="FileFormatIdentifier" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Identifier" type="xs:string" minOccurs="0" />
+                          <xs:element name="IdentifierType" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Document" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="DocumentID" type="xs:string" minOccurs="0" />
+                          <xs:element name="DisplayText" type="xs:string" minOccurs="0" />
+                          <xs:element name="DocumentType" type="xs:string" minOccurs="0" />
+                          <xs:element name="AvailabilityDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="AvailabilityNote" type="xs:string" minOccurs="0" />
+                          <xs:element name="PublicationDate" type="xs:string" minOccurs="0" />
+                          <xs:element name="TitleText" type="xs:string" minOccurs="0" />
+                          <xs:element name="DocumentIPR" type="xs:string" minOccurs="0" />
+                          <xs:element name="DocumentNote" type="xs:string" minOccurs="0" />
+                          <xs:element name="DocumentIdentifier" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Identifier" type="xs:string" minOccurs="0" />
+                                <xs:element name="IdentifierType" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Author" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="AuthorID" type="xs:string" minOccurs="0" />
+                                <xs:element name="AuthorName" type="xs:string" minOccurs="0" />
+                                <xs:element name="OrganisationName" type="xs:string" minOccurs="0" />
+                                <xs:element name="AuthorCompoundName" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Publisher" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="PublisherID" type="xs:string" minOccurs="0" />
+                                <xs:element name="PublisherName" type="xs:string" minOccurs="0" />
+                                <xs:element name="OrganisationName" type="xs:string" minOccurs="0" />
+                                <xs:element name="PublisherCompoundName" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ExternalSignature" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ExternalSignatureID" type="xs:string" minOccurs="0" />
+                          <xs:element name="Signature" type="xs:string" minOccurs="0" />
+                          <xs:element name="SignatureType" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="InternalSignature" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SignatureID" type="xs:string" minOccurs="0" />
+                          <xs:element name="SignatureName" type="xs:string" minOccurs="0" />
+                          <xs:element name="SignatureNote" type="xs:string" minOccurs="0" />
+                          <xs:element name="ByteSequence" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ByteSequenceID" type="xs:string" minOccurs="0" />
+                                <xs:element name="PositionType" type="xs:string" minOccurs="0" />
+                                <xs:element name="Offset" type="xs:string" minOccurs="0" />
+                                <xs:element name="MaxOffset" type="xs:string" minOccurs="0" />
+                                <xs:element name="IndirectOffsetLocation" type="xs:string" minOccurs="0" />
+                                <xs:element name="IndirectOffsetLength" type="xs:string" minOccurs="0" />
+                                <xs:element name="Endianness" type="xs:string" minOccurs="0" />
+                                <xs:element name="ByteSequenceValue" type="xs:string" minOccurs="0" />
+                          		<xs:element name="FidoPosition" type="xs:string" minOccurs="0" />
+                          		<xs:element name="RegularExpression" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="RelatedFormat" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RelationshipType" type="xs:string" minOccurs="0" />
+                          <xs:element name="RelatedFormatID" type="xs:string" minOccurs="0" />
+                          <xs:element name="RelatedFormatName" type="xs:string" minOccurs="0" />
+                          <xs:element name="RelatedFormatVersion" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="CompressionType" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="CompressionID" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionName" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionVersion" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionAliases" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionFamilies" type="xs:string" minOccurs="0" />
+                          <xs:element name="Description" type="xs:string" minOccurs="0" />
+                          <xs:element name="Lossiness" type="xs:string" minOccurs="0" />
+                          <xs:element name="ReleaseDate" type="xs:string" minOccurs="0" />
+                          <xs:element name="WithdrawnDate" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionDocumentation" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionIPR" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionNote" type="xs:string" minOccurs="0" />
+                          <xs:element name="CompressionIdentifier" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Identifier" type="xs:string" minOccurs="0" />
+                                <xs:element name="IdentifierType" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

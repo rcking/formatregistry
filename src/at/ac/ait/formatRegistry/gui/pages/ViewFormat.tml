@@ -1,0 +1,55 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<p></p>
+    <h2><t:pagelink page="start">Return to search page</t:pagelink></h2>
+	<p></p>
+	<h3>Basic format information</h3>
+ 	<div id="section1">
+       <t:beandisplay object="format"/>
+    </div>
+	<h3>Format Identifiers</h3>
+ 	<div id="section2">
+    	<t:grid source="formatIdentifier"/>
+    </div>
+	<h3>External Signatures</h3>
+ 	<div id="section4">
+    	<t:grid source="externalSignature"/>
+    </div>
+	<h3>Internal Signatures</h3>
+ 	<div id="section5">
+		<table>
+			<thead>
+				<tr>
+					<th>Signature Name</th>
+					<th>Signature Note</th>
+					<th>Byte Sequences</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:type="Loop" t:source="internalSignature" t:value="signature">
+					<td>${signature.signatureName}</td>
+					<td>${signature.signatureNote}</td>
+					<td><t:grid source="signature.byteSequence" include="byteSequenceValue,regularExpression"/></td>
+				</tr>
+			</tbody>
+	 	</table>
+    </div>
+	<h3>Related Formats</h3>
+ 	<div id="section6">
+    	<t:grid source="relatedFormat" row="aRelatedFormat">
+	        <t:parameter name="relatedFormatNameCell">
+	    	    <t:pagelink page="viewFormat" context="aRelatedFormat.relatedFormatID">${aRelatedFormat.relatedFormatName}</t:pagelink>
+	        </t:parameter>
+	    </t:grid>
+    </div>
+	<h3>Compression Types</h3>
+ 	<div id="section7">
+    	<t:grid source="compressionType"/>
+    </div>
+	<h3>Related Documents</h3>
+ 	<div id="section3">
+    	<t:grid source="document"/>
+    </div>
+	<p></p>
+    <h2><t:pagelink page="editFormat" context="formatID">Edit this format</t:pagelink></h2>
+	<p></p>
+</t:layout>

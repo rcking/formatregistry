@@ -1,0 +1,55 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xmlns:p="tapestry:parameter">
+    <h1>Edit Byte Sequence</h1>
+
+    <t:form t:id="form">
+
+      <t:errors/>
+
+      <div class="t-beaneditor">
+
+		<h3>Byte Sequence</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Position Type</th>
+					<th>Offset</th>
+					<th>MaxOffset</th>
+					<th>IndirectOffsetLocation</th>
+					<th>IndirectOffsetLength</th>
+					<th>Endianness</th>
+					<th>ByteSequenceValue</th>
+					<th>Fido Position</th>
+					<th>Regular Expression</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="byteSequences" t:type="AjaxFormLoop" t:source="byteSequenceHolders" t:value="byteSequenceHolder" t:encoder="byteSequenceEncoder">
+					<t:submitnotifier>
+						<td><input t:type="TextField" t:id="posType" t:value="byteSequenceHolder.byteSequence.positionType" /></td>
+						<td><input t:type="TextField" t:id="offs" t:value="byteSequenceHolder.byteSequence.offset" /></td>
+						<td><input t:type="TextField" t:id="maxOffs" t:value="byteSequenceHolder.byteSequence.maxOffset" /></td>
+						<td><input t:type="TextField" t:id="indOffs" t:value="byteSequenceHolder.byteSequence.indirectOffsetLocation" /></td>
+						<td><input t:type="TextField" t:id="offsLen" t:value="byteSequenceHolder.byteSequence.indirectOffsetLength" /></td>
+						<td><input t:type="TextField" t:id="endi" t:value="byteSequenceHolder.byteSequence.endianness" /></td>
+						<td><input t:type="TextField" t:id="byteSeq" t:value="byteSequenceHolder.byteSequence.byteSequenceValue" /></td>
+						<td><input t:type="Select" t:id="fidoPos" t:value="byteSequenceHolder.byteSequence.fidoPosition" /></td>
+						<td><input t:type="TextField" t:id="regEx" t:value="byteSequenceHolder.byteSequence.regularExpression" /></td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="5" style="text-align: right">
+							<t:addrowlink>Add a new Byte Sequence</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+        <p>
+        	<input type="submit" value="Update"/>
+        </p>
+      </div>
+    </t:form>
+
+</t:layout> 

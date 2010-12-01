@@ -1,0 +1,28 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<p></p>
+	<h3>Search File Formats</h3>
+	<p></p>
+	<form t:type="form" t:id="searchNames">
+		<t:errors/>
+		Search by name: 
+		<input t:type="TextField" t:id="nameFragment" size="20"/> 
+		<input type="submit" value="Search Names"/>
+ 	</form><br/>
+	<p></p>
+	<form t:type="form" t:id="searchExtensions">
+		<t:errors/>
+		Search by extension: . 
+		<input t:type="TextField" t:id="extensionFragment" size="10"/> 
+		<input type="submit" value="Search Extensions"/>
+ 	</form><br/>
+	<p></p>
+	<form t:type="form" t:id="searchPronomIds">
+		<t:errors/>
+		Search by Pronom ID: 
+		<input t:type="TextField" t:id="idFragment" size="10"/> 
+		<input type="submit" value="Search IDs"/>
+ 	</form><br/>
+	<p></p>
+	<t:actionlink t:id="listAll">View full format list</t:actionlink>
+	<p></p>
+</t:layout>

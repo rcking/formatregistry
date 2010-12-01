@@ -1,0 +1,99 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xmlns:p="tapestry:parameter">
+    <h1>Edit File Format</h1>
+
+    <t:form t:id="form">
+
+      <t:errors/>
+
+      <div class="t-beaneditor">
+
+        <t:beaneditor t:id="format"/>
+
+		<h3>File Format Identifiers</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Identifier</th>
+					<th>Identifier Type</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="fileIdentifiers" t:type="AjaxFormLoop" t:source="fileFormatIdentifierHolders" t:value="fileFormatIdentifierHolder" t:encoder="fileFormatIdentifierEncoder">
+					<t:submitnotifier>
+						<td><input t:type="TextField" t:id="ident" t:value="fileFormatIdentifierHolder.fileFormatIdentifier.identifier" t:validate="required, maxlength=30" size="30"/></td>
+						<td><input t:type="Select" t:id="identtype" t:value="fileFormatIdentifierHolder.fileFormatIdentifier.identifierType" /></td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="5" style="text-align: right">
+							<t:addrowlink>Add an identifier</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+		<h3>Internal Signatures</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Signature Name</th>
+					<th>Signature Note</th>
+					<th>Byte Sequence</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="internalSignatures" t:type="AjaxFormLoop" t:source="internalSignatureHolders" t:value="internalSignatureHolder" t:encoder="internalSignatureEncoder">
+					<t:submitnotifier>
+						<td><input t:type="TextField" t:id="sname" t:value="internalSignatureHolder.internalSignature.signatureName" /></td>
+						<td><input t:type="TextField" t:id="snote" t:value="internalSignatureHolder.internalSignature.signatureNote" /></td>
+						<td><table>
+								<tr><td><t:grid source="internalSignatureHolder.internalSignature.byteSequence" include="byteSequenceValue,regularExpression"/></td></tr>
+								<tr><td><a t:type="actionlink" t:id="editSequence" t:context="internalSignatureHolder.internalSignature.signatureID" href="#">Edit Byte Sequence</a></td></tr>
+							</table>
+					 	</td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="5" style="text-align: right">
+							<t:addrowlink>Add a signature</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+		<h3>Related Formats</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Relationship Type</th>
+					<th>Related Format</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="relatedFormats" t:type="AjaxFormLoop" t:source="relatedFormatHolders" t:value="relatedFormatHolder" t:encoder="relatedFormatEncoder">
+					<t:submitnotifier>
+						<td><input t:type="Select" t:id="relType" t:value="relatedFormatHolder.relatedFormat.relationshipType" /></td>
+						<td><input t:type="TextField" t:id="relFormName" t:value="relatedFormatHolder.relatedFormat.relatedFormatName" t:validate="required, maxlength=100" size="70" t:mixins="autocomplete"/></td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="5" style="text-align: right">
+							<t:addrowlink>Add a related format</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+        <p>
+          <input type="submit" value="Update"/>
+        </p>
+      </div>
+    </t:form>
+
+</t:layout> 

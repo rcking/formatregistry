@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+     <head>
+         <title>Prototype Registry Application</title>
+     </head>
+     <body>
+         <div class="header">
+             <h1>Format Registry Prototype</h1>
+             <h2>AIT Austrian Institute of Technology GmbH</h2>
+         </div>
+         <t:body/>
+     </body>
+</html>
