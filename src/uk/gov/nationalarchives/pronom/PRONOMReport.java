@@ -149,6 +149,7 @@ public class PRONOMReport {
             "document",
             "externalSignature",
             "internalSignature",
+            "fidoSignature",
             "relatedFormat",
             "compressionType"
         })
@@ -202,6 +203,8 @@ public class PRONOMReport {
             protected List<PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature> externalSignature;
             @XmlElement(name = "InternalSignature")
             protected List<PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature> internalSignature;
+            @XmlElement(name = "FidoSignature")
+            protected List<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature> fidoSignature;
             @XmlElement(name = "RelatedFormat")
             protected List<PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat> relatedFormat;
             @XmlElement(name = "CompressionType")
@@ -830,6 +833,35 @@ public class PRONOMReport {
                     internalSignature = new ArrayList<PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature>();
                 }
                 return this.internalSignature;
+            }
+
+            /**
+             * Gets the value of the fidoSignature property.
+             * 
+             * <p>
+             * This accessor method returns a reference to the live list,
+             * not a snapshot. Therefore any modification you make to the
+             * returned list will be present inside the JAXB object.
+             * This is why there is not a <CODE>set</CODE> method for the internalSignature property.
+             * 
+             * <p>
+             * For example, to add a new item, do as follows:
+             * <pre>
+             *    getFidoSignature().add(newItem);
+             * </pre>
+             * 
+             * 
+             * <p>
+             * Objects of the following type(s) are allowed in the list
+             * {@link PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature }
+             * 
+             * 
+             */
+            public List<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature> getFidoSignature() {
+                if (fidoSignature == null) {
+                	fidoSignature = new ArrayList<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature>();
+                }
+                return this.fidoSignature;
             }
 
             /**
@@ -2265,9 +2297,7 @@ public class PRONOMReport {
                     "indirectOffsetLocation",
                     "indirectOffsetLength",
                     "endianness",
-                    "byteSequenceValue",
-                    "fidoPosition",
-                    "regularExpression"
+                    "byteSequenceValue"
                 })
                 public static class ByteSequence {
 
@@ -2287,10 +2317,6 @@ public class PRONOMReport {
                     protected String endianness;
                     @XmlElement(name = "ByteSequenceValue")
                     protected String byteSequenceValue;
-                    @XmlElement(name = "FidoPosition")
-                    protected FidoPositions fidoPosition;
-                    @XmlElement(name = "RegularExpression")
-                    protected String regularExpression;
 
                     /**
                      * Gets the value of the byteSequenceID property.
@@ -2484,58 +2510,195 @@ public class PRONOMReport {
                     public void setByteSequenceValue(String value) {
                         this.byteSequenceValue = value;
                     }
-                    /**
-                     * Gets the value of the fidoPosition property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public FidoPositions getFidoPosition() {
-                        return fidoPosition;
-                    }
-
-                    /**
-                     * Sets the value of the fidoPosition property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setFidoPosition(FidoPositions value) {
-                        this.fidoPosition = value;
-                    }
-
-                    /**
-                     * Gets the value of the regularExpression property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
-                     */
-                    public String getRegularExpression() {
-                        return regularExpression;
-                    }
-
-                    /**
-                     * Sets the value of the regularExpression property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
-                     */
-                    public void setRegularExpression(String value) {
-                        this.regularExpression = value;
-                    }
 
                 }
 
             }
 
+            @XmlAccessorType(XmlAccessType.FIELD)
+            @XmlType(name = "", propOrder = {
+                "fidoSignatureID",
+                "fidoSignatureName",
+                "fidoSignatureNote",
+                "pattern"
+            })
+            public static class FidoSignature {
+
+                @XmlElement(name = "FidoSignatureID")
+                protected String fidoSignatureID;
+                @XmlElement(name = "FidoSignatureName")
+                protected String fidoSignatureName;
+                @XmlElement(name = "FidoSignatureNote")
+                protected String fidoSignatureNote;
+                @XmlElement(name = "Pattern")
+                protected List<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern> pattern;
+
+                /**
+                 * Gets the value of the fidoSignatureID property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                @NonVisual
+                public String getFidoSignatureID() {
+                    return fidoSignatureID;
+                }
+
+                /**
+                 * Sets the value of the fidoSignatureID property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setFidoSignatureID(String value) {
+                    this.fidoSignatureID = value;
+                }
+
+                /**
+                 * Gets the value of the fidoSignatureName property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getFidoSignatureName() {
+                    return fidoSignatureName;
+                }
+
+                /**
+                 * Sets the value of the fidoSignatureName property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setFidoSignatureName(String value) {
+                    this.fidoSignatureName = value;
+                }
+
+                /**
+                 * Gets the value of the fidoSignatureNote property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
+                 */
+                public String getFidoSignatureNote() {
+                    return fidoSignatureNote;
+                }
+
+                /**
+                 * Sets the value of the fidoSignatureNote property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
+                 */
+                public void setFidoSignatureNote(String value) {
+                    this.fidoSignatureNote = value;
+                }
+
+                /**
+                 * Gets the value of the pattern property.
+                 * 
+                 * <p>
+                 * This accessor method returns a reference to the live list,
+                 * not a snapshot. Therefore any modification you make to the
+                 * returned list will be present inside the JAXB object.
+                 * This is why there is not a <CODE>set</CODE> method for the byteSequence property.
+                 * 
+                 * <p>
+                 * For example, to add a new item, do as follows:
+                 * <pre>
+                 *    getPattern().add(newItem);
+                 * </pre>
+                 * 
+                 * 
+                 * <p>
+                 * Objects of the following type(s) are allowed in the list
+                 * {@link PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature.Pattern }
+                 * 
+                 * 
+                 */
+                public List<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern> getPattern() {
+                    if (pattern == null) {
+                    	pattern = new ArrayList<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern>();
+                    }
+                    return this.pattern;
+                }
+            
+                @XmlAccessorType(XmlAccessType.FIELD)
+                @XmlType(name = "", propOrder = {
+                    "position",
+                    "regex"
+                })
+                public static class Pattern {
+
+                    @XmlElement(name = "Position")
+                    protected FidoPositions position;
+                    @XmlElement(name = "Regex")
+                    protected String regex;
+
+                    /**
+                     * Gets the value of the position property.
+                     * 
+                     * @return
+                     *     possible object is
+                     *     {@link FidoPositions }
+                     *     
+                     */
+                    public FidoPositions getPosition() {
+                        return position;
+                    }
+
+                    /**
+                     * Sets the value of the position property.
+                     * 
+                     * @param value
+                     *     allowed object is
+                     *     {@link FidoPositions }
+                     *     
+                     */
+                    public void setPosition(FidoPositions value) {
+                        this.position = value;
+                    }
+
+                    /**
+                     * Gets the value of the regex property.
+                     * 
+                     * @return
+                     *     possible object is
+                     *     {@link String }
+                     *     
+                     */
+                    public String getRegex() {
+                        return regex;
+                    }
+
+                    /**
+                     * Sets the value of the regex property.
+                     * 
+                     * @param value
+                     *     allowed object is
+                     *     {@link String }
+                     *     
+                     */
+                    public void setRegex(String value) {
+                        this.regex = value;
+                    }
+
+                }
+
+            }
+            
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
                 "relationshipType",

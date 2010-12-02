@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>866</FormatID>
+            <FormatName>SketchUp Document Backup</FormatName>
+            <FormatVersion>n/a</FormatVersion>
+            <FormatAliases>
+      </FormatAliases>
+            <FormatFamilies>
+      </FormatFamilies>
+            <FormatTypes>
+      </FormatTypes>
+            <FormatDisclosure>Full</FormatDisclosure>
+            <FormatDescription>Outline record</FormatDescription>
+            <BinaryFileFormat>Binary</BinaryFileFormat>
+            <ByteOrders>
+      </ByteOrders>
+            <ReleaseDate>
+      </ReleaseDate>
+            <WithdrawnDate>
+      </WithdrawnDate>
+            <ProvenanceSourceID>131</ProvenanceSourceID>
+            <ProvenanceName>Digital Library Research Group / MIT Libraries</ProvenanceName>
+            <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
+            <ProvenanceDescription>
+      </ProvenanceDescription>
+            <LastUpdatedDate>06 Apr 2009</LastUpdatedDate>
+            <FormatNote>
+      </FormatNote>
+            <FormatRisk>
+      </FormatRisk>
+            <TechnicalEnvironment>
+      </TechnicalEnvironment>
+            <FileFormatIdentifier>
+                <Identifier>application/octet-stream</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/451</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>857</ExternalSignatureID>
+                <Signature>skb</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <InternalSignature>
+                <SignatureID>243</SignatureID>
+                <SignatureName>Google SketchUp Document</SignatureName>
+                <SignatureNote>
+        </SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>319</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>Little-endian</Endianness>
+                    <ByteSequenceValue>FFFEFF0E53006B0065007400630068005500700020004D006F00640065006C00</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>237</FidoSignatureID>
+                <FidoSignatureName>Google SketchUp Document</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\xff\\\xfe\\\xff\\\x0eS\\000k\\000e\\000t\\000c\\000h\\000U\\000p\\000\\ \\000M\\000o\\000d\\000e\\000l\\000</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
+</PRONOM-Report>

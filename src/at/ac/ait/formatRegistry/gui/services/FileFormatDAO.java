@@ -17,5 +17,6 @@ public interface FileFormatDAO {
   	FileFormat findFormatByName(String name);
   	String getNewFormatID();
   	String getNewInternalSignatureID();
+  	String getNewFidoSignatureID();
   	Set<String> getFormatNamesSet();
 }

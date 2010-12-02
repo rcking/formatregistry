@@ -9,6 +9,7 @@ import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.CompressionType;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.Document;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
+import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FileFormatIdentifier;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat;
@@ -23,6 +24,9 @@ public class ViewPronom {
     
     @Property
     private InternalSignature signature;
+    
+    @Property
+    private FidoSignature fSignature;
     
     void onActivate(String id) {
     	if (id!=null) {
@@ -67,6 +71,10 @@ public class ViewPronom {
 
     public List<InternalSignature> getInternalSignature() {
     	return format.getInternalSignature();
+    }
+
+    public List<FidoSignature> getFidoSignature() {
+    	return format.getFidoSignature();
     }
 
     public List<RelatedFormat> getRelatedFormat() {

@@ -16,6 +16,7 @@ import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.CompressionType;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.Document;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
+import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FileFormatIdentifier;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat;
@@ -29,6 +30,9 @@ public class EditFormat {
 	
 	@InjectPage
 	private EditByteSequence editByteSequence;
+	
+	@InjectPage
+	private EditFidoPattern editFidoPattern;
 	
 	@InjectPage
 	private ViewFormat viewFormat;
@@ -51,6 +55,10 @@ public class EditFormat {
 	private List<InternalSignatureHolder> _internalSignatureHolders;
 
 	@Property
+	@Persist
+	private List<FidoSignatureHolder> _fidoSignatureHolders;
+
+	@Property
 	private FileFormatIdentifierHolder _fileFormatIdentifierHolder;
 
 	@Property
@@ -58,6 +66,9 @@ public class EditFormat {
 	
 	@Property
 	private InternalSignatureHolder _internalSignatureHolder;
+	
+	@Property
+	private FidoSignatureHolder _fidoSignatureHolder;
 
 	Object onActionFromEditSequence(String id) {
 		List<InternalSignature> signatures = format.getInternalSignature();
@@ -65,6 +76,17 @@ public class EditFormat {
 			if (signature.getSignatureID().equals(id)) {
 				editByteSequence.initialize(format, signature);
 				return editByteSequence;
+			}
+		}
+		return this;
+	}
+	
+	Object onActionFromEditPattern(String id) {
+		List<FidoSignature> fSignatures = format.getFidoSignature();
+		for (FidoSignature fSignature : fSignatures) {
+			if (fSignature.getFidoSignatureID().equals(id)) {
+				editFidoPattern.initialize(format, fSignature);
+				return editFidoPattern;
 			}
 		}
 		return this;
@@ -79,6 +101,7 @@ public class EditFormat {
     	_fileFormatIdentifierHolders = new ArrayList<FileFormatIdentifierHolder>();
     	_relatedFormatHolders = new ArrayList<RelatedFormatHolder>();
     	_internalSignatureHolders = new ArrayList<InternalSignatureHolder>();
+    	_fidoSignatureHolders = new ArrayList<FidoSignatureHolder>();
     	if (id!=null) {
     		if (!id.equals("")) {
     			FileFormat testFormat = formatDAO.find(id);
@@ -97,6 +120,11 @@ public class EditFormat {
 		    		while (it3.hasNext()) {
 		    			InternalSignature iS = it3.next();
 		    			_internalSignatureHolders.add(new InternalSignatureHolder(iS, false, 0 - System.nanoTime()));
+		    		}
+		    		Iterator<FidoSignature> it4 = format.getFidoSignature().iterator();
+		    		while (it4.hasNext()) {
+		    			FidoSignature fS = it4.next();
+		    			_fidoSignatureHolders.add(new FidoSignatureHolder(fS, false, 0 - System.nanoTime()));
 		    		}
 		    	}
     		}
@@ -133,12 +161,19 @@ public class EditFormat {
 				format.getInternalSignature().remove(signature);
 			}
 		}   	
+		for (FidoSignatureHolder fsh : _fidoSignatureHolders) {
+			FidoSignature fSignature = fsh.getFidoSignature();
+			if (fsh.isNew()) {
+				format.getFidoSignature().add(fSignature);
+			} else if (fsh.isDeleted()) {
+				format.getFidoSignature().remove(fSignature);
+			}
+		}   	
         formatDAO.save(format);
         return viewFormat.initialize(format.getFormatID());
     }
     
     FileFormatIdentifierHolder onAddRowFromFileIdentifiers() {
-		// Create a skeleton Person and add it to the displayed list with a unique key
     	FileFormatIdentifier newFfi = new FileFormatIdentifier();
     	FileFormatIdentifierHolder newFfiHolder = new FileFormatIdentifierHolder(newFfi, true, 0 - System.nanoTime());
 		_fileFormatIdentifierHolders.add(newFfiHolder);
@@ -205,7 +240,6 @@ public class EditFormat {
 	}
 
     RelatedFormatHolder onAddRowFromRelatedFormats() {
-		// Create a skeleton Person and add it to the displayed list with a unique key
     	RelatedFormat newRf = new RelatedFormat();
     	RelatedFormatHolder newRfHolder = new RelatedFormatHolder(newRf, true, 0 - System.nanoTime());
     	_relatedFormatHolders.add(newRfHolder);
@@ -272,7 +306,6 @@ public class EditFormat {
 	}
 
     InternalSignatureHolder onAddRowFromInternalSignatures() {
-		// Create a skeleton Person and add it to the displayed list with a unique key
     	InternalSignature newIs = new InternalSignature();
     	newIs.setSignatureID(formatDAO.getNewInternalSignatureID());
     	InternalSignatureHolder newIsHolder = new InternalSignatureHolder(newIs, true, 0 - System.nanoTime());
@@ -309,7 +342,7 @@ public class EditFormat {
 			}
 		};
 	}
-
+	
 	public class InternalSignatureHolder {
 		private InternalSignature _is;
 		private Long _key;
@@ -322,6 +355,75 @@ public class EditFormat {
 		}
 		public InternalSignature getInternalSignature() {
 			return _is;
+		}
+		public Long getKey() {
+			return _key;
+		}
+		public boolean isNew() {
+			return _new;
+		}
+
+		public boolean setDeleted(boolean deleted) {
+			return _deleted = deleted;
+		}
+
+		public boolean isDeleted() {
+			return _deleted;
+		}
+
+	}
+
+    FidoSignatureHolder onAddRowFromFidoSignatures() {
+    	FidoSignature newFs = new FidoSignature();
+    	newFs.setFidoSignatureID(formatDAO.getNewFidoSignatureID());
+    	FidoSignatureHolder newFsHolder = new FidoSignatureHolder(newFs, true, 0 - System.nanoTime());
+    	_fidoSignatureHolders.add(newFsHolder);
+		return newFsHolder;
+	}
+
+	void onRemoveRowFromFidoSignatures(FidoSignatureHolder fidoSignature) {
+		if (fidoSignature.isNew()) {
+			_fidoSignatureHolders.remove(fidoSignature);;
+		}
+		else {
+			fidoSignature.setDeleted(true);
+		}
+	}
+
+	public ValueEncoder<FidoSignatureHolder> getFidoSignatureEncoder() {
+		return new ValueEncoder<FidoSignatureHolder>() {
+
+			public String toClient(FidoSignatureHolder value) {
+				Long key = value.getKey();
+				return key.toString();
+			}
+
+			public FidoSignatureHolder toValue(String keyAsString) {
+				Long key = new Long(keyAsString);
+				for (FidoSignatureHolder holder : _fidoSignatureHolders) {
+					if (holder.getKey().equals(key)) {
+						return holder;
+					}
+				}
+				throw new IllegalArgumentException("Received key \"" + key
+						+ "\" which has no counterpart in this collection: " + _fidoSignatureHolders);
+			}
+		};
+	}
+
+
+	public class FidoSignatureHolder {
+		private FidoSignature _fs;
+		private Long _key;
+		private boolean _new;
+		private boolean _deleted;
+		FidoSignatureHolder(FidoSignature fs, boolean isNew, Long key) {
+			_fs = fs;
+			_key = key;	    			
+			_new = isNew;
+		}
+		public FidoSignature getFidoSignature() {
+			return _fs;
 		}
 		public Long getKey() {
 			return _key;

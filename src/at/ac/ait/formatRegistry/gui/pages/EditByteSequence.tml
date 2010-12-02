@@ -18,8 +18,6 @@
 					<th>IndirectOffsetLength</th>
 					<th>Endianness</th>
 					<th>ByteSequenceValue</th>
-					<th>Fido Position</th>
-					<th>Regular Expression</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -33,12 +31,10 @@
 						<td><input t:type="TextField" t:id="offsLen" t:value="byteSequenceHolder.byteSequence.indirectOffsetLength" /></td>
 						<td><input t:type="TextField" t:id="endi" t:value="byteSequenceHolder.byteSequence.endianness" /></td>
 						<td><input t:type="TextField" t:id="byteSeq" t:value="byteSequenceHolder.byteSequence.byteSequenceValue" /></td>
-						<td><input t:type="Select" t:id="fidoPos" t:value="byteSequenceHolder.byteSequence.fidoPosition" /></td>
-						<td><input t:type="TextField" t:id="regEx" t:value="byteSequenceHolder.byteSequence.regularExpression" /></td>
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
 					<p:addRow>
-						<td colspan="5" style="text-align: right">
+						<td colspan="8" style="text-align: right">
 							<t:addrowlink>Add a new Byte Sequence</t:addrowlink>
 						</td>
 					</p:addRow>

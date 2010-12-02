@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>671</FormatID>
+            <FormatName>Still Picture Interchange File Format</FormatName>
+            <FormatVersion>1.0</FormatVersion>
+            <FormatAliases>SPIFF (1.0)</FormatAliases>
+            <FormatFamilies>
+      </FormatFamilies>
+            <FormatTypes>
+      </FormatTypes>
+            <FormatDisclosure>
+      </FormatDisclosure>
+            <FormatDescription>Description in preparation.</FormatDescription>
+            <BinaryFileFormat>Binary</BinaryFileFormat>
+            <ByteOrders>Big-endian (Motorola)</ByteOrders>
+            <ReleaseDate>
+      </ReleaseDate>
+            <WithdrawnDate>
+      </WithdrawnDate>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
+      </ProvenanceDescription>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
+      </FormatNote>
+            <FormatRisk>
+      </FormatRisk>
+            <TechnicalEnvironment>
+      </TechnicalEnvironment>
+            <FileFormatIdentifier>
+                <Identifier>fmt/112</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>image/jpeg</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>582</ExternalSignatureID>
+                <Signature>spf</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <ExternalSignature>
+                <ExternalSignatureID>746</ExternalSignatureID>
+                <Signature>jpg</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <InternalSignature>
+                <SignatureID>70</SignatureID>
+                <SignatureName>SPIFF 1.0</SignatureName>
+                <SignatureNote>SOI and APP8 markers</SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>176</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>FFD8FFE800205350494646000100(00|01|02|03|04){11}(00|01|02|03|04|05){9}FFE8</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>18</FidoSignatureID>
+                <FidoSignatureName>SPIFF 1.0</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe8\\000\\ SPIFF\\000\\\x01\\000(?:\\000|\\\x01|\\\x02|\\\x03|\\\x04).{11}(?:\\000|\\\x01|\\\x02|\\\x03|\\\x04|\\\x05).{9}\\\xff\\\xe8</Regex>
+                </Pattern>
+            </FidoSignature>
+            <RelatedFormat>
+                <RelationshipType>Has_priority_over</RelationshipType>
+                <RelatedFormatID>670</RelatedFormatID>
+                <RelatedFormatName>Raw JPEG Stream</RelatedFormatName>
+                <RelatedFormatVersion>
+        </RelatedFormatVersion>
+            </RelatedFormat>
+        </FileFormat>
+    </report_format_detail>
+</PRONOM-Report>

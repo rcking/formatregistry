@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>133</FormatID>
+            <FormatName>Microsoft Powerpoint Presentation</FormatName>
+            <FormatVersion>4.0</FormatVersion>
+            <FormatAliases>
+      </FormatAliases>
+            <FormatFamilies>
+      </FormatFamilies>
+            <FormatTypes>Presentation</FormatTypes>
+            <FormatDisclosure>
+      </FormatDisclosure>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
+      </ByteOrders>
+            <ReleaseDate>
+      </ReleaseDate>
+            <WithdrawnDate>
+      </WithdrawnDate>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
+      </ProvenanceDescription>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
+      </FormatNote>
+            <FormatRisk>
+      </FormatRisk>
+            <TechnicalEnvironment>
+      </TechnicalEnvironment>
+            <FileFormatIdentifier>
+                <Identifier>application/vnd.ms-powerpoint</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>com.microsoft.powerpoint.ppt</Identifier>
+                <IdentifierType>Apple_Uniform_Type_Identifier</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/88</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>127</ExternalSignatureID>
+                <Signature>ppt</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <InternalSignature>
+                <SignatureID>181</SignatureID>
+                <SignatureName>PowerPoint 4.0</SignatureName>
+                <SignatureNote>Compound document header + PowerPoint Document user stream + version number (pp40)</SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>218</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>D0CF11E0A1B11AE1{20}FEFF</ByteSequenceValue>
+                </ByteSequence>
+                <ByteSequence>
+                    <ByteSequenceID>219</ByteSequenceID>
+                    <PositionType>Variable</PositionType>
+                    <Offset>
+          </Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>5000500034003000</ByteSequenceValue>
+                </ByteSequence>
+                <ByteSequence>
+                    <ByteSequenceID>220</ByteSequenceID>
+                    <PositionType>Variable</PositionType>
+                    <Offset>
+          </Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>4D6963726F736F667420506F776572506F696E74</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>243</FidoSignatureID>
+                <FidoSignatureName>PowerPoint 4.0</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\xd0\\\xcf\\\x11\\\xe0\\\xa1\\\xb1\\\x1a\\\xe1.{20}\\\xfe\\\xff</Regex>
+                </Pattern>
+                <Pattern>
+                    <Position>VAR</Position>
+                    <Regex>(?s)P\\000P\\0004\\0000\\000</Regex>
+                </Pattern>
+                <Pattern>
+                    <Position>VAR</Position>
+                    <Regex>(?s)Microsoft\\ PowerPoint</Regex>
+                </Pattern>
+            </FidoSignature>
+            <RelatedFormat>
+                <RelationshipType>Has_priority_over</RelationshipType>
+                <RelatedFormatID>135</RelatedFormatID>
+                <RelatedFormatName>Microsoft Powerpoint Presentation</RelatedFormatName>
+                <RelatedFormatVersion>97-2002</RelatedFormatVersion>
+            </RelatedFormat>
+            <RelatedFormat>
+                <RelationshipType>Has_priority_over</RelationshipType>
+                <RelatedFormatID>767</RelatedFormatID>
+                <RelatedFormatName>OLE2 Compound Document Format</RelatedFormatName>
+                <RelatedFormatVersion>
+        </RelatedFormatVersion>
+            </RelatedFormat>
+            <RelatedFormat>
+                <RelationshipType>Is_previous_version_of</RelationshipType>
+                <RelatedFormatID>134</RelatedFormatID>
+                <RelatedFormatName>Microsoft Powerpoint Presentation</RelatedFormatName>
+                <RelatedFormatVersion>95</RelatedFormatVersion>
+            </RelatedFormat>
+        </FileFormat>
+    </report_format_detail>
+</PRONOM-Report>

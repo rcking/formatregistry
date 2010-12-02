@@ -108,8 +108,23 @@
                                 <xs:element name="IndirectOffsetLength" type="xs:string" minOccurs="0" />
                                 <xs:element name="Endianness" type="xs:string" minOccurs="0" />
                                 <xs:element name="ByteSequenceValue" type="xs:string" minOccurs="0" />
-                          		<xs:element name="FidoPosition" type="xs:string" minOccurs="0" />
-                          		<xs:element name="RegularExpression" type="xs:string" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FidoSignature" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FidoSignatureID" type="xs:string" minOccurs="0" />
+                          <xs:element name="FidoSignatureName" type="xs:string" minOccurs="0" />
+                          <xs:element name="FidoSignatureNote" type="xs:string" minOccurs="0" />
+                          <xs:element name="Pattern" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                          		<xs:element name="Position" type="xs:string" minOccurs="0" />
+                          		<xs:element name="Regex" type="xs:string" minOccurs="0" />
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

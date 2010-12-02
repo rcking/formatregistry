@@ -26,8 +26,39 @@
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
 					<p:addRow>
-						<td colspan="5" style="text-align: right">
+						<td colspan="3" style="text-align: right">
 							<t:addrowlink>Add an identifier</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+		<h3>Fido Signatures</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Signature Name</th>
+					<th>Signature Note</th>
+					<th>Pattern</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="fidoSignatures" t:type="AjaxFormLoop" t:source="fidoSignatureHolders" t:value="fidoSignatureHolder" t:encoder="fidoSignatureEncoder">
+					<t:submitnotifier>
+						<td><input t:type="TextField" t:id="fname" t:value="fidoSignatureHolder.fidoSignature.fidoSignatureName" /></td>
+						<td><input t:type="TextField" t:id="fnote" t:value="fidoSignatureHolder.fidoSignature.fidoSignatureNote" /></td>
+						<td><table>
+								<tr><td><t:grid source="fidoSignatureHolder.fidoSignature.Pattern" /></td></tr>
+								<tr><td><a t:type="actionlink" t:id="editPattern" t:context="fidoSignatureHolder.fidoSignature.fidoSignatureID" href="#">Edit Pattern</a></td></tr>
+							</table>
+					 	</td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="4" style="text-align: right">
+							<t:addrowlink>Add a fido signature</t:addrowlink>
 						</td>
 					</p:addRow>
 				</tr>
@@ -50,14 +81,14 @@
 						<td><input t:type="TextField" t:id="sname" t:value="internalSignatureHolder.internalSignature.signatureName" /></td>
 						<td><input t:type="TextField" t:id="snote" t:value="internalSignatureHolder.internalSignature.signatureNote" /></td>
 						<td><table>
-								<tr><td><t:grid source="internalSignatureHolder.internalSignature.byteSequence" include="byteSequenceValue,regularExpression"/></td></tr>
+								<tr><td><t:grid source="internalSignatureHolder.internalSignature.byteSequence" include="positionType,byteSequenceValue"/></td></tr>
 								<tr><td><a t:type="actionlink" t:id="editSequence" t:context="internalSignatureHolder.internalSignature.signatureID" href="#">Edit Byte Sequence</a></td></tr>
 							</table>
 					 	</td>
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
 					<p:addRow>
-						<td colspan="5" style="text-align: right">
+						<td colspan="4" style="text-align: right">
 							<t:addrowlink>Add a signature</t:addrowlink>
 						</td>
 					</p:addRow>
@@ -82,7 +113,7 @@
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
 					<p:addRow>
-						<td colspan="5" style="text-align: right">
+						<td colspan="3" style="text-align: right">
 							<t:addrowlink>Add a related format</t:addrowlink>
 						</td>
 					</p:addRow>

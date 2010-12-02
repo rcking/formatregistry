@@ -14,8 +14,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import uk.gov.nationalarchives.pronom.PRONOMReport.FidoPositions;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
+import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
+import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FileFormatIdentifier;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat;
@@ -29,6 +32,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	private boolean dataLoaded = false;
 	private int highestFormatID;
 	private int highestSignatureID;
+	private int highestFidoSignatureID;
 	private Hashtable<String, FileFormat> formatHash;
 	private Hashtable<String, PRONOMReport> reportHash;
 	private Set<String> _formatNames = new TreeSet<String>();
@@ -74,6 +78,11 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 							int sigID = new Integer(signature.getSignatureID()).intValue();
 							if (sigID>highestSignatureID) highestSignatureID = sigID;
 						}
+						List<FidoSignature> fidoSignatures = format.getFidoSignature();
+						for (FidoSignature fSignature : fidoSignatures) {
+							int fSigID = new Integer(fSignature.getFidoSignatureID()).intValue();
+							if (fSigID>highestFidoSignatureID) highestFidoSignatureID = fSigID;
+						}
 					}
 				}
 			}
@@ -86,7 +95,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		}
 		dataLoaded = true;
 	}
-
+	
 	public String getNewFormatID() {
 		highestFormatID = highestFormatID + 1;
 		return Integer.toString(highestFormatID);
@@ -191,6 +200,11 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	public String getNewInternalSignatureID() {
 		highestSignatureID = highestSignatureID + 1;
 		return Integer.toString(highestSignatureID);
+	}
+
+	public String getNewFidoSignatureID() {
+		highestFidoSignatureID = highestFidoSignatureID + 1;
+		return Integer.toString(highestFidoSignatureID);
 	}
 
 }

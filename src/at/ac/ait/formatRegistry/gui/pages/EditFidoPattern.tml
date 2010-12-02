@@ -1,0 +1,41 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xmlns:p="tapestry:parameter">
+    <h1>Edit Fido Pattern</h1>
+
+    <t:form t:id="form">
+
+      <t:errors/>
+
+      <div class="t-beaneditor">
+
+		<h3>Fido Pattern</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Fido Position</th>
+					<th>Regular Expression</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="patterns" t:type="AjaxFormLoop" t:source="patternHolders" t:value="patternHolder" t:encoder="patternEncoder">
+					<t:submitnotifier>
+						<td><input t:type="Select" t:id="fidoPos" t:value="patternHolder.pattern.position" /></td>
+						<td><input t:type="TextField" t:id="fidoRegEx" t:value="patternHolder.pattern.regex" /></td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="3" style="text-align: right">
+							<t:addrowlink>Add a new Pattern</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
+        <p>
+        	<input type="submit" value="Update"/>
+        </p>
+      </div>
+    </t:form>
+
+</t:layout> 

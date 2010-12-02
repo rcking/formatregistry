@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>665</FormatID>
+            <FormatName>Portable Network Graphics</FormatName>
+            <FormatVersion>1.1</FormatVersion>
+            <FormatAliases>PNG (1.1)</FormatAliases>
+            <FormatFamilies>
+      </FormatFamilies>
+            <FormatTypes>
+      </FormatTypes>
+            <FormatDisclosure>
+      </FormatDisclosure>
+            <FormatDescription>Description in preparation.</FormatDescription>
+            <BinaryFileFormat>Binary</BinaryFileFormat>
+            <ByteOrders>Big-endian (Motorola)</ByteOrders>
+            <ReleaseDate>
+      </ReleaseDate>
+            <WithdrawnDate>
+      </WithdrawnDate>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
+      </ProvenanceDescription>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
+      </FormatNote>
+            <FormatRisk>
+      </FormatRisk>
+            <TechnicalEnvironment>
+      </TechnicalEnvironment>
+            <FileFormatIdentifier>
+                <Identifier>fmt/12</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>image/png</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>public.png</Identifier>
+                <IdentifierType>Apple_Uniform_Type_Identifier</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>589</ExternalSignatureID>
+                <Signature>png</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <InternalSignature>
+                <SignatureID>183</SignatureID>
+                <SignatureName>PNG 1.1iCCP</SignatureName>
+                <SignatureNote>Signature + IHDR and iCCP chunks at BOF, IEND chunk at EOF</SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>228</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>89504E470D0A1A0A0000000D49484452*69434350</ByteSequenceValue>
+                </ByteSequence>
+                <ByteSequence>
+                    <ByteSequenceID>231</ByteSequenceID>
+                    <PositionType>Absolute from EOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>0000000049454E44AE426082</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <InternalSignature>
+                <SignatureID>184</SignatureID>
+                <SignatureName>PNG 1.1sPLT</SignatureName>
+                <SignatureNote>Signature + IHDR and sPLT chunks at BOF, IEND chunk at EOF</SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>229</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>89504E470D0A1A0A0000000D49484452*73504C54</ByteSequenceValue>
+                </ByteSequence>
+                <ByteSequence>
+                    <ByteSequenceID>232</ByteSequenceID>
+                    <PositionType>Absolute from EOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>0000000049454E44AE426082</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <InternalSignature>
+                <SignatureID>185</SignatureID>
+                <SignatureName>PNG 1.1sRGB</SignatureName>
+                <SignatureNote>Signature + IHDR and sRGB chunks at BOF, IEND chunk at EOF</SignatureNote>
+                <ByteSequence>
+                    <ByteSequenceID>230</ByteSequenceID>
+                    <PositionType>Absolute from BOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>89504E470D0A1A0A0000000D49484452*73524742</ByteSequenceValue>
+                </ByteSequence>
+                <ByteSequence>
+                    <ByteSequenceID>233</ByteSequenceID>
+                    <PositionType>Absolute from EOF</PositionType>
+                    <Offset>0</Offset>
+                    <MaxOffset>
+          </MaxOffset>
+                    <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+                    <IndirectOffsetLength>
+          </IndirectOffsetLength>
+                    <Endianness>
+          </Endianness>
+                    <ByteSequenceValue>0000000049454E44AE426082</ByteSequenceValue>
+                </ByteSequence>
+            </InternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>25</FidoSignatureID>
+                <FidoSignatureName>PNG 1.1iCCP</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*iCCP</Regex>
+                </Pattern>
+                <Pattern>
+                    <Position>EOF</Position>
+                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>26</FidoSignatureID>
+                <FidoSignatureName>PNG 1.1sPLT</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sPLT</Regex>
+                </Pattern>
+                <Pattern>
+                    <Position>EOF</Position>
+                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>27</FidoSignatureID>
+                <FidoSignatureName>PNG 1.1sRGB</FidoSignatureName>
+                <Pattern>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sRGB</Regex>
+                </Pattern>
+                <Pattern>
+                    <Position>EOF</Position>
+                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <RelatedFormat>
+                <RelationshipType>Has_lower_priority_than</RelationshipType>
+                <RelatedFormatID>666</RelatedFormatID>
+                <RelatedFormatName>Portable Network Graphics</RelatedFormatName>
+                <RelatedFormatVersion>1.2</RelatedFormatVersion>
+            </RelatedFormat>
+            <RelatedFormat>
+                <RelationshipType>Has_priority_over</RelationshipType>
+                <RelatedFormatID>664</RelatedFormatID>
+                <RelatedFormatName>Portable Network Graphics</RelatedFormatName>
+                <RelatedFormatVersion>1.0</RelatedFormatVersion>
+            </RelatedFormat>
+            <RelatedFormat>
+                <RelationshipType>Is_previous_version_of</RelationshipType>
+                <RelatedFormatID>666</RelatedFormatID>
+                <RelatedFormatName>Portable Network Graphics</RelatedFormatName>
+                <RelatedFormatVersion>1.2</RelatedFormatVersion>
+            </RelatedFormat>
+            <RelatedFormat>
+                <RelationshipType>Is_subsequent_version_of</RelationshipType>
+                <RelatedFormatID>664</RelatedFormatID>
+                <RelatedFormatName>Portable Network Graphics</RelatedFormatName>
+                <RelatedFormatVersion>1.0</RelatedFormatVersion>
+            </RelatedFormat>
+        </FileFormat>
+    </report_format_detail>
+</PRONOM-Report>
