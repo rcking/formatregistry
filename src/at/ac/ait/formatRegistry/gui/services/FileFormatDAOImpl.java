@@ -11,10 +11,19 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TreeSet;
 
+import uk.bl.dpt.fido.Formats;
+import uk.bl.dpt.fido.Formats.Format;
+import uk.bl.dpt.fido.Formats.Format.Extension;
+import uk.bl.dpt.fido.Formats.Format.HasPriorityOver;
+import uk.bl.dpt.fido.Formats.Format.Mime;
+import uk.bl.dpt.fido.Formats.Format.Signature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.FidoPositions;
+import uk.gov.nationalarchives.pronom.PRONOMReport.IdentifierTypes;
+import uk.gov.nationalarchives.pronom.PRONOMReport.RelationshipTypes;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
@@ -36,9 +45,26 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	private Hashtable<String, FileFormat> formatHash;
 	private Hashtable<String, PRONOMReport> reportHash;
 	private Set<String> _formatNames = new TreeSet<String>();
+	private File pronomXMLDir;
+	private String outputXMLpath;
 
 	public FileFormatDAOImpl() {
-		loadFormatData();
+        ResourceBundle registryResources = ResourceBundle.getBundle("registry");
+        String formatXMLpath = "";
+        if (registryResources!=null) {
+        	formatXMLpath = registryResources.getString("formatxmlpath");       	
+        	outputXMLpath = registryResources.getString("outputxmlpath");   	
+        } else {
+			formatXMLpath = "C:\\development\\eclipse-workspace\\registry\\WebContent\\WEB-INF\\dat\\xml";
+			outputXMLpath = "C:\\development\\eclipse-workspace\\registry\\WebContent\\WEB-INF\\dat\\test";
+			System.out.println("Relying on default paths.");        	
+		}
+		pronomXMLDir = new File(formatXMLpath);
+		if (!pronomXMLDir.exists()) {
+			System.out.println("Improper property configuration, directory does not exist: " + formatXMLpath);
+		} else {
+			loadFormatData();
+		}
 	}
 
 	public void loadFormatData() {
@@ -52,13 +78,12 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		try {
 			context = JAXBContext.newInstance("at.ac.ait.formatRegistry");
 			unmarshaller = context.createUnmarshaller();
-			String path = "C:\\development\\eclipse-workspace\\registry\\WebContent\\WEB-INF\\dat\\xml";
-			File pronomXMLDir = new File(path);
 			File[] pronomXMLs = pronomXMLDir.listFiles();
-			for (int i=0; i<pronomXMLs.length; i++) {
-			//for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < pronomXMLs.length; i++) {
+				// for (int i = 0; i < 10; i++) {
 				File theFile = pronomXMLs[i];
-				// System.out.println("\n\nFile found: " + theFile + "\nNumber: " + i);
+				// System.out.println("\n\nFile found: " + theFile +
+				// "\nNumber: " + i);
 				PRONOMReport report = (PRONOMReport) unmarshaller
 						.unmarshal(new FileReader(theFile));
 				List<PRONOMReport.ReportFormatDetail> listOfDetails = report
@@ -69,19 +94,26 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 					for (PRONOMReport.ReportFormatDetail.FileFormat format : listOfFormats) {
 						String formID = format.getFormatID();
 						int intID = new Integer(formID).intValue();
-						if (intID>highestFormatID) highestFormatID = intID;
+						if (intID > highestFormatID)
+							highestFormatID = intID;
 						formatHash.put(formID, format);
 						reportHash.put(formID, report);
 						_formatNames.add(format.getFormatName());
-						List<InternalSignature> internalSignatures = format.getInternalSignature();
+						List<InternalSignature> internalSignatures = format
+								.getInternalSignature();
 						for (InternalSignature signature : internalSignatures) {
-							int sigID = new Integer(signature.getSignatureID()).intValue();
-							if (sigID>highestSignatureID) highestSignatureID = sigID;
+							int sigID = new Integer(signature.getSignatureID())
+									.intValue();
+							if (sigID > highestSignatureID)
+								highestSignatureID = sigID;
 						}
-						List<FidoSignature> fidoSignatures = format.getFidoSignature();
+						List<FidoSignature> fidoSignatures = format
+								.getFidoSignature();
 						for (FidoSignature fSignature : fidoSignatures) {
-							int fSigID = new Integer(fSignature.getFidoSignatureID()).intValue();
-							if (fSigID>highestFidoSignatureID) highestFidoSignatureID = fSigID;
+							int fSigID = new Integer(
+									fSignature.getFidoSignatureID()).intValue();
+							if (fSigID > highestFidoSignatureID)
+								highestFidoSignatureID = fSigID;
 						}
 					}
 				}
@@ -95,7 +127,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		}
 		dataLoaded = true;
 	}
-	
+
 	public String getNewFormatID() {
 		highestFormatID = highestFormatID + 1;
 		return Integer.toString(highestFormatID);
@@ -116,7 +148,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	@Override
 	public List<FileFormat> findAllFormats() {
 		// TODO Auto-generated method stub
-		return (List<FileFormat>) Collections.synchronizedList(new ArrayList<FileFormat>(formatHash.values()));
+		return (List<FileFormat>) Collections
+				.synchronizedList(new ArrayList<FileFormat>(formatHash.values()));
 	}
 
 	@Override
@@ -148,9 +181,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			marshaller
 					.marshal(
 							report,
-							new FileWriter(
-									"C:\\development\\eclipse-workspace\\registry\\WebContent\\WEB-INF\\dat\\test\\puid."
-											+ outputID + ".xml"));
+							new FileWriter(outputXMLpath + "/" + "puid." + outputID + ".xml"));
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -170,7 +201,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		while (it.hasNext()) {
 			FileFormat format = it.next();
 			String extensions = format.getExtensionList();
-			if (extensions.contains(fragment)) results.add(format);
+			if (extensions.contains(fragment))
+				results.add(format);
 		}
 		return results;
 	}
@@ -181,7 +213,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		while (it.hasNext()) {
 			FileFormat format = it.next();
 			String name = format.getFormatName();
-			if (name.contains(fragment)) results.add(format);
+			if (name.contains(fragment))
+				results.add(format);
 		}
 		return results;
 	}
@@ -192,7 +225,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		while (it.hasNext()) {
 			FileFormat format = it.next();
 			String id = format.getPronomID();
-			if (id.contains(fragment)) results.add(format);
+			if (id.contains(fragment))
+				results.add(format);
 		}
 		return results;
 	}
@@ -205,6 +239,72 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	public String getNewFidoSignatureID() {
 		highestFidoSignatureID = highestFidoSignatureID + 1;
 		return Integer.toString(highestFidoSignatureID);
+	}
+
+	public void exportToFido() {
+		Formats fidoFormats = new Formats();
+		fidoFormats.setVersion("0.1");
+		JAXBContext context;
+		for (FileFormat fileFormat : formatHash.values()) {
+			if (fileFormat.getFidoSignature().size()>0) {
+				Format fidoFormat = new Format();
+				fidoFormat.setName(fileFormat.getFormatName());
+				fidoFormat.setPuid(fileFormat.getPronomID());
+				fidoFormat.setPronomId(fileFormat.getFormatID());
+				for (FileFormatIdentifier ffi : fileFormat.getFileFormatIdentifier()) {
+					if (ffi.getIdentifierType()==IdentifierTypes.MIME) {
+						Mime mime = new Mime();
+						mime.setValue(ffi.getIdentifier());
+						fidoFormat.getMime().add(mime);
+					}
+				}
+				for (ExternalSignature es : fileFormat.getExternalSignature()) {
+					Extension extension = new Extension();
+					extension.setValue(es.getSignature());
+					fidoFormat.getExtension().add(extension);
+				}
+				for (RelatedFormat rf : fileFormat.getRelatedFormat()) {
+					if (rf.getRelationshipType()==RelationshipTypes.Has_priority_over) {
+						String id = rf.getRelatedFormatID();
+						FileFormat relatedFormat = this.find(id);
+						if (relatedFormat!=null) {
+							HasPriorityOver hasPriorityOver = new HasPriorityOver();
+							hasPriorityOver.setValue(relatedFormat.getPronomID());
+							fidoFormat.getHasPriorityOver().add(hasPriorityOver);
+						}
+					}
+				}
+				for (FidoSignature fs : fileFormat.getFidoSignature()) {
+					Signature signature = new Signature();
+					signature.setName(fs.getFidoSignatureName());
+					signature.setNote(fs.getFidoSignatureNote());
+					for (PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern p : fs.getPattern()) {
+						Formats.Format.Signature.Pattern fPattern = new Formats.Format.Signature.Pattern();
+						fPattern.setPosition(p.getPosition().toString());
+						fPattern.setRegex(p.getRegex());
+						signature.getPattern().add(fPattern);
+					}
+					fidoFormat.getSignature().add(signature);
+				}
+				fidoFormats.getFormat().add(fidoFormat);
+			}
+		}
+		try {
+			context = JAXBContext.newInstance(Formats.class);
+			Marshaller marshaller = context.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			marshaller
+					.marshal(
+							fidoFormats,
+							new FileWriter(outputXMLpath + "/" + "formats.xml"));
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }

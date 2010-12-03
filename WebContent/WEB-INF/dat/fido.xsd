@@ -9,7 +9,24 @@
             <xs:sequence>
               <xs:element name="puid" type="xs:string" minOccurs="0" />
               <xs:element name="name" type="xs:string" minOccurs="0" />
-              <xs:element name="extension" type="xs:string" minOccurs="0" />
+              <xs:element name="pronom_id" type="xs:string" minOccurs="0" />
+              <xs:element name="container" type="xs:string" minOccurs="0" />
+              <xs:element name="mime" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="mime_Text" msdata:Ordinal="0">
+                    <xs:extension base="xs:string">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="extension" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent msdata:ColumnName="extension_Text" msdata:Ordinal="0">
+                    <xs:extension base="xs:string">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="has_priority_over" nillable="true" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:simpleContent msdata:ColumnName="has_priority_over_Text" msdata:Ordinal="0">
@@ -22,10 +39,12 @@
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="name" type="xs:string" minOccurs="0" />
+                    <xs:element name="note" type="xs:string" minOccurs="0" />
                     <xs:element name="pattern" minOccurs="0" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="position" type="xs:string" minOccurs="0" />
+                          <xs:element name="pronom_pattern" type="xs:string" minOccurs="0" />
                           <xs:element name="regex" type="xs:string" minOccurs="0" />
                         </xs:sequence>
                       </xs:complexType>

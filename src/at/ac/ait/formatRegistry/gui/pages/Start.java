@@ -56,4 +56,10 @@ public class Start {
         return listFormats.initialize(resultsList);
     }
 
+	Object onSuccessFromExport()
+    {
+		formatDAO.exportToFido();
+        return this;
+    }
+
 }

@@ -23,6 +23,12 @@
 		<input type="submit" value="Search IDs"/>
  	</form><br/>
 	<p></p>
+	<form t:type="form" t:id="export">
+		<t:errors/>
+		Export to Fido formats: 
+		<input type="submit" value="Export"/>
+ 	</form><br/>
+	<p></p>
 	<t:actionlink t:id="listAll">View full format list</t:actionlink>
 	<p></p>
 </t:layout>
