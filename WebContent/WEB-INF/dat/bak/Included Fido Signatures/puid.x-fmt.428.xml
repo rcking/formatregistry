@@ -64,7 +64,9 @@
             <FidoSignature>
                 <FidoSignatureID>228</FidoSignatureID>
                 <FidoSignatureName>Microsoft Windows Shortcut</FidoSignatureName>
+                <FidoSignatureNote>Reference to format: http://msdn.microsoft.com/en-us/library/dd871305(PROT.10).aspx. Byte values five to eight seem to need to be reversed (little-endian ordering) from the suggested ordering in the specification. Ambiguity in the specification means this ordering may or may not be expected.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>334</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AL\\000\\000\\000\\\x01\\\x14\\\x02\\000\\000\\000\\000\\000\\\xc0\\000\\000\\000\\000\\000\\000F</Regex>
                 </Pattern>

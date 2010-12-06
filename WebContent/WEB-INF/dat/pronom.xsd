@@ -123,6 +123,7 @@
                           <xs:element name="Pattern" minOccurs="0" maxOccurs="unbounded">
                             <xs:complexType>
                               <xs:sequence>
+                          		<xs:element name="PatternID" type="xs:string" minOccurs="0" />
                           		<xs:element name="Position" type="xs:string" minOccurs="0" />
                           		<xs:element name="Regex" type="xs:string" minOccurs="0" />
                               </xs:sequence>

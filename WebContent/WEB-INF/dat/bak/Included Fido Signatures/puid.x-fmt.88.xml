@@ -102,15 +102,19 @@
             <FidoSignature>
                 <FidoSignatureID>243</FidoSignatureID>
                 <FidoSignatureName>PowerPoint 4.0</FidoSignatureName>
+                <FidoSignatureNote>Compound document header + PowerPoint Document user stream + version number (pp40)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>218</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xd0\\\xcf\\\x11\\\xe0\\\xa1\\\xb1\\\x1a\\\xe1.{20}\\\xfe\\\xff</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>219</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)P\\000P\\0004\\0000\\000</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>220</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)Microsoft\\ PowerPoint</Regex>
                 </Pattern>

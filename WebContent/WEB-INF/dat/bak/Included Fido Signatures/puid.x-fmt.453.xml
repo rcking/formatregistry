@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>239</FidoSignatureID>
                 <FidoSignatureName>TrueType Font</FidoSignatureName>
+                <FidoSignatureNote></FidoSignatureNote>
                 <Pattern>
+                    <PatternID>315</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\000\\\x01\\000\\000\\000</Regex>
                 </Pattern>

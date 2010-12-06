@@ -79,7 +79,9 @@
             <FidoSignature>
                 <FidoSignatureID>183</FidoSignatureID>
                 <FidoSignatureName>GZIP format</FidoSignatureName>
+                <FidoSignatureNote>Member header ID1 and ID2 fields</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>259</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x1f\\\x8b\\\x08</Regex>
                 </Pattern>

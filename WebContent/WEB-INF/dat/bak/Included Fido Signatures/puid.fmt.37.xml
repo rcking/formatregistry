@@ -70,7 +70,9 @@
             <FidoSignature>
                 <FidoSignatureID>101</FidoSignatureID>
                 <FidoSignatureName>Microsoft Word for Windows 1.0</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>64</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x9b\\\xa5.{16}\\000\\000\\000\\000</Regex>
                 </Pattern>

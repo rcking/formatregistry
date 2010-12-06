@@ -114,13 +114,16 @@
             <FidoSignature>
                 <FidoSignatureID>65</FidoSignatureID>
                 <FidoSignatureName>PDF 1.4</FidoSignatureName>
+                <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>185</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\%PDF\\-1\\.4</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>186</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\%\\%EOF.{0,2}\\Z</Regex>
+                    <Regex>(?s)\\%\\%EOF(?:\\\n|\\\r|\\\r\\\n)\\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

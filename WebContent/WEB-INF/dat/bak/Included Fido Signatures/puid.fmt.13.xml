@@ -85,11 +85,14 @@
             <FidoSignature>
                 <FidoSignatureID>41</FidoSignatureID>
                 <FidoSignatureName>PNG 1.2</FidoSignatureName>
+                <FidoSignatureNote>Signature + IHDR and iTXt chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>226</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*iTXt</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>227</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
                 </Pattern>

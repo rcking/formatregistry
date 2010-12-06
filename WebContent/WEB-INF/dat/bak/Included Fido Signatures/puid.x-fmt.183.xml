@@ -73,7 +73,9 @@
             <FidoSignature>
                 <FidoSignatureID>173</FidoSignatureID>
                 <FidoSignatureName>RealAudio Metafile</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>285</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\Artsp\\:\\/\\/</Regex>
                 </Pattern>

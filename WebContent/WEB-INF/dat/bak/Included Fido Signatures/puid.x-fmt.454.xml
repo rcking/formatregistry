@@ -66,7 +66,9 @@
             <FidoSignature>
                 <FidoSignatureID>240</FidoSignatureID>
                 <FidoSignatureName>Microsoft Windows URL</FidoSignatureName>
+                <FidoSignatureNote>Signature - 5B 49 6E 74 65 72 6E 65 74 53 68 6F 72 74 63 75 74 5D - ASCII - [InternetShortcut] may further be ammended by two bytes 0x0D 0x0A [CR LF / Carriage Return, Line Feed] at the end of the signature if required. Further, the initial 18 byte sequence may suffer regional differences, additional byte sequences may be required to identify these also.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>335</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\[InternetShortcut\\]</Regex>
                 </Pattern>

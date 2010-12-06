@@ -76,7 +76,9 @@
             <FidoSignature>
                 <FidoSignatureID>19</FidoSignatureID>
                 <FidoSignatureName>Windows Bitmap 1.0</FidoSignatureName>
+                <FidoSignatureNote>Device Dependent Bitmap File Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>51</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\000\\000.{6}\\\x01(?:\\\x01|\\\x04|\\\x08)</Regex>
                 </Pattern>

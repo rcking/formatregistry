@@ -105,11 +105,14 @@
             <FidoSignature>
                 <FidoSignatureID>156</FidoSignatureID>
                 <FidoSignatureName>Binary DXF 2004-2005</FidoSignatureName>
+                <FidoSignatureNote>File header, header section with $ACADVER group code, EOF marker</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>82</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AAutoCAD\\ Binary\\ DXF\\\r\\\n\\\x1a\\000.*\\000\\000SECTION\\000\\\x02\\000HEADER\\000.*\\\t\\000\\$ACADVER\\000\\\x01\\000AC1018\\000.*\\000\\000ENDSEC\\000</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>83</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000EOF\\000\\Z</Regex>
                 </Pattern>

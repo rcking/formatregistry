@@ -114,11 +114,14 @@
             <FidoSignature>
                 <FidoSignatureID>214</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.0 (big-endian)</FidoSignatureName>
+                <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.0), EOI marker</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>91</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe1.{2}Exif\\000\\000MM\\000\\*.*\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040200</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>103</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
                 </Pattern>
@@ -126,11 +129,14 @@
             <FidoSignature>
                 <FidoSignatureID>215</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.0 (little-endian)</FidoSignatureName>
+                <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.0), EOI marker</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>92</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe1.{2}Exif\\000\\000II\\*\\000.*\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000200</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>104</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
                 </Pattern>

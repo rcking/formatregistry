@@ -111,7 +111,9 @@
             <FidoSignature>
                 <FidoSignatureID>122</FidoSignatureID>
                 <FidoSignatureName>BIFF 3 Worksheet</FidoSignatureName>
+                <FidoSignatureNote>09 - BOF / 02 - Version 3 / {2} - unspecified / 0000 - unspecified / 1000 - type of data (sheet)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>188</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\t\\\x02.{2}\\000\\000\\\x10\\000</Regex>
                 </Pattern>

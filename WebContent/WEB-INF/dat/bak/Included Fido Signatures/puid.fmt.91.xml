@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>164</FidoSignatureID>
                 <FidoSignatureName>SVG 1.0</FidoSignatureName>
+                <FidoSignatureNote>Including &lt;svg&gt;&lt;/svg&gt; fragments</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>122</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\&lt;\\?xml\\ version\\=\\"1\\.0\\".*\\&lt;svg.*svg\\&gt;</Regex>
                 </Pattern>

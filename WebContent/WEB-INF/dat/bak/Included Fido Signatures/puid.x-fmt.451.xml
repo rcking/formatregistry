@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>237</FidoSignatureID>
                 <FidoSignatureName>Google SketchUp Document</FidoSignatureName>
+                <FidoSignatureNote></FidoSignatureNote>
                 <Pattern>
+                    <PatternID>319</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xfe\\\xff\\\x0eS\\000k\\000e\\000t\\000c\\000h\\000U\\000p\\000\\ \\000M\\000o\\000d\\000e\\000l\\000</Regex>
                 </Pattern>

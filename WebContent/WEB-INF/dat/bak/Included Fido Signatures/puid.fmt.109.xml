@@ -81,11 +81,14 @@
             <FidoSignature>
                 <FidoSignatureID>14</FidoSignatureID>
                 <FidoSignatureName>SWF 6</FidoSignatureName>
+                <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>144</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A(?:C|F)WS\\\x06</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>145</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\Z</Regex>
                 </Pattern>

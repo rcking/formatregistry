@@ -65,7 +65,9 @@
             <FidoSignature>
                 <FidoSignatureID>227</FidoSignatureID>
                 <FidoSignatureName>Java Compiled Object Code</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>284</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xca\\\xfe\\\xba\\\xbe</Regex>
                 </Pattern>

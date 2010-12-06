@@ -116,11 +116,14 @@
             <FidoSignature>
                 <FidoSignatureID>37</FidoSignatureID>
                 <FidoSignatureName>Powerpoint 97-2002</FidoSignatureName>
+                <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>203</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xd0\\\xcf\\\x11\\\xe0\\\xa1\\\xb1\\\x1a\\\xe1.{20}\\\xfe\\\xff</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>204</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)P\\000o\\000w\\000e\\000r\\000P\\000o\\000i\\000n\\000t\\000\\ \\000D\\000o\\000c\\000u\\000m\\000e\\000n\\000t\\000</Regex>
                 </Pattern>

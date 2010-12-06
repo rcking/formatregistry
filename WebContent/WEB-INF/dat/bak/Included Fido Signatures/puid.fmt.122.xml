@@ -136,7 +136,9 @@
             <FidoSignature>
                 <FidoSignatureID>30</FidoSignatureID>
                 <FidoSignatureName>EPS 1.2</FidoSignatureName>
+                <FidoSignatureNote>Version comment</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>205</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\%\\!PS\\-Adobe\\-2\\.0\\ EPSF\\-1\\.2(?:\\\r|\\\n|\\\r\\\n|\\\n\\\r)</Regex>
                 </Pattern>
@@ -144,11 +146,14 @@
             <FidoSignature>
                 <FidoSignatureID>31</FidoSignatureID>
                 <FidoSignatureName>EPS 1.2 Preview</FidoSignatureName>
+                <FidoSignatureNote>Version comment</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>206</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xc5\\\xd0\\\xd3\\\xc6</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>207</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)\\%\\!PS\\-Adobe\\-2\\.0\\ EPSF\\-1\\.2(?:\\\r|\\\n|\\\r\\\n|\\\n\\\r)</Regex>
                 </Pattern>

@@ -67,7 +67,9 @@
             <FidoSignature>
                 <FidoSignatureID>90</FidoSignatureID>
                 <FidoSignatureName>FLAC (Free Lossless Audio Codec)</FidoSignatureName>
+                <FidoSignatureNote>Characters fLaC. A rudimentary signature, we can improve this with a better understanding of the makeup of the initial header fields of the FLAC format.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>394</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{0,4}fLaC</Regex>
                 </Pattern>

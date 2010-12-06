@@ -89,15 +89,19 @@
             <FidoSignature>
                 <FidoSignatureID>229</FidoSignatureID>
                 <FidoSignatureName>Outlook Message Format</FidoSignatureName>
+                <FidoSignatureNote>Compound document header + IPM.Note + recip_version stream header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>280</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xd0\\\xcf\\\x11\\\xe0\\\xa1\\\xb1\\\x1a\\\xe1.{20}\\\xfe\\\xff</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>282</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)IPM\\.Note</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>283</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)r\\000e\\000c\\000i\\000p\\000\\_\\000v\\000e\\000r\\000s\\000i\\000o\\000n\\000</Regex>
                 </Pattern>

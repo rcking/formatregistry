@@ -92,11 +92,14 @@
             <FidoSignature>
                 <FidoSignatureID>106</FidoSignatureID>
                 <FidoSignatureName>Raw JPEG</FidoSignatureName>
+                <FidoSignatureNote>SOI marker at BOF, EOI marker at EOF</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>174</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xd8\\\xff</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>175</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
                 </Pattern>

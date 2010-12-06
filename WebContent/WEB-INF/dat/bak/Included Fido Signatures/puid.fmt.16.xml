@@ -83,11 +83,14 @@
             <FidoSignature>
                 <FidoSignatureID>62</FidoSignatureID>
                 <FidoSignatureName>PDF 1.2</FidoSignatureName>
+                <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>62</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\%PDF\\-1\\.2</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>63</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\%\\%EOF(?:\\\n|\\\r|\\\r\\\n)\\Z</Regex>
                 </Pattern>

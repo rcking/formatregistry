@@ -69,7 +69,9 @@
             <FidoSignature>
                 <FidoSignatureID>245</FidoSignatureID>
                 <FidoSignatureName>Adobe Photoshop (psd)</FidoSignatureName>
+                <FidoSignatureNote>Primarily matches a character sequence of...</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>356</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A8BPS\\000\\\x01\\000\\000\\000\\000\\000\\000\\000</Regex>
                 </Pattern>

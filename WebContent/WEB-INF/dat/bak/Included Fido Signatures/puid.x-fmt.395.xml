@@ -134,7 +134,9 @@
             <FidoSignature>
                 <FidoSignatureID>211</FidoSignatureID>
                 <FidoSignatureName>WordPerfect Graphics 1.0</FidoSignatureName>
+                <FidoSignatureNote>WPG Header (Version=1.0)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>69</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xffWPC\\\x10\\000\\000\\000\\\x01\\\x16\\\x01\\000.{2}\\000\\000</Regex>
                 </Pattern>

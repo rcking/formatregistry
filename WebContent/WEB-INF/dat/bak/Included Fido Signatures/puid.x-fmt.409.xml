@@ -65,7 +65,9 @@
             <FidoSignature>
                 <FidoSignatureID>223</FidoSignatureID>
                 <FidoSignatureName>MS-DOS Executable</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>254</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AMZ</Regex>
                 </Pattern>

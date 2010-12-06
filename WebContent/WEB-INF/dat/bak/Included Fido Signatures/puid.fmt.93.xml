@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>166</FidoSignatureID>
                 <FidoSignatureName>VRML 1.0</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>157</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\#VRML\\ V1\\.0\\ ascii</Regex>
                 </Pattern>

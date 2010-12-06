@@ -66,9 +66,11 @@
             <FidoSignature>
                 <FidoSignatureID>87</FidoSignatureID>
                 <FidoSignatureName>ESRI Arc/View ShapeFile Index</FidoSignatureName>
+                <FidoSignatureNote>100-byte header (file code, version), then first record offset. | Magic No. (4 bytes) | Unused (20 bytes) | File Length (4 bytes) | Version (1000 (decimal), little endian - 4 bytes) | Other - (68 bytes) | First Record No. (4 bytes) |</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>387</PatternID>
                     <Position>BOF</Position>
-                    <Regex></Regex>
+                    <Regex>(?s)\\A\\000\\000\\\'\\\n\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000.{4}\\\xe8\\\x03\\000\\000.{68}\\000\\000\\0002</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

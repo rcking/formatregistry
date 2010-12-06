@@ -105,7 +105,9 @@
             <FidoSignature>
                 <FidoSignatureID>172</FidoSignatureID>
                 <FidoSignatureName>HTML 4.0</FidoSignatureName>
+                <FidoSignatureNote>With DOCTYPE declaration of 4.0. Single byte sequence. BOF character sequence: {0-1024}&lt;!(DOCTYPE|doctype) (HTML|html) (PUBLIC/public) "-//{1-16}//(DTD|dtd) {0-64}(HTML|html) 4.(0 |0/)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>268</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{0,1024}\\&lt;\\!(?:DOCTYPE|doctype)\\ (?:HTML|html)\\ (?:PUBLIC|public)\\ \\"\\-\\/\\/.{1,16}\\/\\/(?:DTD|dtd)\\ .{0,64}(?:HTML|html)\\ 4\\.(?:0\\ |0\\/)</Regex>
                 </Pattern>

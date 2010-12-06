@@ -93,7 +93,9 @@
             <FidoSignature>
                 <FidoSignatureID>233</FidoSignatureID>
                 <FidoSignatureName>3DM 3</FidoSignatureName>
+                <FidoSignatureNote>Header with version no.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>302</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A3D\\ Geometry\\ File\\ Format\\ \\ \\ \\ \\ \\ \\ \\ 3\\\x01\\000\\000\\000</Regex>
                 </Pattern>

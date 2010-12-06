@@ -88,11 +88,14 @@
             <FidoSignature>
                 <FidoSignatureID>169</FidoSignatureID>
                 <FidoSignatureName>HTML pre-2.0</FidoSignatureName>
+                <FidoSignatureNote>Signature for pre-2.0 HTML, or non-valid HTML (no DOCTYPE declaration). EOF character sequence: &lt;/(HTML|html|BODY|body)&gt;{0-1024}</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>270</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{0,1024}\\&lt;(?:HTML|html)</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>271</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\&lt;\\/(?:HTML|html|BODY|body)\\&gt;.{0,1024}\\Z</Regex>
                 </Pattern>

@@ -95,7 +95,9 @@
             <FidoSignature>
                 <FidoSignatureID>99</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format 2000-2002</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>15</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AAC1015</Regex>
                 </Pattern>

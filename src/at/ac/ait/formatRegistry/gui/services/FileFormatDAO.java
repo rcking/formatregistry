@@ -14,7 +14,7 @@ public interface FileFormatDAO {
   	FileFormat find(String id);
   	void save(FileFormat format);
   	void delete(FileFormat format);
-  	void exportToFido();
+  	String exportToFido();
   	FileFormat findFormatByName(String name);
   	String getNewFormatID();
   	String getNewInternalSignatureID();

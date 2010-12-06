@@ -116,11 +116,14 @@
             <FidoSignature>
                 <FidoSignatureID>8</FidoSignatureID>
                 <FidoSignatureName>XHTML 1.1</FidoSignatureName>
+                <FidoSignatureNote>With DOCTYPE declaration for 1.1</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>274</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{0,1024}\\&lt;\\!DOCTYPE\\ html\\ PUBLIC\\ \\"\\-\\/\\/W3C\\/\\/DTD\\ XHTML\\ 1\\.1</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>275</PatternID>
                     <Position>VAR</Position>
                     <Regex>(?s)\\&lt;html\\ xmlns\\=\\"http\\:\\/\\/www\\.w3\\.org\\/1999\\/xhtml\\".*\\&lt;title\\&gt;.*\\&lt;\\/title\\&gt;</Regex>
                 </Pattern>

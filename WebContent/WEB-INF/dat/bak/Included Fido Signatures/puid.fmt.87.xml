@@ -63,7 +63,9 @@
             <FidoSignature>
                 <FidoSignatureID>158</FidoSignatureID>
                 <FidoSignatureName>PCX 2</FidoSignatureName>
+                <FidoSignatureNote>File header sequence</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>166</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\n\\\x02\\\x01(?:\\\x01|\\\x02|\\\x04|\\\x08).{60}\\000.{3}(?:\\\x01|\\\x02)\\000.{4}\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000</Regex>
                 </Pattern>

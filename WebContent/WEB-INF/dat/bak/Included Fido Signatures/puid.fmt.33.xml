@@ -95,7 +95,9 @@
             <FidoSignature>
                 <FidoSignatureID>97</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format R13</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>13</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AAC1012</Regex>
                 </Pattern>

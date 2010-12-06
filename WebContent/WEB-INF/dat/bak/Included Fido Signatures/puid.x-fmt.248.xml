@@ -63,7 +63,9 @@
             <FidoSignature>
                 <FidoSignatureID>179</FidoSignatureID>
                 <FidoSignatureName>Personal Storage Table *.pst (ANSI)</FidoSignatureName>
+                <FidoSignatureNote>Byte analysis completed in http://downloads.sourceforge.net/libpff/Personal_Foler_File_Format.pdf (Personal Folder File (PFF) File Format Specification) and sequence confirmed by research completed in http://www.five-ten-sg.com/libpst/rn01re06.html. PST file header, 24 bytes in total.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>332</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\!BDN.{4}SM(?:\\\x0e\\000|\\\x0f\\000)</Regex>
                 </Pattern>

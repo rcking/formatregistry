@@ -78,7 +78,9 @@
             <FidoSignature>
                 <FidoSignatureID>194</FidoSignatureID>
                 <FidoSignatureName>MPEG-1/2 Video Generic</FidoSignatureName>
+                <FidoSignatureNote>Pack Header start code + System Header start code</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>57</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\000\\000\\\x01\\\xba.{8,11}\\000\\000\\\x01\\\xbb</Regex>
                 </Pattern>

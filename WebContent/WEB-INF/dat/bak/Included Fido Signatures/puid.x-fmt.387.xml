@@ -208,11 +208,14 @@
             <FidoSignature>
                 <FidoSignatureID>195</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near EOF)</FidoSignatureName>
+                <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>101</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AMM\\000\\*</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>383</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040220.{0,65535}\\Z</Regex>
                 </Pattern>
@@ -220,11 +223,14 @@
             <FidoSignature>
                 <FidoSignatureID>196</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near EOF)</FidoSignatureName>
+                <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>102</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AII\\*\\000</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>384</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000220.{0,65535}\\Z</Regex>
                 </Pattern>
@@ -232,11 +238,14 @@
             <FidoSignature>
                 <FidoSignatureID>197</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near BOF)</FidoSignatureName>
+                <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>373</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AMM\\000\\*</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>374</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{10,65535}\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040220</Regex>
                 </Pattern>
@@ -244,11 +253,14 @@
             <FidoSignature>
                 <FidoSignatureID>198</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near BOF)</FidoSignatureName>
+                <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>379</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AII\\*\\000</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>380</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{10,65535}\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000220</Regex>
                 </Pattern>

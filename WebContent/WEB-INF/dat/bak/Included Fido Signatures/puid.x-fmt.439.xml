@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>234</FidoSignatureID>
                 <FidoSignatureName>CATIA Model 5</FidoSignatureName>
+                <FidoSignatureNote></FidoSignatureNote>
                 <Pattern>
+                    <PatternID>312</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AV5\\_CFV2\\000\\000</Regex>
                 </Pattern>

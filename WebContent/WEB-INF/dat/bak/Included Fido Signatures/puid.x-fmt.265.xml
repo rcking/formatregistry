@@ -72,7 +72,9 @@
             <FidoSignature>
                 <FidoSignatureID>182</FidoSignatureID>
                 <FidoSignatureName>TAR (Tape Archive)</FidoSignatureName>
+                <FidoSignatureNote>TAR specification has a 256 byte header which includes 6 octal numbers which may be space or null terminated, may have leading spaces or zeros, and may vary in position by one byte, all depending on which of the many flavours the format follows. The above signature was tested on varied TAR files off the internet and the unknown files in digital preservation successfully.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>339</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A[\\!-\\\xef].{104}[0-7][\\ -7]\\000.{5}[0-7][\\ -7]\\000.{5}[0-7][\\ -7]\\000.{10}[0-7](?:\\000|\\ ).{10}[0-7](?:\\000|\\ ).{5}[0-7][\\000-7](?:\\000|\\ )</Regex>
                 </Pattern>

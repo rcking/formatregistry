@@ -86,13 +86,16 @@
             <FidoSignature>
                 <FidoSignatureID>221</FidoSignatureID>
                 <FidoSignatureName>PostScript DSC 2.1</FidoSignatureName>
+                <FidoSignatureNote>PostScript DSC header version comment + EOF comment</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>246</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\%\\!PS\\-Adobe\\-2\\.1</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>250</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\%\\%EOF.{0,2}\\Z</Regex>
+                    <Regex>(?s)\\%\\%EOF(?:\\\r|\\\n|\\\r\\\n)\\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

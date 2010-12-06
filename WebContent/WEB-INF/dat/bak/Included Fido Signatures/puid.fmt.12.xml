@@ -151,11 +151,14 @@
             <FidoSignature>
                 <FidoSignatureID>25</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1iCCP</FidoSignatureName>
+                <FidoSignatureNote>Signature + IHDR and iCCP chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>228</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*iCCP</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>231</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
                 </Pattern>
@@ -163,11 +166,14 @@
             <FidoSignature>
                 <FidoSignatureID>26</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sPLT</FidoSignatureName>
+                <FidoSignatureNote>Signature + IHDR and sPLT chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>229</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sPLT</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>232</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
                 </Pattern>
@@ -175,11 +181,14 @@
             <FidoSignature>
                 <FidoSignatureID>27</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sRGB</FidoSignatureName>
+                <FidoSignatureNote>Signature + IHDR and sRGB chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>230</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sRGB</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>233</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
                 </Pattern>

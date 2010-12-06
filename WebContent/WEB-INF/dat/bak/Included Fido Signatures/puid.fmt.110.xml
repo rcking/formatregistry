@@ -109,11 +109,14 @@
             <FidoSignature>
                 <FidoSignatureID>16</FidoSignatureID>
                 <FidoSignatureName>SWF 7</FidoSignatureName>
+                <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>146</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A(?:C|F)WS\\\x07</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>152</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\000\\Z</Regex>
                 </Pattern>

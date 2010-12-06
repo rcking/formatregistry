@@ -73,7 +73,9 @@
             <FidoSignature>
                 <FidoSignatureID>117</FidoSignatureID>
                 <FidoSignatureName>RTF 1.5 - 1.6 (generic)</FidoSignatureName>
+                <FidoSignatureNote>\rtf control word, \ansicpg control word</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>109</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\{\\\\rt(?:f|f1)\\\\(?:ansi|mac|pc|pca)\\\\ansicpg</Regex>
                 </Pattern>

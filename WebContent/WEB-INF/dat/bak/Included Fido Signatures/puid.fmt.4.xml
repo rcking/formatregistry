@@ -114,11 +114,14 @@
             <FidoSignature>
                 <FidoSignatureID>104</FidoSignatureID>
                 <FidoSignatureName>GIF 1989a</FidoSignatureName>
+                <FidoSignatureNote>header &amp; trailer</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>181</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AGIF89a</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>182</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\;\\Z</Regex>
                 </Pattern>

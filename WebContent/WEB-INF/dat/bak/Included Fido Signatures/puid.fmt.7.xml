@@ -92,7 +92,9 @@
             <FidoSignature>
                 <FidoSignatureID>137</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (little-endian)</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>183</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AII\\*\\000</Regex>
                 </Pattern>
@@ -100,7 +102,9 @@
             <FidoSignature>
                 <FidoSignatureID>138</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (big-endian)</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>184</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AMM\\000\\*</Regex>
                 </Pattern>

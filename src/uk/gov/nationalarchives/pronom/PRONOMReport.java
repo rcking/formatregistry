@@ -2637,15 +2637,43 @@ public class PRONOMReport {
             
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
+                    "patternID",
                     "position",
                     "regex"
                 })
                 public static class Pattern {
 
+                    @XmlElement(name = "PatternID")
+                    protected String patternID;
                     @XmlElement(name = "Position")
                     protected FidoPositions position;
                     @XmlElement(name = "Regex")
                     protected String regex;
+                    
+                    /**
+                     * Gets the value of the patternID property.
+                     * 
+                     * @return
+                     *     possible object is
+                     *     {@link String }
+                     *     
+                     */
+                    @NonVisual
+                    public String getPatternID() {
+                        return patternID;
+                    }
+
+                    /**
+                     * Sets the value of the patternID property.
+                     * 
+                     * @param value
+                     *     allowed object is
+                     *     {@link String }
+                     *     
+                     */
+                    public void setPatternID(String value) {
+                        this.patternID = value;
+                    }
 
                     /**
                      * Gets the value of the position property.

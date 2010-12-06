@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>184</FidoSignatureID>
                 <FidoSignatureName>FLV 1</FidoSignatureName>
+                <FidoSignatureNote>Header only</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>153</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AFLV\\\x01</Regex>
                 </Pattern>

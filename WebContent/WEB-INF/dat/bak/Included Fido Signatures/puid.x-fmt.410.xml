@@ -69,7 +69,9 @@
             <FidoSignature>
                 <FidoSignatureID>224</FidoSignatureID>
                 <FidoSignatureName>Windows New Executable</FidoSignatureName>
+                <FidoSignatureNote>Header</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>255</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AMZ.*NE</Regex>
                 </Pattern>

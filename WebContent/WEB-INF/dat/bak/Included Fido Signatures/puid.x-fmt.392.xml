@@ -73,9 +73,11 @@
             <FidoSignature>
                 <FidoSignatureID>208</FidoSignatureID>
                 <FidoSignatureName>JPEG2000</FidoSignatureName>
+                <FidoSignatureNote>From the ISO JPEG2000 specification</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>323</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\x00\\x00\\x00\\x0cjP\\x20\\x20\\x0d\\x0a\\x87\\x0a\\x00\\x00\\x00\\x14ftypjp2</Regex>
+                    <Regex>(?s)\\A\\000\\000\\000\\\x0cjP\\ \\ \\\r\\\n\\\x87\\\n</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

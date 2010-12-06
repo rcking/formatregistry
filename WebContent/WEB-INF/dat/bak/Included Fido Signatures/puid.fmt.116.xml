@@ -76,7 +76,9 @@
             <FidoSignature>
                 <FidoSignatureID>21</FidoSignatureID>
                 <FidoSignatureName>Windows Bitmap 3.0</FidoSignatureName>
+                <FidoSignatureNote>BITMAPFILEHEADER + BITMAPINFOHEADER structures</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>53</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\ABM.{4}\\000\\000\\000\\000.{4}\\(\\000\\000\\000.{8}\\\x01\\000(?:\\\x01|\\\x04|\\\x08|\\\x18)\\000(?:\\000|\\\x01|\\\x02)\\000\\000\\000</Regex>
                 </Pattern>

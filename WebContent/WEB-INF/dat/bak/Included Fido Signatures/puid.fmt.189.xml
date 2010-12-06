@@ -74,13 +74,16 @@ OOXML is not an open format but the specification and development rights have be
             <FidoSignature>
                 <FidoSignatureID>72</FidoSignatureID>
                 <FidoSignatureName>Microsoft Office Open XML</FidoSignatureName>
+                <FidoSignatureNote>Signature represents a combination of OOXML specific bytes and a standard ZIP signature (taken verbatim from Zip format sig). Last two bytes of this signature represents a Microsoft Open Packaging growth hint which indentifies this as one of three OOXML document types so far.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>330</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A.{30}\\[Content\\_Types\\]\\.xml\\ \\\xa2</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>331</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04</Regex>
+                    <Regex>(?s)\\APK\\\x03\\\x04.*PK\\\x01\\\x02.*PK\\\x05\\\x06</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

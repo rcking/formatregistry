@@ -1,9 +1,17 @@
 package at.ac.ait.formatRegistry.gui.pages;
 
+import java.io.File;
 import java.util.List;
+
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.tapestry5.PersistenceConstants;
 import org.apache.tapestry5.annotations.InjectPage;
+import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.upload.services.UploadedFile;
+import org.apache.tapestry5.util.TextStreamResponse;
+
 import at.ac.ait.formatRegistry.gui.services.FileFormatDAO;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
 
@@ -26,11 +34,32 @@ public class Start {
 	@Property
 	private String idFragment;
 	
-	private List<FileFormat> resultsList; 
+    @Property
+    private UploadedFile file;
 
-	public List<FileFormat> getResultsList() {
+    private List<FileFormat> resultsList; 
+
+    @Persist(PersistenceConstants.FLASH)
+    @Property
+    private String message;
+
+    /*
+    Object onUploadException(FileUploadException ex)
+    {
+        message = "Upload exception: " + ex.getMessage();
+        return this;
+    }
+    */
+    
+    public List<FileFormat> getResultsList() {
 		return resultsList;
 	}
+
+    public void onSuccessFromUploadFile()
+    {
+        File copied = new File("C:/development/eclipse-workspace/registry/WebContent/WEB-INF/dat/test/" + file.getFileName());
+        file.write(copied);
+    }
 	
 	Object onActionFromListAll()
     {
@@ -58,8 +87,9 @@ public class Start {
 
 	Object onSuccessFromExport()
     {
-		formatDAO.exportToFido();
-        return this;
+		String text = formatDAO.exportToFido();
+		return new TextStreamResponse("text/xml", text);
+        //return this;
     }
 
 }

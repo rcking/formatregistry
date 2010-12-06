@@ -68,7 +68,9 @@
             <FidoSignature>
                 <FidoSignatureID>241</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format 2007-2008</FidoSignatureName>
+                <FidoSignatureNote></FidoSignatureNote>
                 <Pattern>
+                    <PatternID>320</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AAC1021\\000\\000</Regex>
                 </Pattern>

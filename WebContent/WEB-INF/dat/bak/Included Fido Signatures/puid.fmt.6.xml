@@ -69,7 +69,9 @@
             <FidoSignature>
                 <FidoSignatureID>126</FidoSignatureID>
                 <FidoSignatureName>WAVE</FidoSignatureName>
+                <FidoSignatureNote>RIFF header, WAVE ID, Format chunk and Data chunk</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>154</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\ARIFF.{4}WAVE.*fmt\\ .{18,}data</Regex>
                 </Pattern>

@@ -110,7 +110,9 @@
             <FidoSignature>
                 <FidoSignatureID>209</FidoSignatureID>
                 <FidoSignatureName>WordPerfect 5.0</FidoSignatureName>
+                <FidoSignatureNote>Document Header (Version=0.0)</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>71</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xffWPC.{5}\\\n\\000\\000.{2}\\000\\000</Regex>
                 </Pattern>

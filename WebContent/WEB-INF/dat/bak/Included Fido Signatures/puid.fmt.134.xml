@@ -249,11 +249,14 @@
             <FidoSignature>
                 <FidoSignatureID>46</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 with ID3v2 Tag</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFFB{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFFB(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>340</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff[\\\xf2|\\\xf3|\\\xfa|\\\xfb][\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
+                    <Regex>(?s)\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>358</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AID3</Regex>
                 </Pattern>
@@ -261,11 +264,14 @@
             <FidoSignature>
                 <FidoSignatureID>47</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 with ID3v2 Tag</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFF3{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFF3(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>341</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff[\\\xf2|\\\xf3|\\\xfa|\\\xfb][\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
+                    <Regex>(?s)\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>359</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AID3</Regex>
                 </Pattern>
@@ -273,11 +279,14 @@
             <FidoSignature>
                 <FidoSignatureID>48</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 with ID3v2 Tag (protected)</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. Header has CRC bit off to indicate protected. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFFA{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFFA(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>342</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff[\\\xf2|\\\xf3|\\\xfa|\\\xfb][\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
+                    <Regex>(?s)\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>360</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AID3</Regex>
                 </Pattern>
@@ -285,11 +294,14 @@
             <FidoSignature>
                 <FidoSignatureID>49</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 with ID3v2 Tag (protected)</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. Header has CRC bit off to indicate protected. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFF2{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFF2(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>343</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff[\\\xf2|\\\xf3|\\\xfa|\\\xfb][\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
+                    <Regex>(?s)\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{7,500}\\000\\000\\000.{36,1426}\\Z</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>361</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AID3</Regex>
                 </Pattern>
@@ -297,7 +309,9 @@
             <FidoSignature>
                 <FidoSignatureID>50</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 without ID3v2 Tag</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>365</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfb[\\\x10-\\\xeb].{46,1439}</Regex>
                 </Pattern>
@@ -305,7 +319,9 @@
             <FidoSignature>
                 <FidoSignatureID>51</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 without ID3v2 Tag</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>364</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf3[\\\x10-\\\xeb].{46,1439}</Regex>
                 </Pattern>
@@ -313,7 +329,9 @@
             <FidoSignature>
                 <FidoSignatureID>52</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 without ID3v2 Tag (protected)</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF with each header having CRC bit set off to indicate file is protected.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>363</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}\\\xff\\\xfa[\\\x10-\\\xeb].{46,1439}</Regex>
                 </Pattern>
@@ -321,7 +339,9 @@
             <FidoSignature>
                 <FidoSignatureID>53</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 without ID3v2 Tag (protected)</FidoSignatureName>
+                <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF with each header having CRC bit set off to indicate file is protected.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>362</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\A\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}\\\xff\\\xf2[\\\x10-\\\xeb].{46,1439}</Regex>
                 </Pattern>

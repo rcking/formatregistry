@@ -107,11 +107,14 @@
             <FidoSignature>
                 <FidoSignatureID>120</FidoSignatureID>
                 <FidoSignatureName>DXB 1.0</FidoSignatureName>
+                <FidoSignatureNote>File header and file terminator.</FidoSignatureNote>
                 <Pattern>
+                    <PatternID>1</PatternID>
                     <Position>EOF</Position>
                     <Regex>(?s)\\000\\Z</Regex>
                 </Pattern>
                 <Pattern>
+                    <PatternID>196</PatternID>
                     <Position>BOF</Position>
                     <Regex>(?s)\\AAutoCAD\\ DXB\\ 1\\.0\\\r\\\n\\\x1a\\000</Regex>
                 </Pattern>
