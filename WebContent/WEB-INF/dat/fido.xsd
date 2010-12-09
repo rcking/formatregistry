@@ -1,69 +1,70 @@
-<?xml version="1.0"?>
-<!-- Generated using Flame-Ware Solutions XML-2-XSD v2.0 at http://www.flame-ware.com/Products/XML-2-XSD/ -->
-<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="formats">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="format" minOccurs="0" maxOccurs="unbounded">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="puid" type="xs:string" minOccurs="0" />
-              <xs:element name="name" type="xs:string" minOccurs="0" />
-              <xs:element name="pronom_id" type="xs:string" minOccurs="0" />
-              <xs:element name="container" type="xs:string" minOccurs="0" />
-              <xs:element name="mime" nillable="true" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="mime_Text" msdata:Ordinal="0">
-                    <xs:extension base="xs:string">
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="extension" nillable="true" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="extension_Text" msdata:Ordinal="0">
-                    <xs:extension base="xs:string">
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="has_priority_over" nillable="true" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:simpleContent msdata:ColumnName="has_priority_over_Text" msdata:Ordinal="0">
-                    <xs:extension base="xs:string">
-                    </xs:extension>
-                  </xs:simpleContent>
-                </xs:complexType>
-              </xs:element>
-              <xs:element name="signature" minOccurs="0" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="name" type="xs:string" minOccurs="0" />
-                    <xs:element name="note" type="xs:string" minOccurs="0" />
-                    <xs:element name="pattern" minOccurs="0" maxOccurs="unbounded">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="position" type="xs:string" minOccurs="0" />
-                          <xs:element name="pronom_pattern" type="xs:string" minOccurs="0" />
-                          <xs:element name="regex" type="xs:string" minOccurs="0" />
-                        </xs:sequence>
-                      </xs:complexType>
-                    </xs:element>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element maxOccurs="unbounded" ref="format"/>
       </xs:sequence>
-      <xs:attribute name="version" type="xs:string" />
+      <xs:attribute name="version" type="xs:decimal" use="required"/>
     </xs:complexType>
   </xs:element>
-  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+  <xs:element name="format">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element ref="formats" />
-      </xs:choice>
+      <xs:sequence>
+        <xs:choice>
+          <xs:element maxOccurs="1" minOccurs="1" ref="puid"/>
+          <xs:element maxOccurs="unbounded" minOccurs="1" ref="mime"/>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="container"/>
+        <xs:element maxOccurs="1" minOccurs="1" ref="name"/>
+        <xs:element minOccurs="0" ref="note"/>
+        <xs:element maxOccurs="1" minOccurs="0" ref="pronom_id"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="extension"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="has_priority_over"/>
+        <xs:element maxOccurs="unbounded" ref="signature"/>
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="mime" type="xs:string"/>
+  <xs:element name="puid" type="xs:string"/>
+  <xs:element name="container" type="container_type"/>
+  <xs:element name="pronom_id" type="xs:integer"/>
+  <xs:element name="extension" type="xs:string"/>
+  <xs:element name="has_priority_over" type="xs:string"/>
+  <xs:element name="signature">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="note"/>
+        <xs:element maxOccurs="unbounded" ref="pattern"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="note" type="xs:string"/>
+  <xs:element name="pattern">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="position"/>
+        <xs:element ref="pronom_pattern"/>
+        <xs:element ref="regex" minOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="position" type="position_type"/>
+  <xs:element name="pronom_pattern" type="xs:string"/>
+  <xs:element name="regex" type="xs:string"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:simpleType name="position_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BOF"/>
+      <xs:enumeration value="EOF"/>
+      <xs:enumeration value="VAR"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="container_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="zip"/>
+      <xs:enumeration value="tar"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

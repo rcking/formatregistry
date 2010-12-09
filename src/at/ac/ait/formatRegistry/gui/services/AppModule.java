@@ -169,8 +169,28 @@ public class AppModule {
 
 		};
 		
+		URLRewriterRule rule3 = new URLRewriterRule() {
+
+			public Request process(Request request, URLRewriteContext context) {
+				final String path = request.getPath();
+				if (path.startsWith("/o-fmt/")) {
+					String newPath = path.replaceFirst("o-fmt", "viewpronomo");
+					request = new SimpleRequestWrapper(request, newPath);
+				}
+
+				return request;
+
+			}
+
+			public RewriteRuleApplicability applicability() {
+				return RewriteRuleApplicability.INBOUND;
+			}
+
+		};
+		
 		configuration.add("fmt-rule", rule1);
 		configuration.add("x-fmt-rule", rule2);
+		configuration.add("o-fmt-rule", rule3);
 
 	}
 

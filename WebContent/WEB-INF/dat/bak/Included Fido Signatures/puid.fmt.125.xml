@@ -132,7 +132,7 @@
             <FidoSignature>
                 <FidoSignatureID>36</FidoSignatureID>
                 <FidoSignatureName>Powerpoint 95</FidoSignatureName>
-                <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream + Microsoft ® PowerPoint ® Windows statement.</FidoSignatureNote>
+                <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream + &#226;&#128;&#152;Microsoft &#194;&#174; PowerPoint &#194;&#174; Windows&#226;&#128;&#153; statement.</FidoSignatureNote>
                 <Pattern>
                     <PatternID>201</PatternID>
                     <Position>BOF</Position>

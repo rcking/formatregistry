@@ -18,6 +18,9 @@ import javax.xml.bind.annotation.XmlType;
 
 import org.apache.tapestry5.beaneditor.NonVisual;
 
+import uk.bl.dpt.fido.ContainerType;
+import uk.bl.dpt.fido.PositionType;
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "reportFormatDetail"
@@ -144,6 +147,7 @@ public class PRONOMReport {
             "lastUpdatedDate",
             "formatNote",
             "formatRisk",
+            "container",
             "technicalEnvironment",
             "fileFormatIdentifier",
             "document",
@@ -193,6 +197,8 @@ public class PRONOMReport {
             protected String formatNote;
             @XmlElement(name = "FormatRisk")
             protected String formatRisk;
+            @XmlElement(name = "Container")
+            protected ContainerType container;
             @XmlElement(name = "TechnicalEnvironment")
             protected String technicalEnvironment;
             @XmlElement(name = "FileFormatIdentifier")
@@ -681,6 +687,30 @@ public class PRONOMReport {
              */
             public String getFormatRisk() {
                 return formatRisk;
+            }
+
+            /**
+             * Sets the value of the container property.
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link ContainerType }
+             *     
+             */
+            public void setContainer(ContainerType value) {
+                this.container = value;
+            }
+
+            /**
+             * Gets the value of the container property.
+             * 
+             * @return
+             *     possible object is
+             *     {@link ContainerType }
+             *     
+             */
+            public ContainerType getContainer() {
+                return container;
             }
 
             /**
@@ -2646,7 +2676,7 @@ public class PRONOMReport {
                     @XmlElement(name = "PatternID")
                     protected String patternID;
                     @XmlElement(name = "Position")
-                    protected FidoPositions position;
+                    protected PositionType position;
                     @XmlElement(name = "Regex")
                     protected String regex;
                     
@@ -2680,10 +2710,10 @@ public class PRONOMReport {
                      * 
                      * @return
                      *     possible object is
-                     *     {@link FidoPositions }
+                     *     {@link PositionType }
                      *     
                      */
-                    public FidoPositions getPosition() {
+                    public PositionType getPosition() {
                         return position;
                     }
 
@@ -2692,10 +2722,10 @@ public class PRONOMReport {
                      * 
                      * @param value
                      *     allowed object is
-                     *     {@link FidoPositions }
+                     *     {@link PositionType }
                      *     
                      */
-                    public void setPosition(FidoPositions value) {
+                    public void setPosition(PositionType value) {
                         this.position = value;
                     }
 
@@ -2846,10 +2876,6 @@ public class PRONOMReport {
 
         }
 
-    }
-
-    public enum FidoPositions {
-    	EOF, BOF, VAR, Other;
     }
     
     public enum RelationshipTypes {

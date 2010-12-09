@@ -1,0 +1,74 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd" xmlns:p="tapestry:parameter">
+	<t:if test="formatID">
+		<h3>Basic format information</h3>
+	 	<div id="section1">
+	       <t:beandisplay object="format"/>
+	    </div>
+		<h3>Format Identifiers</h3>
+	 	<div id="section2">
+	    	<t:grid source="formatIdentifier"/>
+	    </div>
+		<h3>External Signatures</h3>
+	 	<div id="section4">
+	    	<t:grid source="externalSignature"/>
+	    </div>
+		<h3>Fido Signatures</h3>
+	 	<div id="section5a">
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Note</th>
+						<th>Pattern</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr t:type="Loop" t:source="fidoSignature" t:value="fSignature">
+						<td>${fSignature.fidoSignatureName}</td>
+						<td>${fSignature.fidoSignatureNote}</td>
+						<td><t:grid source="fSignature.Pattern"/></td>
+					</tr>
+				</tbody>
+		 	</table>
+	    </div>
+		<h3>Internal Signatures</h3>
+	 	<div id="section5">
+			<table>
+				<thead>
+					<tr>
+						<th>Signature Name</th>
+						<th>Signature Note</th>
+						<th>Byte Sequences</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr t:type="Loop" t:source="internalSignature" t:value="signature">
+						<td>${signature.signatureName}</td>
+						<td>${signature.signatureNote}</td>
+						<td><t:grid source="signature.byteSequence" include="positionType,byteSequenceValue"/></td>
+					</tr>
+				</tbody>
+		 	</table>
+	    </div>
+		<h3>Related Formats</h3>
+	 	<div id="section6">
+	    	<t:grid source="relatedFormat" row="aRelatedFormat">
+		        <t:parameter name="relatedFormatNameCell">
+		    	    <t:pagelink page="viewFormat" context="aRelatedFormat.relatedFormatID">${aRelatedFormat.relatedFormatName}</t:pagelink>
+		        </t:parameter>
+		    </t:grid>
+	    </div>
+		<h3>Compression Types</h3>
+	 	<div id="section7">
+	    	<t:grid source="compressionType"/>
+	    </div>
+		<h3>Related Documents</h3>
+	 	<div id="section3">
+	    	<t:grid source="document"/>
+	    </div>
+	    <p:else>
+	    	<h2>No resource found with that identifier.</h2>
+		    <h3><t:pagelink page="start">Return to search page</t:pagelink></h3>
+	    </p:else>
+	</t:if>
+</t:layout>

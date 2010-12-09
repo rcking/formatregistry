@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -16,19 +18,14 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.TreeSet;
 
-import uk.bl.dpt.fido.Formats;
-import uk.bl.dpt.fido.Formats.Format;
-import uk.bl.dpt.fido.Formats.Format.Extension;
-import uk.bl.dpt.fido.Formats.Format.HasPriorityOver;
-import uk.bl.dpt.fido.Formats.Format.Mime;
-import uk.bl.dpt.fido.Formats.Format.Signature;
-import uk.gov.nationalarchives.pronom.PRONOMReport.FidoPositions;
+import uk.bl.dpt.fido.*;
 import uk.gov.nationalarchives.pronom.PRONOMReport.IdentifierTypes;
 import uk.gov.nationalarchives.pronom.PRONOMReport.RelationshipTypes;
+import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail;
+import uk.gov.nationalarchives.pronom.PRONOMReport.SignatureTypes;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
-import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FileFormatIdentifier;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat;
@@ -43,7 +40,9 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	private int highestFormatID;
 	private int highestSignatureID;
 	private int highestFidoSignatureID;
+	private int highestPronomOID;
 	private Hashtable<String, FileFormat> formatHash;
+	private Hashtable<String, FileFormat> puidFormatHash;
 	private Hashtable<String, PRONOMReport> reportHash;
 	private Set<String> _formatNames = new TreeSet<String>();
 	private File pronomXMLDir;
@@ -76,6 +75,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		if (dataLoaded)
 			return;
 		formatHash = new Hashtable<String, FileFormat>();
+		puidFormatHash = new Hashtable<String, FileFormat>();
 		reportHash = new Hashtable<String, PRONOMReport>();
 
 		try {
@@ -101,6 +101,12 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 							highestFormatID = intID;
 						formatHash.put(formID, format);
 						reportHash.put(formID, report);
+						String puid = format.getPronomID();
+						if (puid.startsWith("o-")) {
+							int puidInt = new Integer(puid.substring(puid.lastIndexOf("/")+1)).intValue();
+							if (puidInt > highestPronomOID) highestPronomOID = puidInt;
+						}
+						puidFormatHash.put(puid, format);
 						_formatNames.add(format.getFormatName());
 						List<InternalSignature> internalSignatures = format
 								.getInternalSignature();
@@ -246,25 +252,25 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	public String exportToFido() {
 		StringWriter response = new StringWriter();
 		Formats fidoFormats = new Formats();
-		fidoFormats.setVersion("0.1");
+		fidoFormats.setVersion(new BigDecimal("0.1"));
 		JAXBContext context;
 		for (FileFormat fileFormat : formatHash.values()) {
 			if (fileFormat.getFidoSignature().size() > 0) {
 				Format fidoFormat = new Format();
 				fidoFormat.setName(fileFormat.getFormatName());
 				fidoFormat.setPuid(fileFormat.getPronomID());
-				fidoFormat.setPronomId(fileFormat.getFormatID());
+				fidoFormat.setPronomId(new BigInteger(fileFormat.getFormatID()));
+				ContainerType ct = fileFormat.getContainer();
+				if (ct!=null) fidoFormat.setContainer(ct);
 				for (FileFormatIdentifier ffi : fileFormat
 						.getFileFormatIdentifier()) {
 					if (ffi.getIdentifierType() == IdentifierTypes.MIME) {
-						Mime mime = new Mime();
-						mime.setValue(ffi.getIdentifier());
+						String mime = ffi.getIdentifier();
 						fidoFormat.getMime().add(mime);
 					}
 				}
 				for (ExternalSignature es : fileFormat.getExternalSignature()) {
-					Extension extension = new Extension();
-					extension.setValue(es.getSignature());
+					String extension = es.getSignature();
 					fidoFormat.getExtension().add(extension);
 				}
 				for (RelatedFormat rf : fileFormat.getRelatedFormat()) {
@@ -272,11 +278,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 						String id = rf.getRelatedFormatID();
 						FileFormat relatedFormat = this.find(id);
 						if (relatedFormat != null) {
-							HasPriorityOver hasPriorityOver = new HasPriorityOver();
-							hasPriorityOver.setValue(relatedFormat
-									.getPronomID());
-							fidoFormat.getHasPriorityOver()
-									.add(hasPriorityOver);
+							String hasPriorityOver = relatedFormat.getPronomID();
+							fidoFormat.getHasPriorityOver().add(hasPriorityOver);
 						}
 					}
 				}
@@ -295,8 +298,9 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 					if (correspondingInternalSignature==null) correspondingInternalSignature = new InternalSignature();
 					for (PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern p : fs
 							.getPattern()) {
-						Formats.Format.Signature.Pattern fPattern = new Formats.Format.Signature.Pattern();
-						fPattern.setPosition(p.getPosition().toString());
+						uk.bl.dpt.fido.Pattern fPattern = new uk.bl.dpt.fido.Pattern();
+						PositionType pt = p.getPosition();
+						if (pt!=null) fPattern.setPosition(pt);
 						fPattern.setRegex(p.getRegex());
 						String fidoPatternId = p.getPatternID();
 						for (ByteSequence bs : correspondingInternalSignature.getByteSequence()) {
@@ -334,9 +338,11 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 
 	}
 
-	public void importFromFido(File fidoFile) {
+	public String importFromFido(File fidoFile) {
 		JAXBContext context;
 		Unmarshaller unmarshaller;
+		String returnString = "";
+		FileFormat format;
 		try {
 			context = JAXBContext.newInstance("uk.bl.dpt.fido");
 			unmarshaller = context.createUnmarshaller();
@@ -344,52 +350,104 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 					.unmarshal(new FileReader(fidoFile));
 
 			for (Format fidoFormat : fidoFormats.getFormat()) {
-				String pId = fidoFormat.getPronomId();
-				FileFormat format = this.find(pId);
-				if (format!=null) {
-					List<InternalSignature> iss = format.getInternalSignature();
-					for (Signature fs : fidoFormat.getSignature()) {
-						String sName = fs.getName();
-						InternalSignature correspondingInternalSignature = null;
-						for (InternalSignature is : iss) {
-							if (is.getSignatureName().equals(sName)) {
-								correspondingInternalSignature = is;
-								break;
-							}
+				format = null;
+				String pId = null;
+				BigInteger puidInt = fidoFormat.getPronomId();
+				if (puidInt!=null) pId = puidInt.toString();
+				if (pId!=null) format = this.find(pId.trim());
+				if (format==null) {
+					String puid = fidoFormat.getPuid();
+					if (puid!=null) format = puidFormatHash.get(puid.trim());
+					if (format!=null) {
+						returnString += "\nFound an existing format record with Pronom ID: " + puid;
+					} else {
+						format = new FileFormat();
+						String newID = this.getNewFormatID(); 
+						format.setFormatID(newID);
+						formatHash.put(newID, format);
+						PRONOMReport report = new PRONOMReport();
+						ReportFormatDetail rfd = new ReportFormatDetail();
+						rfd.getFileFormat().add(format);
+						report.getReportFormatDetail().add(rfd);
+						reportHash.put(newID, report);
+						String desc = "Imported from a Fido format_extensions.xml.";
+						String oid = fidoFormat.getPuid();
+						if (!oid.equals("")) {
+							desc += " Previous working ID: " + oid;
 						}
-						if (correspondingInternalSignature==null) correspondingInternalSignature = new InternalSignature();
-						FidoSignature signature = new FidoSignature();
-						highestFidoSignatureID++;
-						signature.setFidoSignatureID(new Integer(highestFidoSignatureID).toString());
-						signature.setFidoSignatureName(sName);
-						signature.setFidoSignatureNote(fs.getNote());
-						for ( Formats.Format.Signature.Pattern p : fs.getPattern()) {
-							PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern fPattern = new PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern();
-							String pos = p.getPosition();
-							if (pos.equalsIgnoreCase("BOF")) {
-								fPattern.setPosition(FidoPositions.BOF);
-							} else if (pos.equalsIgnoreCase("EOF")) {
-								fPattern.setPosition(FidoPositions.EOF);
-							} else if (pos.equalsIgnoreCase("VAR")) {
-								fPattern.setPosition(FidoPositions.VAR);
-							}
-							String droidPattern = p.getPronomPattern();
-							String fidoPatternId = "";
-							for (ByteSequence bs : correspondingInternalSignature.getByteSequence()) {
-								if (bs.getByteSequenceValue().equals(droidPattern)) {
-									fidoPatternId = bs.getByteSequenceID();
+						format.setFormatDescription(desc);
+						FileFormatIdentifier ffi = new FileFormatIdentifier();
+						ffi.setIdentifierType(IdentifierTypes.PUID);
+						String newPUID = this.getNewPronomID();
+						ffi.setIdentifier(newPUID);
+						puidFormatHash.put(newPUID, format);
+						returnString += "\nCreated a new format record with Pronom ID: " + newPUID;
+						format.getFileFormatIdentifier().add(ffi);
+						format.setFormatName(fidoFormat.getName());
+						for (String relatedFormatPUID : fidoFormat.getHasPriorityOver()) {
+							if (relatedFormatPUID!=null) {
+								FileFormat relatedFormat = puidFormatHash.get(relatedFormatPUID.trim());
+								if (relatedFormat!=null) {
+									RelatedFormat rf = new RelatedFormat();
+									rf.setRelationshipType(RelationshipTypes.Has_priority_over);
+									rf.setRelatedFormatID(relatedFormat.getFormatID());
+									rf.setRelatedFormatName(relatedFormat.getFormatName());
+									rf.setRelatedFormatVersion(relatedFormat.getFormatVersion());
+									format.getRelatedFormat().add(rf);
 								}
 							}
-							fPattern.setPatternID(fidoPatternId);
-							fPattern.setRegex(p.getRegex());
-							signature.getPattern().add(fPattern);
 						}
-						format.getFidoSignature().add(signature);
+						for (String ex : fidoFormat.getExtension()) {
+							ExternalSignature es = new ExternalSignature();
+							es.setSignatureType(SignatureTypes.File_extension);
+							es.setSignature(ex.trim());
+							format.getExternalSignature().add(es);
+						}
+						for (String mime : fidoFormat.getMime()) {
+							FileFormatIdentifier ffi2 = new FileFormatIdentifier();
+							ffi2.setIdentifierType(IdentifierTypes.MIME);
+							ffi2.setIdentifier(mime.trim());
+							format.getFileFormatIdentifier().add(ffi2);
+						}
 					}
-					this.save(format);
 				} else {
-					System.out.println("Warning: could not find record with internal ID: " + pId);
+					returnString += "\nFound an existing format record with internal ID: " + pId;
 				}
+				ContainerType ct = fidoFormat.getContainer();
+				if (ct!=null) format.setContainer(ct);
+				List<InternalSignature> iss = format.getInternalSignature();
+				for (Signature fs : fidoFormat.getSignature()) {
+					String sName = fs.getName();
+					InternalSignature correspondingInternalSignature = null;
+					for (InternalSignature is : iss) {
+						if (is.getSignatureName().equals(sName)) {
+							correspondingInternalSignature = is;
+							break;
+						}
+					}
+					if (correspondingInternalSignature==null) correspondingInternalSignature = new InternalSignature();
+					FidoSignature signature = new FidoSignature();
+					highestFidoSignatureID++;
+					signature.setFidoSignatureID(new Integer(highestFidoSignatureID).toString());
+					signature.setFidoSignatureName(sName);
+					signature.setFidoSignatureNote(fs.getNote());
+					for ( uk.bl.dpt.fido.Pattern p : fs.getPattern()) {
+						PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern fPattern = new PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern();
+						if (p.getPosition()!=null) fPattern.setPosition(p.getPosition());
+						String droidPattern = p.getPronomPattern();
+						String fidoPatternId = "";
+						for (ByteSequence bs : correspondingInternalSignature.getByteSequence()) {
+							if (bs.getByteSequenceValue().equals(droidPattern)) {
+								fidoPatternId = bs.getByteSequenceID();
+							}
+						}
+						fPattern.setPatternID(fidoPatternId);
+						fPattern.setRegex(p.getRegex());
+						signature.getPattern().add(fPattern);
+					}
+					format.getFidoSignature().add(signature);
+				}
+				this.save(format);
 			}
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
@@ -398,7 +456,18 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(returnString);
+		return returnString;
+	}
 
+	public String getNewPronomID() {
+		highestPronomOID++;
+		String poidString = "o-fmt/" + new Integer(highestPronomOID).toString();
+		return poidString;
+	}
+
+	public String getWorkingDirectoryPath() {
+		return outputXMLpath;
 	}
 
 }

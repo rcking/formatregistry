@@ -30,6 +30,7 @@
                     <xs:element name="LastUpdatedDate" type="xs:string" minOccurs="0" />
                     <xs:element name="FormatNote" type="xs:string" minOccurs="0" />
                     <xs:element name="FormatRisk" type="xs:string" minOccurs="0" />
+                    <xs:element name="Container" type="xs:string" minOccurs="0" />
                     <xs:element name="TechnicalEnvironment" type="xs:string" minOccurs="0" />
                     <xs:element name="FileFormatIdentifier" minOccurs="0" maxOccurs="unbounded">
                       <xs:complexType>
