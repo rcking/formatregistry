@@ -320,6 +320,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			context = JAXBContext.newInstance(Formats.class);
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			marshaller.setProperty(Marshaller.JAXB_NO_NAMESPACE_SCHEMA_LOCATION , "fido-formats.xsd");
 			/*
 			marshaller.marshal(fidoFormats, new FileWriter(outputXMLpath + "/"
 					+ "formats.xml"));

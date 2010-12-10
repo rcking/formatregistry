@@ -2887,7 +2887,7 @@ public class PRONOMReport {
     }
     
     public enum SignatureTypes {
-    	File_extension, other;
+    	File_extension, Other;
     }
 
 }
