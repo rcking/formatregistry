@@ -61,9 +61,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>94</FidoSignatureID>
+                <FidoSignatureID>208</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format R9</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>10</PatternID>
                     <Position>BOF</Position>

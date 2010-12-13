@@ -62,9 +62,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>39</FidoSignatureID>
+                <FidoSignatureID>166</FidoSignatureID>
                 <FidoSignatureName>OpenOffice Writer 1.0</FidoSignatureName>
                 <FidoSignatureNote>PKZIP file header + MIME-type declaration, PKZIP file header + meta.xml (office:version="1.0")</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>84</PatternID>
                     <Position>BOF</Position>

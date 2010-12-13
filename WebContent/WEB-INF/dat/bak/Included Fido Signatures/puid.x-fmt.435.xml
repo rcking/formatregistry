@@ -91,9 +91,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>233</FidoSignatureID>
+                <FidoSignatureID>224</FidoSignatureID>
                 <FidoSignatureName>3DM 3</FidoSignatureName>
                 <FidoSignatureNote>Header with version no.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>302</PatternID>
                     <Position>BOF</Position>

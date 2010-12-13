@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>237</FidoSignatureID>
+                <FidoSignatureID>218</FidoSignatureID>
                 <FidoSignatureName>Google SketchUp Document</FidoSignatureName>
                 <FidoSignatureNote></FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>319</PatternID>
                     <Position>BOF</Position>

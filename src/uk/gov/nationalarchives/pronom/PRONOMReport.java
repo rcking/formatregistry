@@ -2550,6 +2550,7 @@ public class PRONOMReport {
                 "fidoSignatureID",
                 "fidoSignatureName",
                 "fidoSignatureNote",
+                "fidoPrioritize",
                 "pattern"
             })
             public static class FidoSignature {
@@ -2560,6 +2561,8 @@ public class PRONOMReport {
                 protected String fidoSignatureName;
                 @XmlElement(name = "FidoSignatureNote")
                 protected String fidoSignatureNote;
+                @XmlElement(name = "FidoPrioritize")
+                protected boolean fidoPrioritize;
                 @XmlElement(name = "Pattern")
                 protected List<PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern> pattern;
 
@@ -2622,6 +2625,30 @@ public class PRONOMReport {
                  */
                 public String getFidoSignatureNote() {
                     return fidoSignatureNote;
+                }
+
+                /**
+                 * Sets the value of the fidoPrioritize property.
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link boolean }
+                 *     
+                 */
+                
+                public void setFidoPrioritize(boolean value) {
+                    this.fidoPrioritize = value;
+                }
+                /**
+                 * Gets the value of the fidoPrioritize property.
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link boolean }
+                 *     
+                 */
+                public boolean getFidoPrioritize() {
+                    return fidoPrioritize;
                 }
 
                 /**

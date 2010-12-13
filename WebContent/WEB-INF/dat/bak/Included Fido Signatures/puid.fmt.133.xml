@@ -119,9 +119,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>45</FidoSignatureID>
+                <FidoSignatureID>9</FidoSignatureID>
                 <FidoSignatureName>Windows Media Video</FidoSignatureName>
                 <FidoSignatureNote>Header Object + Stream Properties Object (stream type = Video Stream) with WMV Compression ID</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>150</PatternID>
                     <Position>BOF</Position>

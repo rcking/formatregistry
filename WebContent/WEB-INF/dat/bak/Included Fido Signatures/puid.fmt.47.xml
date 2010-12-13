@@ -100,9 +100,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>112</FidoSignatureID>
+                <FidoSignatureID>97</FidoSignatureID>
                 <FidoSignatureName>RTF 1.0 - 1.4 (generic)</FidoSignatureName>
                 <FidoSignatureNote>\rtf control word</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>125</PatternID>
                     <Position>BOF</Position>

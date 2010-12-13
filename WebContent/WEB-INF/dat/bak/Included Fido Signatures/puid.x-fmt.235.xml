@@ -64,9 +64,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>174</FidoSignatureID>
+                <FidoSignatureID>15</FidoSignatureID>
                 <FidoSignatureName>ESRI Arc/View ShapeFile</FidoSignatureName>
                 <FidoSignatureNote>100-byte header (file code, version), then first record number. | Magic No. (4 bytes) | Unused (20 bytes) | File Length (4 bytes) | Version (1000 (decimal), little endian - 4 bytes) | Other - (68 bytes) | First Record No. (4 bytes) |</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>388</PatternID>
                     <Position>BOF</Position>

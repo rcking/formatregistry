@@ -102,9 +102,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>185</FidoSignatureID>
+                <FidoSignatureID>68</FidoSignatureID>
                 <FidoSignatureName>FITS</FidoSignatureName>
                 <FidoSignatureNote>Header (SIMPLE, BITPIX and NAXIS card images)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>160</PatternID>
                     <Position>BOF</Position>

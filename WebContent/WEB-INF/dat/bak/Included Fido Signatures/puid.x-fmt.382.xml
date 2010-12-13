@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>184</FidoSignatureID>
+                <FidoSignatureID>73</FidoSignatureID>
                 <FidoSignatureName>FLV 1</FidoSignatureName>
                 <FidoSignatureNote>Header only</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>153</PatternID>
                     <Position>BOF</Position>

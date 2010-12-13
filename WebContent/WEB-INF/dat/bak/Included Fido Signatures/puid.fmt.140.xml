@@ -57,9 +57,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>60</FidoSignatureID>
+                <FidoSignatureID>135</FidoSignatureID>
                 <FidoSignatureName>ODF 1.0 database</FidoSignatureName>
                 <FidoSignatureNote>ZIP header + MIME-type declaration + version number</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>265</PatternID>
                     <Position>BOF</Position>

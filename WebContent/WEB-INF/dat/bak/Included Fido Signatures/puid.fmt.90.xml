@@ -61,9 +61,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>163</FidoSignatureID>
+                <FidoSignatureID>100</FidoSignatureID>
                 <FidoSignatureName>PCX 5</FidoSignatureName>
                 <FidoSignatureNote>File header sequence</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>163</PatternID>
                     <Position>BOF</Position>

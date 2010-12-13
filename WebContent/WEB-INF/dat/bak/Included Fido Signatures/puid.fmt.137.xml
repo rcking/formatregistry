@@ -94,9 +94,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>56</FidoSignatureID>
+                <FidoSignatureID>138</FidoSignatureID>
                 <FidoSignatureName>ODF 1.0 spreadsheet</FidoSignatureName>
                 <FidoSignatureNote>ZIP header + MIME-type declaration + version number</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>262</PatternID>
                     <Position>BOF</Position>

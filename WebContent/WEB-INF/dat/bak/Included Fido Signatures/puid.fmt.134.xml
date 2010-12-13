@@ -247,9 +247,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>46</FidoSignatureID>
+                <FidoSignatureID>17</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 with ID3v2 Tag</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFFB{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFFB(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>340</PatternID>
                     <Position>EOF</Position>
@@ -262,9 +263,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>47</FidoSignatureID>
+                <FidoSignatureID>18</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 with ID3v2 Tag</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFF3{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFF3(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>341</PatternID>
                     <Position>EOF</Position>
@@ -277,9 +279,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>48</FidoSignatureID>
+                <FidoSignatureID>19</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 with ID3v2 Tag (protected)</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. Header has CRC bit off to indicate protected. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFFA{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFFA(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>342</PatternID>
                     <Position>EOF</Position>
@@ -292,9 +295,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>49</FidoSignatureID>
+                <FidoSignatureID>20</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 with ID3v2 Tag (protected)</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable near EOF. Header has CRC bit off to indicate protected. An ID3v1 tag of up to 355 bytes may be present at EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. A fragment of three null bytes has been appended to the signature to ensure it's the longest. These null bytes appear to be always present so will hopefully not cause any valid MP3 file to fail identification. When the PRONOM bug has been fixed, the "FFF2{10-50}000000{37-1782}" at the end of the byte sequence should be replaced by "FFF2(47-1795)" and this note curtailed. The BOF byte sequence represents the MP3 ID3 tag.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>343</PatternID>
                     <Position>EOF</Position>
@@ -307,9 +311,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>50</FidoSignatureID>
+                <FidoSignatureID>21</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 without ID3v2 Tag</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>365</PatternID>
                     <Position>BOF</Position>
@@ -317,9 +322,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>51</FidoSignatureID>
+                <FidoSignatureID>22</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 without ID3v2 Tag</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>364</PatternID>
                     <Position>BOF</Position>
@@ -327,9 +333,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>52</FidoSignatureID>
+                <FidoSignatureID>23</FidoSignatureID>
                 <FidoSignatureName>MPEG-1 Audio Layer 3 without ID3v2 Tag (protected)</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF with each header having CRC bit set off to indicate file is protected.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>363</PatternID>
                     <Position>BOF</Position>
@@ -337,9 +344,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>53</FidoSignatureID>
+                <FidoSignatureID>24</FidoSignatureID>
                 <FidoSignatureName>MPEG-2 Audio Layer 3 without ID3v2 Tag (protected)</FidoSignatureName>
                 <FidoSignatureNote>Regularly-spaced frame headers should always be discoverable starting at BOF with each header having CRC bit set off to indicate file is protected.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>362</PatternID>
                     <Position>BOF</Position>

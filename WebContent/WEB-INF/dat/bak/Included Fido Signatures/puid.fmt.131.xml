@@ -99,9 +99,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>43</FidoSignatureID>
+                <FidoSignatureID>13</FidoSignatureID>
                 <FidoSignatureName>Advanced Systems Format</FidoSignatureName>
                 <FidoSignatureNote>Header Object</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>147</PatternID>
                     <Position>BOF</Position>

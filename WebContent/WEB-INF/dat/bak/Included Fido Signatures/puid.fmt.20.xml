@@ -108,9 +108,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>77</FidoSignatureID>
+                <FidoSignatureID>89</FidoSignatureID>
                 <FidoSignatureName>PDF 1.6</FidoSignatureName>
                 <FidoSignatureNote>Header and footer</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>113</PatternID>
                     <Position>BOF</Position>

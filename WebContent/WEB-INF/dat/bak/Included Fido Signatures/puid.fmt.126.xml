@@ -114,9 +114,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>37</FidoSignatureID>
+                <FidoSignatureID>123</FidoSignatureID>
                 <FidoSignatureName>Powerpoint 97-2002</FidoSignatureName>
                 <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>203</PatternID>
                     <Position>BOF</Position>

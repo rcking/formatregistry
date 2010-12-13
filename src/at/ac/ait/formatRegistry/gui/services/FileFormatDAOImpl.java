@@ -284,34 +284,36 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 					}
 				}
 				for (FidoSignature fs : fileFormat.getFidoSignature()) {
-					Signature signature = new Signature();
-					String sName = fs.getFidoSignatureName();
-					signature.setName(sName);
-					signature.setNote(fs.getFidoSignatureNote());
-					InternalSignature correspondingInternalSignature = null;
-					for (InternalSignature is : fileFormat.getInternalSignature()) {
-						if (is.getSignatureName().equals(sName)) {
-							correspondingInternalSignature = is;
-							break;
-						}
-					}
-					if (correspondingInternalSignature==null) correspondingInternalSignature = new InternalSignature();
-					for (PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern p : fs
-							.getPattern()) {
-						uk.bl.dpt.fido.Pattern fPattern = new uk.bl.dpt.fido.Pattern();
-						PositionType pt = p.getPosition();
-						if (pt!=null) fPattern.setPosition(pt);
-						fPattern.setRegex(p.getRegex());
-						String fidoPatternId = p.getPatternID();
-						for (ByteSequence bs : correspondingInternalSignature.getByteSequence()) {
-							if (bs.getByteSequenceID().equals(fidoPatternId)) {
-								fPattern.setPronomPattern(bs.getByteSequenceValue());
+					if (fs.getFidoPrioritize()) {
+						Signature signature = new Signature();
+						String sName = fs.getFidoSignatureName();
+						signature.setName(sName);
+						signature.setNote(fs.getFidoSignatureNote());
+						InternalSignature correspondingInternalSignature = null;
+						for (InternalSignature is : fileFormat.getInternalSignature()) {
+							if (is.getSignatureName().equals(sName)) {
+								correspondingInternalSignature = is;
 								break;
 							}
 						}
-						signature.getPattern().add(fPattern);
+						if (correspondingInternalSignature==null) correspondingInternalSignature = new InternalSignature();
+						for (PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern p : fs
+								.getPattern()) {
+							uk.bl.dpt.fido.Pattern fPattern = new uk.bl.dpt.fido.Pattern();
+							PositionType pt = p.getPosition();
+							if (pt!=null) fPattern.setPosition(pt);
+							fPattern.setRegex(p.getRegex());
+							String fidoPatternId = p.getPatternID();
+							for (ByteSequence bs : correspondingInternalSignature.getByteSequence()) {
+								if (bs.getByteSequenceID().equals(fidoPatternId)) {
+									fPattern.setPronomPattern(bs.getByteSequenceValue());
+									break;
+								}
+							}
+							signature.getPattern().add(fPattern);
+						}
+						fidoFormat.getSignature().add(signature);
 					}
-					fidoFormat.getSignature().add(signature);
 				}
 				fidoFormats.getFormat().add(fidoFormat);
 			}
@@ -417,6 +419,11 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 				ContainerType ct = fidoFormat.getContainer();
 				if (ct!=null) format.setContainer(ct);
 				List<InternalSignature> iss = format.getInternalSignature();
+				if (!fidoFormat.getSignature().isEmpty()) {
+					for (FidoSignature fSig : format.getFidoSignature()) {
+						fSig.setFidoPrioritize(false);
+					}
+				}
 				for (Signature fs : fidoFormat.getSignature()) {
 					String sName = fs.getName();
 					InternalSignature correspondingInternalSignature = null;
@@ -432,6 +439,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 					signature.setFidoSignatureID(new Integer(highestFidoSignatureID).toString());
 					signature.setFidoSignatureName(sName);
 					signature.setFidoSignatureNote(fs.getNote());
+					signature.setFidoPrioritize(true);
 					for ( uk.bl.dpt.fido.Pattern p : fs.getPattern()) {
 						PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern fPattern = new PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature.Pattern();
 						if (p.getPosition()!=null) fPattern.setPosition(p.getPosition());

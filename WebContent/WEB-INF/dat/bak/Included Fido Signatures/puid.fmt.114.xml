@@ -74,9 +74,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>19</FidoSignatureID>
+                <FidoSignatureID>185</FidoSignatureID>
                 <FidoSignatureName>Windows Bitmap 1.0</FidoSignatureName>
                 <FidoSignatureNote>Device Dependent Bitmap File Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>51</PatternID>
                     <Position>BOF</Position>

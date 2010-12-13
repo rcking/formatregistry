@@ -99,9 +99,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>119</FidoSignatureID>
+                <FidoSignatureID>154</FidoSignatureID>
                 <FidoSignatureName>RTF 1.7 - 1.8 (generic)</FidoSignatureName>
                 <FidoSignatureNote>\rtf control word, \ansicpg control word and &lt;deffont&gt; declaration</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>124</PatternID>
                     <Position>BOF</Position>

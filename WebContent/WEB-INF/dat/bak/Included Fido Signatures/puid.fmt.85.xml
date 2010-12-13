@@ -103,9 +103,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>156</FidoSignatureID>
+                <FidoSignatureID>167</FidoSignatureID>
                 <FidoSignatureName>Binary DXF 2004-2005</FidoSignatureName>
                 <FidoSignatureNote>File header, header section with $ACADVER group code, EOF marker</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>82</PatternID>
                     <Position>BOF</Position>

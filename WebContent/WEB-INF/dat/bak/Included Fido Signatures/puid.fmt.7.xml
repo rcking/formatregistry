@@ -90,9 +90,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>137</FidoSignatureID>
+                <FidoSignatureID>119</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (little-endian)</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>183</PatternID>
                     <Position>BOF</Position>
@@ -100,9 +101,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>138</FidoSignatureID>
+                <FidoSignatureID>120</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (big-endian)</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>184</PatternID>
                     <Position>BOF</Position>

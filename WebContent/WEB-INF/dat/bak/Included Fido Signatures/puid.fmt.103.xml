@@ -114,9 +114,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>8</FidoSignatureID>
+                <FidoSignatureID>82</FidoSignatureID>
                 <FidoSignatureName>XHTML 1.1</FidoSignatureName>
                 <FidoSignatureNote>With DOCTYPE declaration for 1.1</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>274</PatternID>
                     <Position>BOF</Position>

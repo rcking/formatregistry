@@ -63,9 +63,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>227</FidoSignatureID>
+                <FidoSignatureID>233</FidoSignatureID>
                 <FidoSignatureName>Java Compiled Object Code</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>284</PatternID>
                     <Position>BOF</Position>

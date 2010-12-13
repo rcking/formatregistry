@@ -79,9 +79,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>13</FidoSignatureID>
+                <FidoSignatureID>76</FidoSignatureID>
                 <FidoSignatureName>SWF 5</FidoSignatureName>
                 <FidoSignatureNote>Header and footer</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>142</PatternID>
                     <Position>BOF</Position>

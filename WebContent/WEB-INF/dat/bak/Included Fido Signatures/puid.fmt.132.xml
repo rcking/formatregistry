@@ -119,9 +119,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>44</FidoSignatureID>
+                <FidoSignatureID>12</FidoSignatureID>
                 <FidoSignatureName>Windows Media Audio</FidoSignatureName>
                 <FidoSignatureNote>Header Object + Stream Properties Object (stream type = Audio Stream) with WMA Codec ID</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>148</PatternID>
                     <Position>BOF</Position>

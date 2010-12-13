@@ -100,9 +100,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>243</FidoSignatureID>
+                <FidoSignatureID>125</FidoSignatureID>
                 <FidoSignatureName>PowerPoint 4.0</FidoSignatureName>
                 <FidoSignatureNote>Compound document header + PowerPoint Document user stream + version number (pp40)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>218</PatternID>
                     <Position>BOF</Position>

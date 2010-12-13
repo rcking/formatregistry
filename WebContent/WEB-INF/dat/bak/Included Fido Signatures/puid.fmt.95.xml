@@ -112,9 +112,10 @@ PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basi
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>168</FidoSignatureID>
+                <FidoSignatureID>148</FidoSignatureID>
                 <FidoSignatureName>Acrobat PDF/A</FidoSignatureName>
                 <FidoSignatureNote>Describes a signature for the PDF/A format. Identifies the byte sequence which equals - xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/ which is the PDF/A identification namespace within the PDF/A meta-data. This signature identifies PDF/A formats generically. Further "characterization" byte sequence records can be added to identify subsets, i.e. PDF/A-1a or PDF/A-1b by identifying the &lt;pdfaid:part&gt; bytes after this initial sequence. See ISO 19005-1:2005 and Technical Corrigendum 1 for further information.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>336</PatternID>
                     <Position>BOF</Position>

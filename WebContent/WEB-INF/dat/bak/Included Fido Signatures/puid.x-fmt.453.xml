@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>239</FidoSignatureID>
+                <FidoSignatureID>216</FidoSignatureID>
                 <FidoSignatureName>TrueType Font</FidoSignatureName>
                 <FidoSignatureNote></FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>315</PatternID>
                     <Position>BOF</Position>

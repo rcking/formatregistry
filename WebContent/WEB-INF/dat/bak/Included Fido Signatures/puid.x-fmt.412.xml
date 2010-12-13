@@ -85,9 +85,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>226</FidoSignatureID>
+                <FidoSignatureID>141</FidoSignatureID>
                 <FidoSignatureName>JAR format</FidoSignatureName>
                 <FidoSignatureNote>Local file header + manifest + end of central directory. Signature consists of two byte sequences, a BOF sequence and EOF sequence. BOF character sequence: PK..*META-INF/MANIFEST.MF, EOF character sequence: PK..</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>257</PatternID>
                     <Position>BOF</Position>

@@ -78,9 +78,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>139</FidoSignatureID>
+                <FidoSignatureID>195</FidoSignatureID>
                 <FidoSignatureName>Drawing Interchange File Format 2.2</FidoSignatureName>
                 <FidoSignatureNote>Header section with $ACADVER group code, EOF marker</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>37</PatternID>
                     <Position>VAR</Position>

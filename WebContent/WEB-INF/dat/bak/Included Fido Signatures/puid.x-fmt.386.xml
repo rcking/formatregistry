@@ -76,9 +76,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>194</FidoSignatureID>
+                <FidoSignatureID>59</FidoSignatureID>
                 <FidoSignatureName>MPEG-1/2 Video Generic</FidoSignatureName>
                 <FidoSignatureNote>Pack Header start code + System Header start code</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>57</PatternID>
                     <Position>BOF</Position>

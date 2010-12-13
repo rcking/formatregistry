@@ -87,9 +87,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>229</FidoSignatureID>
+                <FidoSignatureID>228</FidoSignatureID>
                 <FidoSignatureName>Outlook Message Format</FidoSignatureName>
                 <FidoSignatureNote>Compound document header + IPM.Note + recip_version stream header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>280</PatternID>
                     <Position>BOF</Position>

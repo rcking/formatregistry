@@ -138,9 +138,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>34</FidoSignatureID>
+                <FidoSignatureID>10</FidoSignatureID>
                 <FidoSignatureName>EPS 3.0</FidoSignatureName>
                 <FidoSignatureNote>Version comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>214</PatternID>
                     <Position>BOF</Position>
@@ -148,9 +149,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>35</FidoSignatureID>
+                <FidoSignatureID>11</FidoSignatureID>
                 <FidoSignatureName>EPS 3.0 Preview</FidoSignatureName>
                 <FidoSignatureNote>Version comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>215</PatternID>
                     <Position>BOF</Position>

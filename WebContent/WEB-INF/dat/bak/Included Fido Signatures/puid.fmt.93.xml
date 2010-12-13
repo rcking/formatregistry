@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>166</FidoSignatureID>
+                <FidoSignatureID>58</FidoSignatureID>
                 <FidoSignatureName>VRML 1.0</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>157</PatternID>
                     <Position>BOF</Position>

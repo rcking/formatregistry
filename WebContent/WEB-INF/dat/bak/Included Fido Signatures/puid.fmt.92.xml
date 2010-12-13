@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>165</FidoSignatureID>
+                <FidoSignatureID>90</FidoSignatureID>
                 <FidoSignatureName>SVG 1.1</FidoSignatureName>
                 <FidoSignatureNote>Including &lt;svg&gt;&lt;/svg&gt; fragments</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>123</PatternID>
                     <Position>BOF</Position>

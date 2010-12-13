@@ -67,9 +67,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>126</FidoSignatureID>
+                <FidoSignatureID>72</FidoSignatureID>
                 <FidoSignatureName>WAVE</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, Format chunk and Data chunk</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>154</PatternID>
                     <Position>BOF</Position>

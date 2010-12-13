@@ -71,9 +71,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>208</FidoSignatureID>
+                <FidoSignatureID>25</FidoSignatureID>
                 <FidoSignatureName>JPEG2000</FidoSignatureName>
                 <FidoSignatureNote>From the ISO JPEG2000 specification</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>323</PatternID>
                     <Position>BOF</Position>

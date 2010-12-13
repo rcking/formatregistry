@@ -108,9 +108,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>209</FidoSignatureID>
+                <FidoSignatureID>175</FidoSignatureID>
                 <FidoSignatureName>WordPerfect 5.0</FidoSignatureName>
                 <FidoSignatureNote>Document Header (Version=0.0)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>71</PatternID>
                     <Position>BOF</Position>

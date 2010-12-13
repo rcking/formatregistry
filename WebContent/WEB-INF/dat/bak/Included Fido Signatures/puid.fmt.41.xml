@@ -90,9 +90,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>106</FidoSignatureID>
+                <FidoSignatureID>48</FidoSignatureID>
                 <FidoSignatureName>Raw JPEG</FidoSignatureName>
                 <FidoSignatureNote>SOI marker at BOF, EOI marker at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>174</PatternID>
                     <Position>BOF</Position>

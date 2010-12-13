@@ -129,9 +129,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>105</FidoSignatureID>
+                <FidoSignatureID>14</FidoSignatureID>
                 <FidoSignatureName>Microsoft Word for Windows 97 - 2002</FidoSignatureName>
                 <FidoSignatureNote>Compound document header + WordDocument user stream + version number</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>222</PatternID>
                     <Position>BOF</Position>

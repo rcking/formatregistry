@@ -68,9 +68,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>101</FidoSignatureID>
+                <FidoSignatureID>179</FidoSignatureID>
                 <FidoSignatureName>Microsoft Word for Windows 1.0</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>64</PatternID>
                     <Position>BOF</Position>

@@ -105,9 +105,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>120</FidoSignatureID>
+                <FidoSignatureID>153</FidoSignatureID>
                 <FidoSignatureName>DXB 1.0</FidoSignatureName>
                 <FidoSignatureNote>File header and file terminator.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>1</PatternID>
                     <Position>EOF</Position>

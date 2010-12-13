@@ -70,9 +70,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>18</FidoSignatureID>
+                <FidoSignatureID>47</FidoSignatureID>
                 <FidoSignatureName>SPIFF 1.0</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP8 markers</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>176</PatternID>
                     <Position>BOF</Position>

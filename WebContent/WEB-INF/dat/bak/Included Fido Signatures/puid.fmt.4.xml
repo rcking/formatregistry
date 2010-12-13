@@ -112,9 +112,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>104</FidoSignatureID>
+                <FidoSignatureID>105</FidoSignatureID>
                 <FidoSignatureName>GIF 1989a</FidoSignatureName>
                 <FidoSignatureNote>header &amp; trailer</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>181</PatternID>
                     <Position>BOF</Position>

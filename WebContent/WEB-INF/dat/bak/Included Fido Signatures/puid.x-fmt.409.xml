@@ -63,9 +63,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>223</FidoSignatureID>
+                <FidoSignatureID>144</FidoSignatureID>
                 <FidoSignatureName>MS-DOS Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>254</PatternID>
                     <Position>BOF</Position>

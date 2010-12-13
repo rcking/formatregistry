@@ -67,9 +67,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>224</FidoSignatureID>
+                <FidoSignatureID>143</FidoSignatureID>
                 <FidoSignatureName>Windows New Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>255</PatternID>
                     <Position>BOF</Position>

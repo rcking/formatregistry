@@ -77,9 +77,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>183</FidoSignatureID>
+                <FidoSignatureID>229</FidoSignatureID>
                 <FidoSignatureName>GZIP format</FidoSignatureName>
                 <FidoSignatureNote>Member header ID1 and ID2 fields</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>259</PatternID>
                     <Position>BOF</Position>

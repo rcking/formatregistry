@@ -71,9 +71,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>173</FidoSignatureID>
+                <FidoSignatureID>212</FidoSignatureID>
                 <FidoSignatureName>RealAudio Metafile</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>285</PatternID>
                     <Position>BOF</Position>

@@ -149,9 +149,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>25</FidoSignatureID>
+                <FidoSignatureID>53</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1iCCP</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and iCCP chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>228</PatternID>
                     <Position>BOF</Position>
@@ -164,9 +165,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>26</FidoSignatureID>
+                <FidoSignatureID>54</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sPLT</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and sPLT chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>229</PatternID>
                     <Position>BOF</Position>
@@ -179,9 +181,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>27</FidoSignatureID>
+                <FidoSignatureID>55</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sRGB</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and sRGB chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>230</PatternID>
                     <Position>BOF</Position>

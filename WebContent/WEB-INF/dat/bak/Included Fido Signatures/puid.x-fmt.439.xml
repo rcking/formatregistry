@@ -66,9 +66,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>234</FidoSignatureID>
+                <FidoSignatureID>222</FidoSignatureID>
                 <FidoSignatureName>CATIA Model 5</FidoSignatureName>
                 <FidoSignatureNote></FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>312</PatternID>
                     <Position>BOF</Position>

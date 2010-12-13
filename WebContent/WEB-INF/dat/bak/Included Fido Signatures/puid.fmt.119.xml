@@ -74,9 +74,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>24</FidoSignatureID>
+                <FidoSignatureID>180</FidoSignatureID>
                 <FidoSignatureName>Windows Bitmap 5.0</FidoSignatureName>
                 <FidoSignatureNote>BITMAPFILEHEADER + BITMAPV5HEADER structures</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>56</PatternID>
                     <Position>BOF</Position>

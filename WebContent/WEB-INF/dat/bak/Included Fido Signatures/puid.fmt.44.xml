@@ -117,9 +117,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>109</FidoSignatureID>
+                <FidoSignatureID>49</FidoSignatureID>
                 <FidoSignatureName>JFIF 1.02</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP0 markers at BOF, EOI marker at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>172</PatternID>
                     <Position>BOF</Position>

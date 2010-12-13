@@ -71,9 +71,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>236</FidoSignatureID>
+                <FidoSignatureID>219</FidoSignatureID>
                 <FidoSignatureName>Adobe InDesign Document</FidoSignatureName>
                 <FidoSignatureNote></FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>313</PatternID>
                     <Position>BOF</Position>

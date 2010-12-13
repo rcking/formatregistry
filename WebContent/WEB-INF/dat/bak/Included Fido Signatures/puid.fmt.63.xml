@@ -78,9 +78,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>130</FidoSignatureID>
+                <FidoSignatureID>152</FidoSignatureID>
                 <FidoSignatureName>Drawing Interchange File Format (ASCII) (generic)</FidoSignatureName>
                 <FidoSignatureNote>Section group code, EOF marker</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>17</PatternID>
                     <Position>VAR</Position>

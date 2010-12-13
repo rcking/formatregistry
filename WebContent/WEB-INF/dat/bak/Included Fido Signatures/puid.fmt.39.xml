@@ -130,9 +130,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>103</FidoSignatureID>
+                <FidoSignatureID>16</FidoSignatureID>
                 <FidoSignatureName>Microsoft Word for Windows 6.0/95</FidoSignatureName>
                 <FidoSignatureNote>Compound document header + WordDocument user stream + version number</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>66</PatternID>
                     <Position>BOF</Position>

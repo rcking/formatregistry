@@ -99,9 +99,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>124</FidoSignatureID>
+                <FidoSignatureID>30</FidoSignatureID>
                 <FidoSignatureName>BIFF 4 Workbook/Workspace</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 04 - Version indicator / {2} - unspecified / 0004 - version 4 / 0001 - type of data (workspace)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>192</PatternID>
                     <Position>BOF</Position>

@@ -83,9 +83,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>74</FidoSignatureID>
+                <FidoSignatureID>126</FidoSignatureID>
                 <FidoSignatureName>MP4 Media File</FidoSignatureName>
                 <FidoSignatureNote>Represents the following character sequence: {4}ftyp{0-64}(mp42|mp41|isom|iso2){4-64}(moov|cmov|mdat)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>357</PatternID>
                     <Position>BOF</Position>

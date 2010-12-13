@@ -94,9 +94,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>57</FidoSignatureID>
+                <FidoSignatureID>137</FidoSignatureID>
                 <FidoSignatureName>ODF 1.0 presentation</FidoSignatureName>
                 <FidoSignatureNote>ZIP header + MIME-type declaration + version number</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>263</PatternID>
                     <Position>BOF</Position>

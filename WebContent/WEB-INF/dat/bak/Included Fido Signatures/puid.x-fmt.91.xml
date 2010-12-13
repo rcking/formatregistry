@@ -84,9 +84,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>244</FidoSignatureID>
+                <FidoSignatureID>122</FidoSignatureID>
                 <FidoSignatureName>PostScript DSC 1.0</FidoSignatureName>
                 <FidoSignatureNote>PostScript DSC header version comment + EOF comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>244</PatternID>
                     <Position>BOF</Position>

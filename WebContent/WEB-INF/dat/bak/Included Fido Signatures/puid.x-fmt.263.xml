@@ -86,9 +86,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>181</FidoSignatureID>
+                <FidoSignatureID>231</FidoSignatureID>
                 <FidoSignatureName>ZIP format</FidoSignatureName>
                 <FidoSignatureNote>Local file header at BOF + central file header and end of central directory near EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the kongest fragment is not nearest EOF. The first fragment in the EOF byte sequence has been shortened by 1 byte to ensure that the subsequent fragment is the longest. This abbreviation does not reduce the overall signature strength too much and so will hopefully not result in any false pisitive identification. When the PRONOM bug has been fixed, the "504B01" at the start of the EOF byte sequence should be extended to "504B0102", and this note reduced.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>258</PatternID>
                     <Position>BOF</Position>

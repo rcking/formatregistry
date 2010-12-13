@@ -113,9 +113,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>225</FidoSignatureID>
+                <FidoSignatureID>142</FidoSignatureID>
                 <FidoSignatureName>Windows Portable Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>256</PatternID>
                     <Position>BOF</Position>

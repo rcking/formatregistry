@@ -83,9 +83,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>41</FidoSignatureID>
+                <FidoSignatureID>52</FidoSignatureID>
                 <FidoSignatureName>PNG 1.2</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and iTXt chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>226</PatternID>
                     <Position>BOF</Position>

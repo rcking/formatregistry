@@ -99,9 +99,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>6</FidoSignatureID>
+                <FidoSignatureID>88</FidoSignatureID>
                 <FidoSignatureName>XML 1.0</FidoSignatureName>
                 <FidoSignatureNote>XML declaration and version</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>126</PatternID>
                     <Position>BOF</Position>

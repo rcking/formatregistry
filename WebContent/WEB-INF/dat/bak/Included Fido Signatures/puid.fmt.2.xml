@@ -272,9 +272,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>75</FidoSignatureID>
+                <FidoSignatureID>69</FidoSignatureID>
                 <FidoSignatureName>BWAVE PCM 1</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, BEXT chunk (Version=1), Format chunk and Data chunk</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>156</PatternID>
                     <Position>BOF</Position>
@@ -282,9 +283,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>76</FidoSignatureID>
+                <FidoSignatureID>70</FidoSignatureID>
                 <FidoSignatureName>BWAVE MPEG 1</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, BEXT chunk (Version=1), Format chunk, Fact chunk, MEXT chunk and Data chunk</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>111</PatternID>
                     <Position>BOF</Position>

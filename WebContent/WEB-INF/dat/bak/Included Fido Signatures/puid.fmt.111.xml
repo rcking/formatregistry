@@ -89,9 +89,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>17</FidoSignatureID>
+                <FidoSignatureID>151</FidoSignatureID>
                 <FidoSignatureName>OLE2 Compound Document Format</FidoSignatureName>
                 <FidoSignatureNote>Compound Document Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>200</PatternID>
                     <Position>BOF</Position>

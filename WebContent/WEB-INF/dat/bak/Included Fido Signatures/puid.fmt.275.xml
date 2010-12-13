@@ -75,9 +75,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>85</FidoSignatureID>
+                <FidoSignatureID>239</FidoSignatureID>
                 <FidoSignatureName>MS Access 2007</FidoSignatureName>
                 <FidoSignatureNote>ACE Database header plus variably positioned AccessVersion element having value 09. Two byte sequences. First byte sequence character sequence, Standard ACE DB. Second byte sequence character sequence, A c c e s s V e r s I o n{0-2048} 0 9 . [0:9] [0:9]</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>354</PatternID>
                     <Position>BOF</Position>

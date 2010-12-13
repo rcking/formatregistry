@@ -95,9 +95,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>212</FidoSignatureID>
+                <FidoSignatureID>162</FidoSignatureID>
                 <FidoSignatureName>EXIF Audio 2.2</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, Format chunk, LIST exif chunk (ever=2.2) and Data chunk</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>90</PatternID>
                     <Position>BOF</Position>

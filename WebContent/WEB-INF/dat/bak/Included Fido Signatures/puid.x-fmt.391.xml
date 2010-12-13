@@ -144,9 +144,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>206</FidoSignatureID>
+                <FidoSignatureID>34</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.2 (big-endian)</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.2), EOI marker</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>95</PatternID>
                     <Position>BOF</Position>
@@ -159,9 +160,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>207</FidoSignatureID>
+                <FidoSignatureID>35</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.2 (little-endian)</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.2), EOI marker</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>96</PatternID>
                     <Position>BOF</Position>

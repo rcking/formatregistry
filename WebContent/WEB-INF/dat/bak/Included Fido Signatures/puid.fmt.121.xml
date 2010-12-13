@@ -83,9 +83,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>29</FidoSignatureID>
+                <FidoSignatureID>150</FidoSignatureID>
                 <FidoSignatureName>DROID Signature File</FidoSignatureName>
                 <FidoSignatureNote>&lt;FFSignatureFile&gt; element - {0-50} F F S I g n a t u r e F I l e {0-100} V e r s I o n =</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>208</PatternID>
                     <Position>BOF</Position>

@@ -113,9 +113,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>63</FidoSignatureID>
+                <FidoSignatureID>213</FidoSignatureID>
                 <FidoSignatureName>SIARD</FidoSignatureName>
-                <FidoSignatureNote>Signature for SIARD, combining that of a standard ZIP file and the expected XMLNS string: xmlns=&#226;&#128;&#156;http://www.bar.admin.ch/xmlns/siard/1.0/metadata.xsd&#226;&#128;&#156; - Offset currently set to 1024 bytes but it is expected that this could be improved given further test data.</FidoSignatureNote>
+                <FidoSignatureNote>Signature for SIARD, combining that of a standard ZIP file and the expected XMLNS string: xmlns=“http://www.bar.admin.ch/xmlns/siard/1.0/metadata.xsd“ - Offset currently set to 1024 bytes but it is expected that this could be improved given further test data.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>389</PatternID>
                     <Position>BOF</Position>

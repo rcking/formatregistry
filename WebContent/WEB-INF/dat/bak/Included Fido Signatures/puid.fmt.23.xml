@@ -61,9 +61,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>80</FidoSignatureID>
+                <FidoSignatureID>4</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format 1.3</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>3</PatternID>
                     <Position>BOF</Position>

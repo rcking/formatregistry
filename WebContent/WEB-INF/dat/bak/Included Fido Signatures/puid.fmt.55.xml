@@ -109,9 +109,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>121</FidoSignatureID>
+                <FidoSignatureID>33</FidoSignatureID>
                 <FidoSignatureName>BIFF 2 Worksheet</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 00 - Version 2 / {2} - unspecified / 0700 - unspecified / 1000 - type of data (sheet)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>177</PatternID>
                     <Position>BOF</Position>

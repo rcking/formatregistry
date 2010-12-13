@@ -206,9 +206,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>195</FidoSignatureID>
+                <FidoSignatureID>43</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near EOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>101</PatternID>
                     <Position>BOF</Position>
@@ -221,9 +222,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>196</FidoSignatureID>
+                <FidoSignatureID>44</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near EOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>102</PatternID>
                     <Position>BOF</Position>
@@ -236,9 +238,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>197</FidoSignatureID>
+                <FidoSignatureID>45</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near BOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>373</PatternID>
                     <Position>BOF</Position>
@@ -251,9 +254,10 @@
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>198</FidoSignatureID>
+                <FidoSignatureID>46</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near BOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>379</PatternID>
                     <Position>BOF</Position>

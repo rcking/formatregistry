@@ -86,9 +86,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>169</FidoSignatureID>
+                <FidoSignatureID>81</FidoSignatureID>
                 <FidoSignatureName>HTML pre-2.0</FidoSignatureName>
                 <FidoSignatureNote>Signature for pre-2.0 HTML, or non-valid HTML (no DOCTYPE declaration). EOF character sequence: &lt;/(HTML|html|BODY|body)&gt;{0-1024}</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>270</PatternID>
                     <Position>BOF</Position>

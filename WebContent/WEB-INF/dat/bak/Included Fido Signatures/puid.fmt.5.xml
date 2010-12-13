@@ -100,9 +100,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>115</FidoSignatureID>
+                <FidoSignatureID>71</FidoSignatureID>
                 <FidoSignatureName>AVI</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, AVI ID, LIST hdrl chunk with avih sub-chunk + LIST movi chunk</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>155</PatternID>
                     <Position>BOF</Position>

@@ -132,9 +132,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>211</FidoSignatureID>
+                <FidoSignatureID>173</FidoSignatureID>
                 <FidoSignatureName>WordPerfect Graphics 1.0</FidoSignatureName>
                 <FidoSignatureNote>WPG Header (Version=1.0)</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>69</PatternID>
                     <Position>BOF</Position>

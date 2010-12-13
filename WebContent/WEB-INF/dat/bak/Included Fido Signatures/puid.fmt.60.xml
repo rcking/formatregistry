@@ -104,9 +104,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>127</FidoSignatureID>
+                <FidoSignatureID>28</FidoSignatureID>
                 <FidoSignatureName>BIFF 5 &amp; 7 Workbook (generic)</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 08 - Version indicator / {2} - unspecified / 0005 - Version 5 / 0500 - unspecified /  (9C35|6C92|920C|F90C) - build identifier</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>194</PatternID>
                     <Position>BOF</Position>

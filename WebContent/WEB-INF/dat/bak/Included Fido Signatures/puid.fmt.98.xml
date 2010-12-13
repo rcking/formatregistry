@@ -103,9 +103,10 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>171</FidoSignatureID>
+                <FidoSignatureID>86</FidoSignatureID>
                 <FidoSignatureName>HTML 3.2</FidoSignatureName>
                 <FidoSignatureNote>With DOCTYPE declaration of 3.2. Single byte sequence. BOF character sequence: {0-1024}&lt;!(DOCTYPE|doctype) (HTML|html) (PUBLIC/public) "-//{1-16}//(DTD|dtd) {0-64}(HTML|html) 3.2</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>278</PatternID>
                     <Position>BOF</Position>
