@@ -38,5 +38,12 @@
         <br/>
         <input type="submit" value="Upload"/>
     </t:form>
+    
+	<h3>Pronom Export</h3>
+	<form t:type="form" t:id="pronomExport">
+		<t:errors/>
+		Export to Pronom: 
+		<input type="submit" value="Export"/>
+ 	</form><br/>
  	
 </t:layout>

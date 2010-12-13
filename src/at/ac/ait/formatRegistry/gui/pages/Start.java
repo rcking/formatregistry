@@ -2,6 +2,8 @@ package at.ac.ait.formatRegistry.gui.pages;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -88,8 +90,8 @@ public class Start {
 
 	Object onSuccessFromExport() {
 		return new StreamResponse() {
-			String text = formatDAO.exportToFido();
-			ByteArrayInputStream inputStream;
+			File file = formatDAO.exportToFido();
+			FileInputStream inputStream;
 
 			@Override
 			public String getContentType() {
@@ -104,19 +106,67 @@ public class Start {
 			@Override
 			public void prepareResponse(Response response) {
 				try {
-					inputStream = new ByteArrayInputStream(
-							text.getBytes("UTF-8"));
+					//inputStream = new ByteArrayInputStream(text.getBytes("UTF-8"));
+					inputStream = new FileInputStream(file);
+					response.setHeader("Expires", "0");
+					response.setHeader("Cache-Control",
+							"must-revalidate, post-check=0, pre-check=0");
+					response.setHeader("Content-Disposition",
+							"attachment; filename=formats.xml");
+					response.setHeader("Content-Length",
+							"" + inputStream.available());
 				} catch (UnsupportedEncodingException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-				response.setHeader("Expires", "0");
-				response.setHeader("Cache-Control",
-						"must-revalidate, post-check=0, pre-check=0");
-				response.setHeader("Content-Disposition",
-						"attachment; filename=formats.xml");
-				response.setHeader("Content-Length",
-						"" + inputStream.available());
+			}
+		};
+
+	}
+	
+	Object onSuccessFromPronomExport() {
+		return new StreamResponse() {
+			File file = formatDAO.exportToPronom();
+			FileInputStream inputStream;
+
+			@Override
+			public String getContentType() {
+				return "application/zip";
+			}
+
+			@Override
+			public InputStream getStream() throws IOException {
+				return inputStream;
+			}
+
+			@Override
+			public void prepareResponse(Response response) {
+				try {
+					//inputStream = new ByteArrayInputStream(text.getBytes("UTF-8"));
+					inputStream = new FileInputStream(file);
+					response.setHeader("Expires", "0");
+					response.setHeader("Cache-Control",
+							"must-revalidate, post-check=0, pre-check=0");
+					response.setHeader("Content-Disposition",
+							"attachment; filename=pronom.zip");
+					response.setHeader("Content-Length",
+							"" + inputStream.available());
+				} catch (UnsupportedEncodingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		};
 

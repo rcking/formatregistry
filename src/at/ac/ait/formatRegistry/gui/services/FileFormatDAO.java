@@ -14,7 +14,8 @@ public interface FileFormatDAO {
   	FileFormat find(String id);
   	void save(FileFormat format);
   	void delete(FileFormat format);
-  	String exportToFido();
+  	File exportToFido();
+  	File exportToPronom();
   	String importFromFido(File file);
   	FileFormat findFormatByName(String name);
   	String getNewFormatID();
