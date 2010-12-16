@@ -90,14 +90,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>227</FidoSignatureID>
+                <FidoSignatureID>320</FidoSignatureID>
                 <FidoSignatureName>3DM 4</FidoSignatureName>
                 <FidoSignatureNote>Header with version no.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>299</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A3D\\ Geometry\\ File\\ Format\\ \\ \\ \\ \\ \\ \\ \\ 4\\\x01\\000\\000\\000</Regex>
+                    <Regex>(?s)\A3D Geometry File Format        4\x01\x00\x00\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

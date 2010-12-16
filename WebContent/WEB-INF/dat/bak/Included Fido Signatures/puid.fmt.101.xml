@@ -99,14 +99,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>88</FidoSignatureID>
+                <FidoSignatureID>6</FidoSignatureID>
                 <FidoSignatureName>XML 1.0</FidoSignatureName>
                 <FidoSignatureNote>XML declaration and version</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>126</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\&lt;\\?xml\\ version\\=(?:\\"|\\\')1\\.0(?:\\"|\\\')</Regex>
+                    <Regex>(?s)\A&lt;\?xml version=(?:"|')1\.0(?:"|')</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

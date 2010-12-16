@@ -130,24 +130,24 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>124</FidoSignatureID>
+                <FidoSignatureID>36</FidoSignatureID>
                 <FidoSignatureName>Powerpoint 95</FidoSignatureName>
-                <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream + ‘Microsoft ® PowerPoint ® Windows’ statement.</FidoSignatureNote>
+                <FidoSignatureNote>Compound Document Header + PowerPoint Document user stream + âMicrosoft Â® PowerPoint Â® Windowsâ statement.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>201</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xd0\\\xcf\\\x11\\\xe0\\\xa1\\\xb1\\\x1a\\\xe1.{20}\\\xfe\\\xff</Regex>
+                    <Regex>(?s)\A\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1.{20}\xfe\xff</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>202</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)P\\000o\\000w\\000e\\000r\\000P\\000o\\000i\\000n\\000t\\000\\ \\000D\\000o\\000c\\000u\\000m\\000e\\000n\\000t\\000</Regex>
+                    <Regex>(?s)P\x00o\x00w\x00e\x00r\x00P\x00o\x00i\x00n\x00t\x00 \x00D\x00o\x00c\x00u\x00m\x00e\x00n\x00t\x00</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>217</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)Microsoft\\ \\(R\\)\\ PowerPoint\\ \\(R\\)\\ Windows\\ \\ \\000\\\x07(?:\\000|\\\x01)\\000\\000\\\xf0\\\x03\\000\\000\\_</Regex>
+                    <Regex>(?s)Microsoft \(R\) PowerPoint \(R\) Windows  \x00\x07(?:\x00|\x01)\x00\x00\xf0\x03\x00\x00_</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

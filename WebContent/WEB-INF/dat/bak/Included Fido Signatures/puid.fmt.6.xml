@@ -67,14 +67,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>72</FidoSignatureID>
+                <FidoSignatureID>170</FidoSignatureID>
                 <FidoSignatureName>WAVE</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, Format chunk and Data chunk</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>154</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ARIFF.{4}WAVE.*fmt\\ .{18,}data</Regex>
+                    <Regex>(?s)\ARIFF.{4}WAVE.*fmt .{18,}data</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

@@ -70,14 +70,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>47</FidoSignatureID>
+                <FidoSignatureID>18</FidoSignatureID>
                 <FidoSignatureName>SPIFF 1.0</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP8 markers</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>176</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe8\\000\\ SPIFF\\000\\\x01\\000(?:\\000|\\\x01|\\\x02|\\\x03|\\\x04).{11}(?:\\000|\\\x01|\\\x02|\\\x03|\\\x04|\\\x05).{9}\\\xff\\\xe8</Regex>
+                    <Regex>(?s)\A\xff\xd8\xff\xe8\x00 SPIFF\x00\x01\x00(?:\x00|\x01|\x02|\x03|\x04).{11}(?:\x00|\x01|\x02|\x03|\x04|\x05).{9}\xff\xe8</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

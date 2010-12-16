@@ -99,14 +99,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>99</FidoSignatureID>
+                <FidoSignatureID>154</FidoSignatureID>
                 <FidoSignatureName>RTF 1.0 - 1.4 (generic)</FidoSignatureName>
                 <FidoSignatureNote>\rtf control word</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>125</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\{\\\\rt(?:f|f1)\\\\(?:ansi|mac|pc|pca)</Regex>
+                    <Regex>(?s)\A\{\\rt(?:f|f1)\\(?:ansi|mac|pc|pca)</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

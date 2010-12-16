@@ -90,19 +90,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>48</FidoSignatureID>
+                <FidoSignatureID>150</FidoSignatureID>
                 <FidoSignatureName>Raw JPEG</FidoSignatureName>
                 <FidoSignatureNote>SOI marker at BOF, EOI marker at EOF</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>174</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff</Regex>
+                    <Regex>(?s)\A\xff\xd8\xff</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>175</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
+                    <Regex>(?s)\xff\xd9\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

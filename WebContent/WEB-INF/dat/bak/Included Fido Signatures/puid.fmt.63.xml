@@ -78,19 +78,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>152</FidoSignatureID>
+                <FidoSignatureID>174</FidoSignatureID>
                 <FidoSignatureName>Drawing Interchange File Format (ASCII) (generic)</FidoSignatureName>
                 <FidoSignatureNote>Section group code, EOF marker</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>17</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)0\\\r\\\nSECTION\\\r\\\n\\ \\ 2\\\r\\\n.*0\\\r\\\nENDSEC\\\r\\\n</Regex>
+                    <Regex>(?s)0\r\nSECTION\r\n  2\r\n.*0\r\nENDSEC\r\n</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>18</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)0\\\r\\\nEOF\\\r\\\n\\Z</Regex>
+                    <Regex>(?s)0\r\nEOF\r\n\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

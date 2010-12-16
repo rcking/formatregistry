@@ -1,48 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>60</FormatID>
-      <FormatName>CorelDraw Drawing</FormatName>
-      <FormatVersion>6.0</FormatVersion>
-      <FormatAliases>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>60</FormatID>
+            <FormatName>CorelDraw Drawing</FormatName>
+            <FormatVersion>6.0</FormatVersion>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>
+            <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>10 Oct 2003</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>10 Oct 2003</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/29</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>54</ExternalSignatureID>
-        <Signature>cdr</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/29</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>54</ExternalSignatureID>
+                <Signature>cdr</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>257</FidoSignatureID>
+                <FidoSignatureName>Corel Drawing Version 6.0</FidoSignatureName>
+                <FidoSignatureNote>RIFF (little-endian) or RIFX (big-endian) Form labeled CDR6vrsn</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\ARIF(?:F|X).{4}CDR6vrsn</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

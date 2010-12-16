@@ -94,14 +94,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>136</FidoSignatureID>
+                <FidoSignatureID>58</FidoSignatureID>
                 <FidoSignatureName>ODF 1.0 drawing</FidoSignatureName>
                 <FidoSignatureNote>ZIP header + MIME-type declaration + version number</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>264</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04.{26}mimetypeapplication\\/vnd\\.oasis\\.opendocument\\.graphics.*office\\:version\\=\\"1\\.0</Regex>
+                    <Regex>(?s)\APK\x03\x04.{26}mimetypeapplication/vnd\.oasis\.opendocument\.graphics.*office:version="1\.0</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

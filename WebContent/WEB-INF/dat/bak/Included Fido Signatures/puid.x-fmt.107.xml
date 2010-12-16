@@ -1,49 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>155</FormatID>
-      <FormatName>AutoCAD Named Plot Style Table</FormatName>
-      <FormatVersion>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>155</FormatID>
+            <FormatName>AutoCAD Named Plot Style Table</FormatName>
+            <FormatVersion>
       </FormatVersion>
-      <FormatAliases>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>
+            <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/107</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>149</ExternalSignatureID>
-        <Signature>stb</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/107</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>149</ExternalSignatureID>
+                <Signature>stb</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>220</FidoSignatureID>
+                <FidoSignatureName>AutoCAD Named Plot Style Table</FidoSignatureName>
+                <FidoSignatureNote>Header: PIAFILEVERSION_2.0,STBVER1, compress&lt;cr&gt;&lt;lf&gt; pmzlibcodec.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\APIAFILEVERSION_2\.0,STBVER1,compress\r\npmzlibcodec</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

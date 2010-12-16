@@ -1,53 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>203</FormatID>
-      <FormatName>Computer Graphics Metafile</FormatName>
-      <FormatVersion>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>203</FormatID>
+            <FormatName>Computer Graphics Metafile</FormatName>
+            <FormatVersion>
       </FormatVersion>
-      <FormatAliases>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>
+            <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>image/cgm</Identifier>
-        <IdentifierType>MIME</IdentifierType>
-      </FileFormatIdentifier>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/142</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>197</ExternalSignatureID>
-        <Signature>cgm</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>image/cgm</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/142</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>197</ExternalSignatureID>
+                <Signature>cgm</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>223</FidoSignatureID>
+                <FidoSignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.1</FidoSignatureName>
+                <FidoSignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\AB(?:E|e)(?:G|g)(?:M|m)(?:F|f).*(?:M|m)(?:F|f)(?:V|v)(?:e|E)(?:R|r)(?:S|s)(?:I|i)(?:O|o)(?:N|n).{1}1</Regex>
+                </Pattern>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>EOF</Position>
+                    <Regex>(?s)E(?:N|n)(?:D|d)(?:M|m)(?:F|f).{0,1};.{0,2048}\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>224</FidoSignatureID>
+                <FidoSignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.2</FidoSignatureName>
+                <FidoSignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\AB(?:E|e)(?:G|g)(?:M|m)(?:F|f).*(?:M|m)(?:F|f)(?:V|v)(?:e|E)(?:R|r)(?:S|s)(?:I|i)(?:O|o)(?:N|n).{1}1</Regex>
+                </Pattern>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>EOF</Position>
+                    <Regex>(?s)e(?:N|n)(?:D|d)(?:M|m)(?:F|f).{0,1};.{0,2048}\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>225</FidoSignatureID>
+                <FidoSignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.3</FidoSignatureName>
+                <FidoSignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\Ab(?:E|e)(?:G|g)(?:M|m)(?:F|f).*(?:M|m)(?:F|f)(?:V|v)(?:e|E)(?:R|r)(?:S|s)(?:I|i)(?:O|o)(?:N|n).{1}1</Regex>
+                </Pattern>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>EOF</Position>
+                    <Regex>(?s)E(?:N|n)(?:D|d)(?:M|m)(?:F|f).{0,1};.{0,2048}\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>226</FidoSignatureID>
+                <FidoSignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.4</FidoSignatureName>
+                <FidoSignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\Ab(?:E|e)(?:G|g)(?:M|m)(?:F|f).*(?:M|m)(?:F|f)(?:V|v)(?:e|E)(?:R|r)(?:S|s)(?:I|i)(?:O|o)(?:N|n).{1}1</Regex>
+                </Pattern>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>EOF</Position>
+                    <Regex>(?s)e(?:N|n)(?:D|d)(?:M|m)(?:F|f).{0,1};.{0,2048}\Z</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

@@ -61,14 +61,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>102</FidoSignatureID>
+                <FidoSignatureID>203</FidoSignatureID>
                 <FidoSignatureName>PCX 3</FidoSignatureName>
                 <FidoSignatureNote>File header sequence</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>165</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\n\\\x03\\\x01(?:\\\x01|\\\x02|\\\x04|\\\x08).{60}\\000.{3}(?:\\\x01|\\\x02)\\000.{4}\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000</Regex>
+                    <Regex>(?s)\A\n\x03\x01(?:\x01|\x02|\x04|\x08).{60}\x00.{3}(?:\x01|\x02)\x00.{4}\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

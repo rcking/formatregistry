@@ -66,14 +66,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>58</FidoSignatureID>
+                <FidoSignatureID>210</FidoSignatureID>
                 <FidoSignatureName>VRML 1.0</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>157</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\#VRML\\ V1\\.0\\ ascii</Regex>
+                    <Regex>(?s)\A#VRML V1\.0 ascii</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

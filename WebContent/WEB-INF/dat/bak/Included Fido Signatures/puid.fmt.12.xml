@@ -149,51 +149,51 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>53</FidoSignatureID>
+                <FidoSignatureID>25</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1iCCP</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and iCCP chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>228</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*iCCP</Regex>
+                    <Regex>(?s)\A\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR.*iCCP</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>231</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                    <Regex>(?s)\x00\x00\x00\x00IEND\xaeB`\x82\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>54</FidoSignatureID>
+                <FidoSignatureID>26</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sPLT</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and sPLT chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>229</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sPLT</Regex>
+                    <Regex>(?s)\A\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR.*sPLT</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>232</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                    <Regex>(?s)\x00\x00\x00\x00IEND\xaeB`\x82\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>55</FidoSignatureID>
+                <FidoSignatureID>27</FidoSignatureID>
                 <FidoSignatureName>PNG 1.1sRGB</FidoSignatureName>
                 <FidoSignatureNote>Signature + IHDR and sRGB chunks at BOF, IEND chunk at EOF</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>230</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\x89PNG\\\r\\\n\\\x1a\\\n\\000\\000\\000\\\rIHDR.*sRGB</Regex>
+                    <Regex>(?s)\A\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR.*sRGB</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>233</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\000\\000\\000IEND\\\xaeB\\`\\\x82\\Z</Regex>
+                    <Regex>(?s)\x00\x00\x00\x00IEND\xaeB`\x82\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

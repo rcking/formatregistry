@@ -67,14 +67,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>143</FidoSignatureID>
+                <FidoSignatureID>313</FidoSignatureID>
                 <FidoSignatureName>Windows New Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>255</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMZ.*NE</Regex>
+                    <Regex>(?s)\AMZ.*NE</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

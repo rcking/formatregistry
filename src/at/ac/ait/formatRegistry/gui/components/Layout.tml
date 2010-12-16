@@ -3,10 +3,39 @@
          <title>Prototype Registry Application</title>
      </head>
      <body>
-         <div class="header">
-             <h1>Format Registry Prototype</h1>
-             <h2>AIT Austrian Institute of Technology GmbH</h2>
-         </div>
-         <t:body/>
-     </body>
+     	<div id="main" class="box">
+	        <div id="header">
+	            <h1 id="logo"><a title="Registry" href="./">Format Registry Prototype<span></span></a></h1>
+	        </div>
+	        <div id="tabs" class="noprint">
+	        	<ul class="box">
+	        		<li><t:pagelink page="start">Search Formats</t:pagelink></li>
+	        		<li><t:pagelink page="importExport">Import/Export</t:pagelink></li>
+	        		<li><t:pagelink page="editFormat">Add Format</t:pagelink></li>
+	        	</ul>
+	        </div>
+			<div class="box" id="page">
+			    <div class="box">		
+			        <div id="content">
+			        	<div class="article">
+				     		<t:body/>
+				     	</div>
+					    <div class="box">
+							<table width="100%" class="noborder">
+								<tr class="noborder">
+									<td class="noborder" style="text-align:right"><img src="/registry/ait_logo.jpg"></img></td>
+									<td class="noborder" style="text-align:center"><img src="/registry/dme-logo.jpg"></img></td>
+									<td class="noborder" style="text-align:left"><img src="/registry/logo_opf.jpg"></img></td>
+								</tr>
+							</table>
+						</div>
+				    </div>
+				</div>
+		    </div>
+
+			<div id="footer" style="text-align:center">
+		        <p>css created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a></p>
+		    </div>
+		</div>
+    </body>
 </html>

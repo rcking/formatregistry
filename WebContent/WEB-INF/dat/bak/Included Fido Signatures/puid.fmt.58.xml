@@ -99,14 +99,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>30</FidoSignatureID>
+                <FidoSignatureID>168</FidoSignatureID>
                 <FidoSignatureName>BIFF 4 Workbook/Workspace</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 04 - Version indicator / {2} - unspecified / 0004 - version 4 / 0001 - type of data (workspace)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>192</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\t\\\x04.{2}\\000\\\x04\\000\\\x01</Regex>
+                    <Regex>(?s)\A\x09\x04.{2}\x00\x04\x00\x01</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

@@ -81,19 +81,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>111</FidoSignatureID>
+                <FidoSignatureID>61</FidoSignatureID>
                 <FidoSignatureName>PDF 1.1</FidoSignatureName>
                 <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>60</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\%PDF\\-1\\.1</Regex>
+                    <Regex>(?s)\A%PDF-1\.1</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>61</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\%\\%EOF(?:\\\n|\\\r|\\\r\\\n)\\Z</Regex>
+                    <Regex>(?s)%%EOF(?:\n|\r|\r\n)\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

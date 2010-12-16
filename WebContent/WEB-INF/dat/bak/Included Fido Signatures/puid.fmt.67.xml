@@ -77,19 +77,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>198</FidoSignatureID>
+                <FidoSignatureID>178</FidoSignatureID>
                 <FidoSignatureName>Drawing Interchange File Format 1.4</FidoSignatureName>
                 <FidoSignatureNote>Header section with $ACADVER group code, EOF marker</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>43</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)0\\\r\\\nSECTION\\\r\\\n\\ \\ 2\\\r\\\nHEADER\\\r\\\n.*9\\\r\\\n\\$ACADVER\\\r\\\n\\ \\ 1\\\r\\\nAC1\\.40\\\r\\\n.*0\\\r\\\nENDSEC\\\r\\\n</Regex>
+                    <Regex>(?s)0\r\nSECTION\r\n  2\r\nHEADER\r\n.*9\r\n\$ACADVER\r\n  1\r\nAC1\.40\r\n.*0\r\nENDSEC\r\n</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>44</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)0\\\r\\\nEOF\\\r\\\n\\Z</Regex>
+                    <Regex>(?s)0\r\nEOF\r\n\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

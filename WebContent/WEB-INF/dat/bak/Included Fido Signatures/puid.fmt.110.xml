@@ -107,19 +107,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>74</FidoSignatureID>
+                <FidoSignatureID>16</FidoSignatureID>
                 <FidoSignatureName>SWF 7</FidoSignatureName>
                 <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>146</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A(?:C|F)WS\\\x07</Regex>
+                    <Regex>(?s)\A(?:C|F)WS\x07</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>152</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\000\\Z</Regex>
+                    <Regex>(?s)\x00\x00\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

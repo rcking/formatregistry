@@ -112,35 +112,35 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>159</FidoSignatureID>
+                <FidoSignatureID>302</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.0 (big-endian)</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.0), EOI marker</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>91</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe1.{2}Exif\\000\\000MM\\000\\*.*\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040200</Regex>
+                    <Regex>(?s)\A\xff\xd8\xff\xe1.{2}Exif\x00\x00MM\x00\*.*\x90\x00\x00\x07\x00\x00\x00\x040200</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>103</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
+                    <Regex>(?s)\xff\xd9\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>160</FidoSignatureID>
+                <FidoSignatureID>303</FidoSignatureID>
                 <FidoSignatureName>EXIF Compressed Image 2.0 (little-endian)</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP1, EXIF IFD (EXIF ver=2.0), EOI marker</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>92</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe1.{2}Exif\\000\\000II\\*\\000.*\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000200</Regex>
+                    <Regex>(?s)\A\xff\xd8\xff\xe1.{2}Exif\x00\x00II\*\x00.*\x00\x90\x07\x00\x04\x00\x00\x000200</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>104</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
+                    <Regex>(?s)\xff\xd9\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

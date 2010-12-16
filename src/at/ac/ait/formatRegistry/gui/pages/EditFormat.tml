@@ -21,7 +21,7 @@
 			<tbody>
 				<tr t:id="fileIdentifiers" t:type="AjaxFormLoop" t:source="fileFormatIdentifierHolders" t:value="fileFormatIdentifierHolder" t:encoder="fileFormatIdentifierEncoder">
 					<t:submitnotifier>
-						<td><input t:type="TextField" t:id="ident" t:value="fileFormatIdentifierHolder.fileFormatIdentifier.identifier" t:validate="required, maxlength=30" size="30"/></td>
+						<td><input t:type="TextField" t:id="ident" t:value="fileFormatIdentifierHolder.fileFormatIdentifier.identifier" /></td>
 						<td><input t:type="Select" t:id="identtype" t:value="fileFormatIdentifierHolder.fileFormatIdentifier.identifierType" /></td>
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
@@ -40,6 +40,7 @@
 				<tr>
 					<th>Signature Name</th>
 					<th>Signature Note</th>
+					<th>Priority</th>
 					<th>Pattern</th>
 					<th>Action</th>
 				</tr>
@@ -49,6 +50,7 @@
 					<t:submitnotifier>
 						<td><input t:type="TextField" t:id="fname" t:value="fidoSignatureHolder.fidoSignature.fidoSignatureName" /></td>
 						<td><input t:type="TextField" t:id="fnote" t:value="fidoSignatureHolder.fidoSignature.fidoSignatureNote" /></td>
+						<td><t:checkbox t:id="fprior" t:value="fidoSignatureHolder.fidoSignature.fidoPrioritize" /></td>
 						<td><table>
 								<tr><td><t:grid source="fidoSignatureHolder.fidoSignature.Pattern" /></td></tr>
 								<tr><td><a t:type="actionlink" t:id="editPattern" t:context="fidoSignatureHolder.fidoSignature.fidoSignatureID" href="#">Edit Pattern</a></td></tr>
@@ -57,7 +59,7 @@
 						<td><t:removerowlink>remove</t:removerowlink></td>
 					</t:submitnotifier>
 					<p:addRow>
-						<td colspan="4" style="text-align: right">
+						<td colspan="5" style="text-align: right">
 							<t:addrowlink>Add a fido signature</t:addrowlink>
 						</td>
 					</p:addRow>

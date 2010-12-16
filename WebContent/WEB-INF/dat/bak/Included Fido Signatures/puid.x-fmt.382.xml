@@ -66,14 +66,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>73</FidoSignatureID>
+                <FidoSignatureID>272</FidoSignatureID>
                 <FidoSignatureName>FLV 1</FidoSignatureName>
                 <FidoSignatureNote>Header only</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>153</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AFLV\\\x01</Regex>
+                    <Regex>(?s)\AFLV\x01</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

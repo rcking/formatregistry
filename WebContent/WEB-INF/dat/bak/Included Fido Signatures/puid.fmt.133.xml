@@ -119,19 +119,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>9</FidoSignatureID>
+                <FidoSignatureID>45</FidoSignatureID>
                 <FidoSignatureName>Windows Media Video</FidoSignatureName>
                 <FidoSignatureNote>Header Object + Stream Properties Object (stream type = Video Stream) with WMV Compression ID</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>150</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A0\\&amp;\\\xb2u\\\x8ef\\\xcf\\\x11\\\xa6\\\xd9\\000\\\xaa\\000b\\\xcel.{12}\\\x01\\\x02</Regex>
+                    <Regex>(?s)\A0&amp;\xb2u\x8ef\xcf\x11\xa6\xd9\x00\xaa\x00b\xcel.{12}\x01\x02</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>151</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s).{30}\\\x91\\\x07\\\xdc\\\xb7\\\xb7\\\xa9\\\xcf\\\x11\\\x8e\\\xe6\\000\\\xc0\\\x0c\\ Se.{8}\\\xc0\\\xef\\\x19\\\xbcM\\[\\\xcf\\\x11\\\xa8\\\xfd\\000\\\x80\\_\\\\D\\+.{65}WMV(?:1|2|3)</Regex>
+                    <Regex>(?s).{30}\x91\x07\xdc\xb7\xb7\xa9\xcf\x11\x8e\xe6\x00\xc0\x0c Se.{8}\xc0\xef\x19\xbcM\[\xcf\x11\xa8\xfd\x00\x80_\\D\+.{65}WMV(?:1|2|3)</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

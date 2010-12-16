@@ -71,14 +71,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>212</FidoSignatureID>
+                <FidoSignatureID>230</FidoSignatureID>
                 <FidoSignatureName>RealAudio Metafile</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>285</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\Artsp\\:\\/\\/</Regex>
+                    <Regex>(?s)\Artsp://</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

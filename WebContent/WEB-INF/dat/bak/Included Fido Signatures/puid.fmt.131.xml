@@ -99,14 +99,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>13</FidoSignatureID>
+                <FidoSignatureID>43</FidoSignatureID>
                 <FidoSignatureName>Advanced Systems Format</FidoSignatureName>
                 <FidoSignatureNote>Header Object</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>147</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A0\\&amp;\\\xb2u\\\x8ef\\\xcf\\\x11\\\xa6\\\xd9\\000\\\xaa\\000b\\\xcel.{12}\\\x01\\\x02</Regex>
+                    <Regex>(?s)\A0&amp;\xb2u\x8ef\xcf\x11\xa6\xd9\x00\xaa\x00b\xcel.{12}\x01\x02</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

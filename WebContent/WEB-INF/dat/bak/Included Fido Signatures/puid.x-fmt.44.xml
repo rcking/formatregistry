@@ -113,14 +113,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>223</FidoSignatureID>
+                <FidoSignatureID>327</FidoSignatureID>
                 <FidoSignatureName>WordPerfect for Windows 6.x - 12</FidoSignatureName>
                 <FidoSignatureNote>Also known as Corel WordPerfect. Major and minor version fields are the main variants between 6.x and 12 formats (The last two bytes in this signature). The major version is the same for 6.x through to 12 documents - 2. The minor version byte for a 9 non-compound file created in WPWin 8.0 is 1. The minor version for a 9 compound file created in WPWin 8.0. Is 2.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>321</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xffWPC.{4}\\\x01\\\n\\\x02\\\x01</Regex>
+                    <Regex>(?s)\A\xffWPC.{4}\x01\n\x02\x01</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

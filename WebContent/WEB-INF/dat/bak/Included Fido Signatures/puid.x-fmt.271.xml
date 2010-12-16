@@ -1,48 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>403</FormatID>
-      <FormatName>dBASE Database</FormatName>
-      <FormatVersion>III+</FormatVersion>
-      <FormatAliases>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>403</FormatID>
+            <FormatName>dBASE Database</FormatName>
+            <FormatVersion>III+</FormatVersion>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>
+            <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>10 Oct 2003</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>10 Oct 2003</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/271</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>390</ExternalSignatureID>
-        <Signature>dbf</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/271</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>390</ExternalSignatureID>
+                <Signature>dbf</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>255</FidoSignatureID>
+                <FidoSignatureName>dBase Table with dbt Version III+</FidoSignatureName>
+                <FidoSignatureNote>dbt Flag(Bit 7 of first byte), Version number(bits 0-2 of first byte), Date of last update MMDD, First uppercase character of field name, field type (C, D, L, M, N). Memo fields in the dbf and a flag indicating the existence of a database text (.dbt) file were already a part of the dbase III dbf file format.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\A\x83.?[\x01-\x0c][\x01-\x1f].{28}[A-Z].{10}(?:C|D|L|M|N)</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

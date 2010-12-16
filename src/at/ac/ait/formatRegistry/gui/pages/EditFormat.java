@@ -12,6 +12,7 @@ import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
+import uk.gov.nationalarchives.pronom.PRONOMReport.IdentifierTypes;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.CompressionType;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.Document;
@@ -133,6 +134,10 @@ public class EditFormat {
     		format = new FileFormat();
     		formatID = formatDAO.getNewFormatID();
     		format.setFormatID(formatID);
+    		FileFormatIdentifier ffi = new FileFormatIdentifier();
+    		ffi.setIdentifierType(IdentifierTypes.PUID);
+    		ffi.setIdentifier(formatDAO.getNewPronomID());
+    		format.getFileFormatIdentifier().add(ffi);
     	}
     }
 

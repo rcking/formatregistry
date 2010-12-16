@@ -67,14 +67,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>121</FidoSignatureID>
+                <FidoSignatureID>343</FidoSignatureID>
                 <FidoSignatureName>Adobe Photoshop (psd)</FidoSignatureName>
-                <FidoSignatureNote>Primarily matches a character sequence of: 8BPS……….</FidoSignatureNote>
+                <FidoSignatureNote>Primarily matches a character sequence of: 8BPSâ¦â¦â¦.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>356</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A8BPS\\000\\\x01\\000\\000\\000\\000\\000\\000\\000</Regex>
+                    <Regex>(?s)\A8BPS\x00\x01\x00\x00\x00\x00\x00\x00\x00</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

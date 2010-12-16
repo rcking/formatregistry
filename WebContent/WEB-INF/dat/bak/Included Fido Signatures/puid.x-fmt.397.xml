@@ -63,14 +63,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>161</FidoSignatureID>
+                <FidoSignatureID>301</FidoSignatureID>
                 <FidoSignatureName>EXIF Audio 2.0</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, Format chunk, LIST exif chunk (ever=2.0) and Data chunk</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>88</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ARIFF.{4}WAVE.*fmt\\ .{4}(?:\\\x01|\\\x07|\\\x11)\\000.*LIST.{4}exifever.{4}0200.*data</Regex>
+                    <Regex>(?s)\ARIFF.{4}WAVE.*fmt .{4}(?:\x01|\x07|\x11)\x00.*LIST.{4}exifever.{4}0200.*data</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

@@ -86,19 +86,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>81</FidoSignatureID>
+                <FidoSignatureID>213</FidoSignatureID>
                 <FidoSignatureName>HTML pre-2.0</FidoSignatureName>
                 <FidoSignatureNote>Signature for pre-2.0 HTML, or non-valid HTML (no DOCTYPE declaration). EOF character sequence: &lt;/(HTML|html|BODY|body)&gt;{0-1024}</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>270</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{0,1024}\\&lt;(?:HTML|html)</Regex>
+                    <Regex>(?s)\A.{0,1024}&lt;(?:HTML|html)</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>271</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\&lt;\\/(?:HTML|html|BODY|body)\\&gt;.{0,1024}\\Z</Regex>
+                    <Regex>(?s)&lt;/(?:HTML|html|BODY|body)&gt;.{0,1024}\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

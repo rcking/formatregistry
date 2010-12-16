@@ -85,19 +85,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>141</FidoSignatureID>
+                <FidoSignatureID>315</FidoSignatureID>
                 <FidoSignatureName>JAR format</FidoSignatureName>
                 <FidoSignatureNote>Local file header + manifest + end of central directory. Signature consists of two byte sequences, a BOF sequence and EOF sequence. BOF character sequence: PK..*META-INF/MANIFEST.MF, EOF character sequence: PK..</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>257</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04.*META\\-INF\\/MANIFEST\\.MF</Regex>
+                    <Regex>(?s)\APK\x03\x04.*META-INF/MANIFEST\.MF</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>366</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)PK\\\x05\\\x06.{18,65531}\\Z</Regex>
+                    <Regex>(?s)PK\x05\x06.{18,65531}\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

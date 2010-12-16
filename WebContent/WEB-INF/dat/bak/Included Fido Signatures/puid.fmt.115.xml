@@ -74,14 +74,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>184</FidoSignatureID>
+                <FidoSignatureID>20</FidoSignatureID>
                 <FidoSignatureName>Windows Bitmap 2.0</FidoSignatureName>
                 <FidoSignatureNote>BITMAPFILEHEADER + BITMAPINFOHEADER structures</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>52</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ABM.{4}\\000\\000\\000\\000.{4}\\\x0c\\000\\000\\000.{4}\\\x01\\000(?:\\\x01|\\\x04|\\\x08|\\\x18)\\000</Regex>
+                    <Regex>(?s)\ABM.{4}\x00\x00\x00\x00.{4}\x0c\x00\x00\x00.{4}\x01\x00(?:\x01|\x04|\x08|\x18)\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

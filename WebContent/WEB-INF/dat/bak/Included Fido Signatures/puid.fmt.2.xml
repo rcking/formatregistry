@@ -272,25 +272,25 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>69</FidoSignatureID>
+                <FidoSignatureID>75</FidoSignatureID>
                 <FidoSignatureName>BWAVE PCM 1</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, BEXT chunk (Version=1), Format chunk and Data chunk</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>156</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ARIFF.{4}WAVE.*bext.{350}\\\x01\\000.{254,}fmt\\ \\\x10\\000\\000\\000\\\x01\\000.{14,}data</Regex>
+                    <Regex>(?s)\ARIFF.{4}WAVE.*bext.{350}\x01\x00.{254,}fmt \x10\x00\x00\x00\x01\x00.{14,}data</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>70</FidoSignatureID>
+                <FidoSignatureID>76</FidoSignatureID>
                 <FidoSignatureName>BWAVE MPEG 1</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, WAVE ID, BEXT chunk (Version=1), Format chunk, Fact chunk, MEXT chunk and Data chunk</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>111</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ARIFF.{4}WAVE.*bext.{350}\\\x01\\000.{254,}fmt\\ \\(\\000\\000\\000P\\000.{38}fact\\\x04\\000\\000\\000.{4}mext\\\x0c\\000\\000\\000.{12}data</Regex>
+                    <Regex>(?s)\ARIFF.{4}WAVE.*bext.{350}\x01\x00.{254,}fmt \(\x00\x00\x00P\x00.{38}fact\x04\x00\x00\x00.{4}mext\x0c\x00\x00\x00.{12}data</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

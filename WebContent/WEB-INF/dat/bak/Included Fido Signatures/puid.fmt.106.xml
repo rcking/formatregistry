@@ -79,19 +79,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>78</FidoSignatureID>
+                <FidoSignatureID>11</FidoSignatureID>
                 <FidoSignatureName>SWF 3</FidoSignatureName>
                 <FidoSignatureNote>Header and footer</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>138</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A(?:C|F)WS\\\x03</Regex>
+                    <Regex>(?s)\A(?:C|F)WS\x03</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>139</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\000\\Z</Regex>
+                    <Regex>(?s)\x00\x00\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

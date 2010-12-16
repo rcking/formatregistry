@@ -103,14 +103,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>87</FidoSignatureID>
+                <FidoSignatureID>214</FidoSignatureID>
                 <FidoSignatureName>HTML 2.0</FidoSignatureName>
                 <FidoSignatureNote>With DOCTYPE declaration for 2.0. Single byte sequence, BOF character sequence: {0-1024}&lt;!(DOCTYPE|doctype) (HTML|html) (PUBLIC/public) "-//{1-16}//(DTD|dtd) {0-64}(HTML|html) 2.0</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>276</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{0,1024}\\&lt;\\!(?:DOCTYPE|doctype)\\ (?:HTML|html)\\ (?:PUBLIC|public)\\ \\"\\-\\/\\/.{1,16}\\/\\/(?:DTD|dtd)\\ .{0,64}(?:HTML|html)\\ 2\\.0</Regex>
+                    <Regex>(?s)\A.{0,1024}&lt;!(?:DOCTYPE|doctype) (?:HTML|html) (?:PUBLIC|public) "-//.{1,16}//(?:DTD|dtd) .{0,64}(?:HTML|html) 2\.0</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

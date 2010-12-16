@@ -1,49 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>323</FormatID>
-      <FormatName>ESRI MapInfo Export File</FormatName>
-      <FormatVersion>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>323</FormatID>
+            <FormatName>ESRI MapInfo Export File</FormatName>
+            <FormatVersion>
       </FormatVersion>
-      <FormatAliases>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>
+            <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDescription>Outline record only</FormatDescription>
+            <BinaryFileFormat>Text</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>1</ProvenanceSourceID>
+            <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+            <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/231</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>310</ExternalSignatureID>
-        <Signature>mif</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/231</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>310</ExternalSignatureID>
+                <Signature>mif</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>239</FidoSignatureID>
+                <FidoSignatureName>ESRI MapInfo Export File No.1</FidoSignatureName>
+                <FidoSignatureNote>MIF file header indicating Version, Charset and number of Columns.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\A.{0,10}V(?:E|e)(?:R|r)(?:S|s)(?:I|i).?(?:N|n).{5,6}(?:C|c)(?:H|h)(?:A|a)(?:R|r)(?:S|s)(?:E|e)(?:T|t).*C(?:O|o)(?:L|l)(?:U|u)(?:M|m)(?:N|n)(?:S|s)</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>240</FidoSignatureID>
+                <FidoSignatureName>ESRI MapInfo Export File No.2</FidoSignatureName>
+                <FidoSignatureNote>MIF file header indicating Version, Charset and number of Columns.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\AV(?:E|e)(?:R|r)(?:S|s)(?:I|i).?(?:N|n).{5,6}(?:C|c)(?:H|h)(?:A|a)(?:R|r)(?:S|s)(?:E|e)(?:T|t).*c(?:O|o)(?:L|l)(?:U|u)(?:M|m)(?:N|n)(?:S|s)</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>241</FidoSignatureID>
+                <FidoSignatureName>ESRI MapInfo Export File No.3</FidoSignatureName>
+                <FidoSignatureNote>MIF file header indicating Version, Charset and number of Columns.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\Av(?:E|e)(?:R|r)(?:S|s)(?:I|i).?(?:N|n).{5,6}(?:C|c)(?:H|h)(?:A|a)(?:R|r)(?:S|s)(?:E|e)(?:T|t).*C(?:O|o)(?:L|l)(?:U|u)(?:M|m)(?:N|n)(?:S|s)</Regex>
+                </Pattern>
+            </FidoSignature>
+            <FidoSignature>
+                <FidoSignatureID>242</FidoSignatureID>
+                <FidoSignatureName>ESRI MapInfo Export File No.4</FidoSignatureName>
+                <FidoSignatureNote>MIF file header indicating Version, Charset and number of Columns.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\Av(?:E|e)(?:R|r)(?:S|s)(?:I|i).?(?:N|n).{5,6}(?:C|c)(?:H|h)(?:A|a)(?:R|r)(?:S|s)(?:E|e)(?:T|t).*c(?:O|o)(?:L|l)(?:U|u)(?:M|m)(?:N|n)(?:S|s)</Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

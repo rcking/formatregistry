@@ -63,14 +63,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>144</FidoSignatureID>
+                <FidoSignatureID>311</FidoSignatureID>
                 <FidoSignatureName>MS-DOS Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>254</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMZ</Regex>
+                    <Regex>(?s)\AMZ</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

@@ -210,80 +210,80 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>61</FidoSignatureID>
+                <FidoSignatureID>274</FidoSignatureID>
                 <FidoSignatureName>QuickTime 1</FidoSignatureName>
                 <FidoSignatureNote>Movie atom (moov) + movie header atom (mvhd)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>159</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{4}moov.{4}mvhd</Regex>
+                    <Regex>(?s)\A.{4}moov.{4}mvhd</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>62</FidoSignatureID>
+                <FidoSignatureID>275</FidoSignatureID>
                 <FidoSignatureName>Quicktime 2</FidoSignatureName>
                 <FidoSignatureNote>Movie data atom (mdat) + movie atom (moov) + movie header atom (mvhd)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>197</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{4}mdat.*moov.{4}mvhd</Regex>
+                    <Regex>(?s)\A.{4}mdat.*moov.{4}mvhd</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>63</FidoSignatureID>
+                <FidoSignatureID>276</FidoSignatureID>
                 <FidoSignatureName>Quicktime 3</FidoSignatureName>
                 <FidoSignatureNote>Movie atom (moov) + compressed movie atom (cmov) + data compression atom (dcom)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>198</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{4}moov.{4}cmov.{4}dcom</Regex>
+                    <Regex>(?s)\A.{4}moov.{4}cmov.{4}dcom</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>64</FidoSignatureID>
+                <FidoSignatureID>277</FidoSignatureID>
                 <FidoSignatureName>Quicktime 4</FidoSignatureName>
                 <FidoSignatureNote>Movie data atom (mdat) + movie atom (moov) + compressed movie atom (cmov) + data compression atom (dcom)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>199</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{4}mdat.*moov.{4}cmov.{4}dcom</Regex>
+                    <Regex>(?s)\A.{4}mdat.*moov.{4}cmov.{4}dcom</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>65</FidoSignatureID>
+                <FidoSignatureID>278</FidoSignatureID>
                 <FidoSignatureName>QuickTime 5</FidoSignatureName>
                 <FidoSignatureNote>Placeholder atom (wide) + movie data atom (mdat) + movie atom (moov) + movie header atom (mvhd)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>252</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\000\\000\\000\\\x08wide.{4}mdat.*moov.{4}mvhd</Regex>
+                    <Regex>(?s)\A\x00\x00\x00\x08wide.{4}mdat.*moov.{4}mvhd</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>66</FidoSignatureID>
+                <FidoSignatureID>279</FidoSignatureID>
                 <FidoSignatureName>QuickTime 6</FidoSignatureName>
                 <FidoSignatureNote>Placeholder atom (wide) + movie data atom (mdat) + movie atom (moov) + compressed movie atom (cmov) + data compression atom (dcom)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>253</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\000\\000\\000\\\x08wide.{4}mdat.*moov.{4}cmov.{4}dcom</Regex>
+                    <Regex>(?s)\A\x00\x00\x00\x08wide.{4}mdat.*moov.{4}cmov.{4}dcom</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>67</FidoSignatureID>
+                <FidoSignatureID>280</FidoSignatureID>
                 <FidoSignatureName>QuickTime</FidoSignatureName>
                 <FidoSignatureNote>Atoms: mdat, cmov, moov, ftyp, pnot, wide, skip, free, junk, or pict</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>286</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{4}mdat</Regex>
+                    <Regex>(?s)\A.{4}mdat</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

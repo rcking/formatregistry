@@ -114,19 +114,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>83</FidoSignatureID>
+                <FidoSignatureID>7</FidoSignatureID>
                 <FidoSignatureName>XHTML 1.0</FidoSignatureName>
                 <FidoSignatureNote>With DOCTYPE declaration for 1.0</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>272</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{0,1024}\\&lt;\\!DOCTYPE\\ html\\ PUBLIC\\ \\"\\-\\/\\/W3C\\/\\/DTD\\ XHTML\\ 1\\.0</Regex>
+                    <Regex>(?s)\A.{0,1024}&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1\.0</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>273</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)\\&lt;html\\ xmlns\\=\\"http\\:\\/\\/www\\.w3\\.org\\/1999\\/xhtml\\".*\\&lt;title\\&gt;.*\\&lt;\\/title\\&gt;</Regex>
+                    <Regex>(?s)&lt;html xmlns="http://www\.w3\.org/1999/xhtml".*&lt;title&gt;.*&lt;/title&gt;</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

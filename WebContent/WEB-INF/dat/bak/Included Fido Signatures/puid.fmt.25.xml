@@ -61,14 +61,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>2</FidoSignatureID>
+                <FidoSignatureID>82</FidoSignatureID>
                 <FidoSignatureName>AutoCAD Drawing Format 2.0</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>5</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AAC1\\.50</Regex>
+                    <Regex>(?s)\AAC1\.50</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

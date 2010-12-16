@@ -62,14 +62,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>165</FidoSignatureID>
+                <FidoSignatureID>40</FidoSignatureID>
                 <FidoSignatureName>OpenOffice Calc 1.0</FidoSignatureName>
                 <FidoSignatureNote>PKZIP file header + MIME-type declaration, PKZIP file header + meta.xml (office:version="1.0")</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>85</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04\\\x14\\000\\000\\000\\000\\000.{20}mimetypeapplication\\/vnd\\.sun\\.xml\\.calc.*PK\\\x03\\\x04\\\x14\\000\\000\\000\\000\\000.{20}meta\\.xml\\&lt;\\?xml\\ version\\=\\"1\\.0\\".{322}office\\:version\\=\\"1\\.0\\"\\&gt;</Regex>
+                    <Regex>(?s)\APK\x03\x04\x14\x00\x00\x00\x00\x00.{20}mimetypeapplication/vnd\.sun\.xml\.calc.*PK\x03\x04\x14\x00\x00\x00\x00\x00.{20}meta\.xml&lt;\?xml version="1\.0".{322}office:version="1\.0"&gt;</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

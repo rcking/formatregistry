@@ -66,14 +66,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>222</FidoSignatureID>
-                <FidoSignatureName>CATIA Model 5</FidoSignatureName>
-                <FidoSignatureNote></FidoSignatureNote>
+                <FidoSignatureID>326</FidoSignatureID>
+                <FidoSignatureName>CATIA Part Description V5</FidoSignatureName>
+                <FidoSignatureNote>CATIA Version 5 identifier plus file extension of the file name (.CATPart)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
-                    <PatternID>312</PatternID>
+                    <PatternID></PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AV5\\_CFV2\\000\\000</Regex>
+                    <Regex>(?s)\AV5_CFV2\x00\x00.*\.CATPart</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

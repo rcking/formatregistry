@@ -108,19 +108,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>106</FidoSignatureID>
+                <FidoSignatureID>117</FidoSignatureID>
                 <FidoSignatureName>GIF 1987a</FidoSignatureName>
                 <FidoSignatureNote>header &amp; trailer</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>179</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AGIF87a</Regex>
+                    <Regex>(?s)\AGIF87a</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>180</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\;\\Z</Regex>
+                    <Regex>(?s);\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

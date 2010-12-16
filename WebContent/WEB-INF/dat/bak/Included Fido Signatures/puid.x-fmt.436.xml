@@ -1,70 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
-  <report_format_detail>
-    <FileFormat>
-      <FormatID>843</FormatID>
-      <FormatName>CATIA Model</FormatName>
-      <FormatVersion>4</FormatVersion>
-      <FormatAliases>
+    <report_format_detail>
+        <SearchCriteria>Criteria</SearchCriteria>
+        <FileFormat>
+            <FormatID>843</FormatID>
+            <FormatName>CATIA Model</FormatName>
+            <FormatVersion>4</FormatVersion>
+            <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
+            <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
+            <FormatTypes>
       </FormatTypes>
-      <FormatDisclosure>Full</FormatDisclosure>
-      <FormatDescription>Outline record CATIA 3-D CAD Model</FormatDescription>
-      <BinaryFileFormat>Binary</BinaryFileFormat>
-      <ByteOrders>
+            <FormatDisclosure>Full</FormatDisclosure>
+            <FormatDescription>Outline record CATIA 3-D CAD Model</FormatDescription>
+            <BinaryFileFormat>Binary</BinaryFileFormat>
+            <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
+            <ReleaseDate>
       </ReleaseDate>
-      <WithdrawnDate>
+            <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>131</ProvenanceSourceID>
-      <ProvenanceName>Digital Library Research Group / MIT Libraries</ProvenanceName>
-      <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
-      <ProvenanceDescription>
+            <ProvenanceSourceID>131</ProvenanceSourceID>
+            <ProvenanceName>Digital Library Research Group / MIT Libraries</ProvenanceName>
+            <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
+            <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>06 May 2009</LastUpdatedDate>
-      <FormatNote>
+            <LastUpdatedDate>06 May 2009</LastUpdatedDate>
+            <FormatNote>
       </FormatNote>
-      <FormatRisk>
+            <FormatRisk>
       </FormatRisk>
-      <TechnicalEnvironment>
+            <TechnicalEnvironment>
       </TechnicalEnvironment>
-      <FileFormatIdentifier>
-        <Identifier>application/octet-stream</Identifier>
-        <IdentifierType>MIME</IdentifierType>
-      </FileFormatIdentifier>
-      <FileFormatIdentifier>
-        <Identifier>x-fmt/436</Identifier>
-        <IdentifierType>PUID</IdentifierType>
-      </FileFormatIdentifier>
-      <Developers>
-        <DeveloperID>135</DeveloperID>
-        <DeveloperName>
-        </DeveloperName>
-        <OrganisationName>Dassault Systems</OrganisationName>
-        <DeveloperCompoundName>Dassault Systems</DeveloperCompoundName>
-      </Developers>
-      <Support>
-        <SupportID>135</SupportID>
-        <SupportName>
-        </SupportName>
-        <OrganisationName>Dassault Systems</OrganisationName>
-        <SupportCompoundName>Dassault Systems</SupportCompoundName>
-      </Support>
-      <ExternalSignature>
-        <ExternalSignatureID>843</ExternalSignatureID>
-        <Signature>mod</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-      <ExternalSignature>
-        <ExternalSignatureID>844</ExternalSignatureID>
-        <Signature>model</Signature>
-        <SignatureType>File_extension</SignatureType>
-      </ExternalSignature>
-    </FileFormat>
-    <SearchCriteria>Criteria</SearchCriteria>
-  </report_format_detail>
+            <FileFormatIdentifier>
+                <Identifier>application/octet-stream</Identifier>
+                <IdentifierType>MIME</IdentifierType>
+            </FileFormatIdentifier>
+            <FileFormatIdentifier>
+                <Identifier>x-fmt/436</Identifier>
+                <IdentifierType>PUID</IdentifierType>
+            </FileFormatIdentifier>
+            <ExternalSignature>
+                <ExternalSignatureID>843</ExternalSignatureID>
+                <Signature>mod</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <ExternalSignature>
+                <ExternalSignatureID>844</ExternalSignatureID>
+                <Signature>model</Signature>
+                <SignatureType>File_extension</SignatureType>
+            </ExternalSignature>
+            <FidoSignature>
+                <FidoSignatureID>324</FidoSignatureID>
+                <FidoSignatureName>CATIA Model V4</FidoSignatureName>
+                <FidoSignatureNote>In the file header, the current level of CATIA used to create the model.</FidoSignatureNote>
+                <FidoPrioritize>true</FidoPrioritize>
+                <Pattern>
+                    <PatternID></PatternID>
+                    <Position>BOF</Position>
+                    <Regex>(?s)\A.{80}CATIA   .{2024}CATIA SOLUTIONS V4.{6}RELEASE </Regex>
+                </Pattern>
+            </FidoSignature>
+        </FileFormat>
+    </report_format_detail>
 </PRONOM-Report>

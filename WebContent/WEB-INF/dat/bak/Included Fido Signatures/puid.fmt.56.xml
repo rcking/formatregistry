@@ -109,14 +109,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>32</FidoSignatureID>
+                <FidoSignatureID>166</FidoSignatureID>
                 <FidoSignatureName>BIFF 3 Worksheet</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 02 - Version 3 / {2} - unspecified / 0000 - unspecified / 1000 - type of data (sheet)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>188</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\t\\\x02.{2}\\000\\000\\\x10\\000</Regex>
+                    <Regex>(?s)\A\x09\x02.{2}\x00\x00\x10\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

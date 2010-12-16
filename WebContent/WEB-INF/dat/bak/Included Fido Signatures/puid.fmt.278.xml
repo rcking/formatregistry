@@ -83,25 +83,25 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>235</FidoSignatureID>
+                <FidoSignatureID>88</FidoSignatureID>
                 <FidoSignatureName>Outlook Express Mail Message</FidoSignatureName>
                 <FidoSignatureNote>Version of ARPA Internet Text Message. ASCII Characters, X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3350 and including the two CRLF that terminate the line in the eml header. Signature may be too prescriptive and will need improving with more eml format testing.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>392</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)\\\r\\\nX\\-MimeOLE\\:\\ Produced\\ By\\ Microsoft\\ MimeOLE\\ V6\\.00\\..{4}\\..{4}\\\r\\\n</Regex>
+                    <Regex>(?s)\r\nX-MimeOLE: Produced By Microsoft MimeOLE V6\.00\..{4}\..{4}\r\n</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>236</FidoSignatureID>
+                <FidoSignatureID>89</FidoSignatureID>
                 <FidoSignatureName>Emailchemy RFC2822</FidoSignatureName>
                 <FidoSignatureNote>Signature to identify RFC2822 standard messages output from Emailchemy email conversion application. Character sequence: X-Converted-By: Emailchemy ??.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>393</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{0,4096}\\\r\\\nX\\-Converted\\-By\\:\\ Emailchemy\\ .?\\.</Regex>
+                    <Regex>(?s)\A.{0,4096}\r\nX-Converted-By: Emailchemy .?\.</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

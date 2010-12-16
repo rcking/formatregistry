@@ -62,14 +62,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>164</FidoSignatureID>
+                <FidoSignatureID>42</FidoSignatureID>
                 <FidoSignatureName>OpenOffice Impress 1.0</FidoSignatureName>
                 <FidoSignatureNote>PKZIP file header + MIME-type declaration, PKZIP file header + meta.xml (office:version="1.0")</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>87</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04\\\x14\\000\\000\\000\\000\\000.{20}mimetypeapplication\\/vnd\\.sun\\.xml\\.impress.*PK\\\x03\\\x04\\\x14\\000\\000\\000\\000\\000.{20}meta\\.xml\\&lt;\\?xml\\ version\\=\\"1\\.0\\".{383}office\\:version\\=\\"1\\.0\\"\\&gt;</Regex>
+                    <Regex>(?s)\APK\x03\x04\x14\x00\x00\x00\x00\x00.{20}mimetypeapplication/vnd\.sun\.xml\.impress.*PK\x03\x04\x14\x00\x00\x00\x00\x00.{20}meta\.xml&lt;\?xml version="1\.0".{383}office:version="1\.0"&gt;</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

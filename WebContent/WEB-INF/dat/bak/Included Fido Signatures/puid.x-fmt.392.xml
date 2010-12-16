@@ -71,14 +71,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>25</FidoSignatureID>
+                <FidoSignatureID>296</FidoSignatureID>
                 <FidoSignatureName>JPEG2000</FidoSignatureName>
                 <FidoSignatureNote>From the ISO JPEG2000 specification</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>323</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\000\\000\\000\\\x0cjP\\ \\ \\\r\\\n\\\x87\\\n</Regex>
+                    <Regex>(?s)\A\x00\x00\x00\x0cjP  \r\n\x87\n</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

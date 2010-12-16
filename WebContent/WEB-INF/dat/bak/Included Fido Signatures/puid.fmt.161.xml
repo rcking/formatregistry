@@ -113,24 +113,24 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>213</FidoSignatureID>
+                <FidoSignatureID>63</FidoSignatureID>
                 <FidoSignatureName>SIARD</FidoSignatureName>
-                <FidoSignatureNote>Signature for SIARD, combining that of a standard ZIP file and the expected XMLNS string: xmlns=“http://www.bar.admin.ch/xmlns/siard/1.0/metadata.xsd“ - Offset currently set to 1024 bytes but it is expected that this could be improved given further test data.</FidoSignatureNote>
+                <FidoSignatureNote>Signature for SIARD, combining that of a standard ZIP file and the expected XMLNS string: xmlns=âhttp://www.bar.admin.ch/xmlns/siard/1.0/metadata.xsdâ - Offset currently set to 1024 bytes but it is expected that this could be improved given further test data.</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>389</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04</Regex>
+                    <Regex>(?s)\APK\x03\x04</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>390</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)PK\\\x01.{43,65531}PK\\\x05\\\x06.{18,65531}\\Z</Regex>
+                    <Regex>(?s)PK\x01.{43,65531}PK\x05\x06.{18,65531}\Z</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>391</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)xmlns\\=\\"http\\:\\/\\/www\\.bar\\.admin\\.ch\\/xmlns\\/siard\\/1\\.0\\/metadata\\.xsd\\"</Regex>
+                    <Regex>(?s)xmlns="http://www\.bar\.admin\.ch/xmlns/siard/1\.0/metadata\.xsd"</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

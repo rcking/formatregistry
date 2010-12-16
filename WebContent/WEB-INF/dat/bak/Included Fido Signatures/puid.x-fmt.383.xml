@@ -102,14 +102,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>68</FidoSignatureID>
+                <FidoSignatureID>273</FidoSignatureID>
                 <FidoSignatureName>FITS</FidoSignatureName>
                 <FidoSignatureNote>Header (SIMPLE, BITPIX and NAXIS card images)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>160</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ASIMPLE\\ \\ \\=\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ T.{50}BITPIX\\ \\ \\=.{19}(?:\\ 8|\\+8|08|16|32|64).{50}NAXIS\\ \\ \\ \\=</Regex>
+                    <Regex>(?s)\ASIMPLE  =                    T.{50}BITPIX  =.{19}(?: 8|\+8|08|16|32|64).{50}NAXIS   =</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

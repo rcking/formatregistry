@@ -108,14 +108,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>174</FidoSignatureID>
+                <FidoSignatureID>298</FidoSignatureID>
                 <FidoSignatureName>WordPerfect 5.1</FidoSignatureName>
                 <FidoSignatureNote>Document Header (Version=0.1)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>70</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xffWPC.{5}\\\n\\000\\\x01.{2}\\000\\000</Regex>
+                    <Regex>(?s)\A\xffWPC.{5}\n\x00\x01.{2}\x00\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

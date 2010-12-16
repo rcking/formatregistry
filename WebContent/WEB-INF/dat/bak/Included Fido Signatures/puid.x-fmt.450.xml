@@ -71,14 +71,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>219</FidoSignatureID>
+                <FidoSignatureID>329</FidoSignatureID>
                 <FidoSignatureName>Adobe InDesign Document</FidoSignatureName>
                 <FidoSignatureNote></FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>313</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\x06\\\x06\\\xed\\\xf5\\\xd8\\\x1dF\\\xe5\\\xbd1\\\xef\\\xe7\\\xfet\\\xb7\\\x1dDOCUMENT</Regex>
+                    <Regex>(?s)\A\x06\x06\xed\xf5\xd8\x1dF\xe5\xbd1\xef\xe7\xfet\xb7\x1dDOCUMENT</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

@@ -113,14 +113,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>142</FidoSignatureID>
+                <FidoSignatureID>314</FidoSignatureID>
                 <FidoSignatureName>Windows Portable Executable</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>256</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMZ.*PE\\000\\000</Regex>
+                    <Regex>(?s)\AMZ.*PE\x00\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

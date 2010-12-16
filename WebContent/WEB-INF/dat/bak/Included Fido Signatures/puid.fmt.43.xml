@@ -91,19 +91,19 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>50</FidoSignatureID>
+                <FidoSignatureID>152</FidoSignatureID>
                 <FidoSignatureName>JFIF 1.01</FidoSignatureName>
                 <FidoSignatureNote>SOI and APP0 markers at BOF, EOI marker at EOF</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>170</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xff\\\xd8\\\xff\\\xe0.{2}JFIF\\000\\\x01\\\x01(?:\\000|\\\x01|\\\x02)</Regex>
+                    <Regex>(?s)\A\xff\xd8\xff\xe0.{2}JFIF\x00\x01\x01(?:\x00|\x01|\x02)</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>171</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\xff\\\xd9\\Z</Regex>
+                    <Regex>(?s)\xff\xd9\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

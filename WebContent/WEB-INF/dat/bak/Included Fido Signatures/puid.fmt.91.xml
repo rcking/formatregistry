@@ -66,14 +66,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>91</FidoSignatureID>
+                <FidoSignatureID>208</FidoSignatureID>
                 <FidoSignatureName>SVG 1.0</FidoSignatureName>
                 <FidoSignatureNote>Including &lt;svg&gt;&lt;/svg&gt; fragments</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>122</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\&lt;\\?xml\\ version\\=\\"1\\.0\\".*\\&lt;svg.*svg\\&gt;</Regex>
+                    <Regex>(?s)\A&lt;\?xml version="1\.0".*&lt;svg.*svg&gt;</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

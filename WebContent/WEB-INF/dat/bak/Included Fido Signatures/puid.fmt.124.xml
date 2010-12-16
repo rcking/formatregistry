@@ -138,30 +138,30 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>10</FidoSignatureID>
+                <FidoSignatureID>34</FidoSignatureID>
                 <FidoSignatureName>EPS 3.0</FidoSignatureName>
                 <FidoSignatureNote>Version comment</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>214</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\%\\!PS\\-Adobe\\-3\\.0\\ EPSF\\-3\\.0(?:\\\r|\\\n|\\\r\\\n|\\\n\\\r)</Regex>
+                    <Regex>(?s)\A%!PS-Adobe-3\.0 EPSF-3\.0(?:\r|\n|\r\n|\n\r)</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>11</FidoSignatureID>
+                <FidoSignatureID>35</FidoSignatureID>
                 <FidoSignatureName>EPS 3.0 Preview</FidoSignatureName>
                 <FidoSignatureNote>Version comment</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>215</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xc5\\\xd0\\\xd3\\\xc6</Regex>
+                    <Regex>(?s)\A\xc5\xd0\xd3\xc6</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>216</PatternID>
                     <Position>VAR</Position>
-                    <Regex>(?s)\\%\\!PS\\-Adobe\\-3\\.0\\ EPSF\\-3\\.0(?:\\\r|\\\n|\\\r\\\n|\\\n\\\r)</Regex>
+                    <Regex>(?s)%!PS-Adobe-3\.0 EPSF-3\.0(?:\r|\n|\r\n|\n\r)</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

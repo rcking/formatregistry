@@ -1,10 +1,4 @@
 <t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-	<p></p>
-    <h2><t:pagelink page="start">Return to search page</t:pagelink></h2>
-	<p></p>
-	<p></p>
-    <h2><t:pagelink page="editFormat">Create new format</t:pagelink></h2>
-	<p></p>
     <t:grid source="formats" row="format" include="pronomID,formatName,formatVersion,extensionList,lastUpdatedDate" rowsPerPage="20">
         <t:parameter name="formatNameCell">
     	    <t:pagelink page="viewFormat" context="format.formatID">${format.formatName}</t:pagelink>

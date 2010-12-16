@@ -1,7 +1,7 @@
 <t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-	<p></p>
-    <h2><t:pagelink page="start">Return to search page</t:pagelink></h2>
-	<p></p>
+
+    <t:pagelink page="editFormat" context="formatID">Edit this format</t:pagelink>
+
 	<h3>Basic format information</h3>
  	<div id="section1">
        <t:beandisplay object="format"/>
@@ -21,6 +21,7 @@
 					<tr>
 						<th>Name</th>
 						<th>Note</th>
+						<th>Prioritized</th>
 						<th>Pattern</th>
 					</tr>
 				</thead>
@@ -28,6 +29,7 @@
 					<tr t:type="Loop" t:source="fidoSignature" t:value="fSignature">
 						<td>${fSignature.fidoSignatureName}</td>
 						<td>${fSignature.fidoSignatureNote}</td>
+						<td>${fSignature.fidoPrioritize}</td>
 						<td><t:grid source="fSignature.Pattern"/></td>
 					</tr>
 				</tbody>
@@ -68,7 +70,4 @@
  	<div id="section3">
     	<t:grid source="document"/>
     </div>
-	<p></p>
-    <h2><t:pagelink page="editFormat" context="formatID">Edit this format</t:pagelink></h2>
-	<p></p>
 </t:layout>

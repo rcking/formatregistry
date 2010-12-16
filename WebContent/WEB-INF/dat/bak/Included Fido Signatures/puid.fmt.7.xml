@@ -90,25 +90,25 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>119</FidoSignatureID>
+                <FidoSignatureID>181</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (little-endian)</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>183</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AII\\*\\000</Regex>
+                    <Regex>(?s)\AII\*\x00</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>120</FidoSignatureID>
+                <FidoSignatureID>182</FidoSignatureID>
                 <FidoSignatureName>TIFF generic (big-endian)</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>184</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMM\\000\\*</Regex>
+                    <Regex>(?s)\AMM\x00\*</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

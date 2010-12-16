@@ -1,0 +1,24 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+
+	<h3>Fido Import/Export</h3>
+	<form t:type="form" t:id="export">
+		<t:errors/>
+		Export to Fido formats: 
+		<input type="submit" value="Download"/>
+ 	</form><br/>
+ 	
+	<t:form t:id="uploadFile">
+        <t:errors/>
+        <input t:type="upload" t:id="file" validate="required"/>
+        <br/>
+        <input type="submit" value="Upload"/>
+    </t:form>
+    
+	<h3>Pronom Export</h3>
+	<form t:type="form" t:id="pronomExport">
+		<t:errors/>
+		Export to Pronom: 
+		<input type="submit" value="Export"/>
+ 	</form><br/>
+ 	
+</t:layout>

@@ -100,14 +100,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>71</FidoSignatureID>
+                <FidoSignatureID>159</FidoSignatureID>
                 <FidoSignatureName>AVI</FidoSignatureName>
                 <FidoSignatureNote>RIFF header, AVI ID, LIST hdrl chunk with avih sub-chunk + LIST movi chunk</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>155</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\ARIFF.{4}AVI\\ .*LIST.{4}hdrlavih.*LIST.{4}movi</Regex>
+                    <Regex>(?s)\ARIFF.{4}AVI .*LIST.{4}hdrlavih.*LIST.{4}movi</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>

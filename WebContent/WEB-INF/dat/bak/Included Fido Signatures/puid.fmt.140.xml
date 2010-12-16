@@ -57,14 +57,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>135</FidoSignatureID>
+                <FidoSignatureID>60</FidoSignatureID>
                 <FidoSignatureName>ODF 1.0 database</FidoSignatureName>
                 <FidoSignatureNote>ZIP header + MIME-type declaration + version number</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>265</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\APK\\\x03\\\x04.{26}mimetypeapplication\\/vnd\\.sun\\.xml\\.base.*office\\:version\\=\\"1\\.0</Regex>
+                    <Regex>(?s)\APK\x03\x04.{26}mimetypeapplication/vnd\.sun\.xml\.base.*office:version="1\.0</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

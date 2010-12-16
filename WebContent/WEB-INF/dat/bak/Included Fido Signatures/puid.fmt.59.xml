@@ -104,14 +104,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>29</FidoSignatureID>
+                <FidoSignatureID>169</FidoSignatureID>
                 <FidoSignatureName>BIFF 5 &amp; 7 Workbook (generic)</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 08 - Version indicator / {2} - unspecified / 0005 - Version 5 / 0500 - unspecified /  (9C35|6C92|920C|F90C) - build identifier</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>194</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{512}\\\t\\\x08.{2}\\000\\\x05\\\x05\\000(?:\\\x9c5|l\\\x92|\\\x92\\\x0c|\\\xf9\\\x0c)</Regex>
+                    <Regex>(?s)\A.{512}\x09\x08.{2}\x00\x05\x05\x00(?:\x9c5|l\x92|\x92\x0c|\xf9\x0c)</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

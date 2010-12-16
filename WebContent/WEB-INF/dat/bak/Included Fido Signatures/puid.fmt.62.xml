@@ -104,14 +104,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>26</FidoSignatureID>
+                <FidoSignatureID>173</FidoSignatureID>
                 <FidoSignatureName>BIFF 8 &amp; 8X Workbook (generic)</FidoSignatureName>
                 <FidoSignatureNote>09 - BOF / 08 - Version indicator / {2} - unspecified / 0006 - version / 0500 - substream EC30 - build identifier /  CD07 - year (1997)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>195</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{512}\\\t\\\x08.{2}\\000\\\x06\\\x05\\000\\\xec0\\\xcd\\\x07</Regex>
+                    <Regex>(?s)\A.{512}\x09\x08.{2}\x00\x06\x05\x00\xec0\xcd\x07</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

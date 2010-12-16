@@ -19,6 +19,7 @@
 					<tr>
 						<th>Name</th>
 						<th>Note</th>
+						<th>Prioritized</th>
 						<th>Pattern</th>
 					</tr>
 				</thead>
@@ -26,6 +27,7 @@
 					<tr t:type="Loop" t:source="fidoSignature" t:value="fSignature">
 						<td>${fSignature.fidoSignatureName}</td>
 						<td>${fSignature.fidoSignatureNote}</td>
+						<td>${fSignature.fidoPrioritize}</td>
 						<td><t:grid source="fSignature.Pattern"/></td>
 					</tr>
 				</tbody>

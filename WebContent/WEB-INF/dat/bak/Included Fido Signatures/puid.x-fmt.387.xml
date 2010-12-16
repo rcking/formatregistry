@@ -206,67 +206,67 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>43</FidoSignatureID>
+                <FidoSignatureID>283</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near EOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>101</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMM\\000\\*</Regex>
+                    <Regex>(?s)\AMM\x00\*</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>383</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040220.{0,65535}\\Z</Regex>
+                    <Regex>(?s)\x90\x00\x00\x07\x00\x00\x00\x040220.{0,65535}\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>44</FidoSignatureID>
+                <FidoSignatureID>284</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near EOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near EOF (EXIF ver=2.2)</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>102</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AII\\*\\000</Regex>
+                    <Regex>(?s)\AII\*\x00</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>384</PatternID>
                     <Position>EOF</Position>
-                    <Regex>(?s)\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000220.{0,65535}\\Z</Regex>
+                    <Regex>(?s)\x00\x90\x07\x00\x04\x00\x00\x000220.{0,65535}\Z</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>45</FidoSignatureID>
+                <FidoSignatureID>285</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (big-endian, EXIF near BOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>373</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AMM\\000\\*</Regex>
+                    <Regex>(?s)\AMM\x00\*</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>374</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{10,65535}\\\x90\\000\\000\\\x07\\000\\000\\000\\\x040220</Regex>
+                    <Regex>(?s)\A.{10,65535}\x90\x00\x00\x07\x00\x00\x00\x040220</Regex>
                 </Pattern>
             </FidoSignature>
             <FidoSignature>
-                <FidoSignatureID>46</FidoSignatureID>
+                <FidoSignatureID>286</FidoSignatureID>
                 <FidoSignatureName>EXIF Uncompressed Image 2.2 (little-endian, EXIF near BOF)</FidoSignatureName>
                 <FidoSignatureNote>TIFF header, EXIF IFD near BOF (EXIF ver=2.2).  [NB: When the DROID bug associated with longest fragment not nearest anchor is fixed, the 2 BOF sequences can be merged.]</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>379</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\AII\\*\\000</Regex>
+                    <Regex>(?s)\AII\*\x00</Regex>
                 </Pattern>
                 <Pattern>
                     <PatternID>380</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A.{10,65535}\\000\\\x90\\\x07\\000\\\x04\\000\\000\\0000220</Regex>
+                    <Regex>(?s)\A.{10,65535}\x00\x90\x07\x00\x04\x00\x00\x000220</Regex>
                 </Pattern>
             </FidoSignature>
             <RelatedFormat>

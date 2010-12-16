@@ -63,14 +63,14 @@
                 </ByteSequence>
             </InternalSignature>
             <FidoSignature>
-                <FidoSignatureID>233</FidoSignatureID>
+                <FidoSignatureID>316</FidoSignatureID>
                 <FidoSignatureName>Java Compiled Object Code</FidoSignatureName>
                 <FidoSignatureNote>Header</FidoSignatureNote>
                 <FidoPrioritize>true</FidoPrioritize>
                 <Pattern>
                     <PatternID>284</PatternID>
                     <Position>BOF</Position>
-                    <Regex>(?s)\\A\\\xca\\\xfe\\\xba\\\xbe</Regex>
+                    <Regex>(?s)\A\xca\xfe\xba\xbe</Regex>
                 </Pattern>
             </FidoSignature>
         </FileFormat>
