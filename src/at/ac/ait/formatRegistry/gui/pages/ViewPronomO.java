@@ -43,7 +43,11 @@ public class ViewPronomO {
     		formatID = "false";
     	}
     }
-    
+
+    String onPassivate() {
+    	return formatID;
+    }
+
     public String getFormatID() {
     	return formatID;
     }

@@ -42,7 +42,11 @@ public class ViewPronomX {
     		formatID = "false";
     	}
     }
-    
+
+    String onPassivate() {
+    	return formatID;
+    }
+
     public String getFormatID() {
     	return formatID;
     }

@@ -53,7 +53,7 @@
 						<td><t:checkbox t:id="fprior" t:value="fidoSignatureHolder.fidoSignature.fidoPrioritize" /></td>
 						<td><table>
 								<tr><td><t:grid source="fidoSignatureHolder.fidoSignature.Pattern" /></td></tr>
-								<tr><td><a t:type="actionlink" t:id="editPattern" t:context="fidoSignatureHolder.fidoSignature.fidoSignatureID" href="#">Edit Pattern</a></td></tr>
+								<tr><td><t:submit t:id="editPattern" t:context="fidoSignatureHolder.fidoSignature.fidoSignatureID" value="Edit Pattern"/></td></tr>
 							</table>
 					 	</td>
 						<td><t:removerowlink>remove</t:removerowlink></td>
@@ -84,7 +84,7 @@
 						<td><input t:type="TextField" t:id="snote" t:value="internalSignatureHolder.internalSignature.signatureNote" /></td>
 						<td><table>
 								<tr><td><t:grid source="internalSignatureHolder.internalSignature.byteSequence" include="positionType,byteSequenceValue"/></td></tr>
-								<tr><td><a t:type="actionlink" t:id="editSequence" t:context="internalSignatureHolder.internalSignature.signatureID" href="#">Edit Byte Sequence</a></td></tr>
+								<tr><td><t:submit t:id="editSequence" t:context="internalSignatureHolder.internalSignature.signatureID" value="Edit Byte Sequence"/></td></tr>
 							</table>
 					 	</td>
 						<td><t:removerowlink>remove</t:removerowlink></td>

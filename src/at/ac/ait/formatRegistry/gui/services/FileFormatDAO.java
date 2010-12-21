@@ -12,6 +12,7 @@ public interface FileFormatDAO {
   	List<FileFormat> findFormatsByExtension(String fragment);
   	List<FileFormat> findFormatsByPronomId(String fragment);
   	FileFormat find(String id);
+  	FileFormat getNewFormat();
   	void save(FileFormat format);
   	void delete(FileFormat format);
   	File exportToFido();

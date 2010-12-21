@@ -49,6 +49,10 @@ public class ViewPronom {
     	}
     }
     
+    String onPassivate() {
+    	return formatID;
+    }
+    
     public String getFormatID() {
     	return formatID;
     }

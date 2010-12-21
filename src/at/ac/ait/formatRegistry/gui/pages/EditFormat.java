@@ -41,7 +41,7 @@ public class EditFormat {
     @Property
 	@Persist
     private FileFormat format;
-    private String formatID = "";
+    private String formatID;
 
 	@Property
 	@Persist
@@ -70,45 +70,35 @@ public class EditFormat {
 	
 	@Property
 	private FidoSignatureHolder _fidoSignatureHolder;
+	
+	private boolean patternTrigger = false;
+	private boolean sequenceTrigger = false;
+	private FidoSignature theFidoSignature = null;
+	private InternalSignature theInternalSignature = null;
 
-	Object onActionFromEditSequence(String id) {
-		List<InternalSignature> signatures = format.getInternalSignature();
-		for (InternalSignature signature : signatures) {
-			if (signature.getSignatureID().equals(id)) {
-				editByteSequence.initialize(format, signature);
-				return editByteSequence;
-			}
-		}
-		return this;
-	}
-	
-	Object onActionFromEditPattern(String id) {
-		List<FidoSignature> fSignatures = format.getFidoSignature();
-		for (FidoSignature fSignature : fSignatures) {
-			if (fSignature.getFidoSignatureID().equals(id)) {
-				editFidoPattern.initialize(format, fSignature);
-				return editFidoPattern;
-			}
-		}
-		return this;
-	}
-	
 	Object initialize(String id) {
 		onActivate(id);
 		return this;
 	}
+	
+	void onActivate(String id) {
+		this.formatID = id;
+	}
+    
+    String onPassivate() {
+    	return formatID;
+    }
 
-    void onActivate(String id) {
+    void setupRender() {
     	_fileFormatIdentifierHolders = new ArrayList<FileFormatIdentifierHolder>();
     	_relatedFormatHolders = new ArrayList<RelatedFormatHolder>();
     	_internalSignatureHolders = new ArrayList<InternalSignatureHolder>();
     	_fidoSignatureHolders = new ArrayList<FidoSignatureHolder>();
-    	if (id!=null) {
-    		if (!id.equals("")) {
-    			FileFormat testFormat = formatDAO.find(id);
+    	if (formatID!=null) {
+    		if (!formatID.equals("")) {
+    			FileFormat testFormat = formatDAO.find(formatID);
 		    	if (testFormat!=null) {
 		    		format = testFormat;
-		    		formatID = id;
 		    		Iterator<FileFormatIdentifier> it1 = format.getFileFormatIdentifier().iterator();
 		    		while (it1.hasNext()) {
 		    			_fileFormatIdentifierHolders.add(new FileFormatIdentifierHolder(it1.next(), false, 0 - System.nanoTime()));
@@ -131,16 +121,53 @@ public class EditFormat {
     		}
     	}
     	if (format==null) {
-    		format = new FileFormat();
-    		formatID = formatDAO.getNewFormatID();
-    		format.setFormatID(formatID);
-    		FileFormatIdentifier ffi = new FileFormatIdentifier();
-    		ffi.setIdentifierType(IdentifierTypes.PUID);
-    		ffi.setIdentifier(formatDAO.getNewPronomID());
-    		format.getFileFormatIdentifier().add(ffi);
+    		format = formatDAO.getNewFormat();
+    		Iterator<FileFormatIdentifier> it1 = format.getFileFormatIdentifier().iterator();
+    		while (it1.hasNext()) {
+    			_fileFormatIdentifierHolders.add(new FileFormatIdentifierHolder(it1.next(), false, 0 - System.nanoTime()));
+    		}
     	}
     }
 
+	public void onSelectedFromEditPattern(String id) {
+		for (FidoSignatureHolder fsh : _fidoSignatureHolders) {
+			FidoSignature fSignature = fsh.getFidoSignature();
+			if (fsh.isNew()) {
+				format.getFidoSignature().add(fSignature);
+			} else if (fsh.isDeleted()) {
+				format.getFidoSignature().remove(fSignature);
+			}
+		}
+		_fidoSignatureHolders.clear();
+		List<FidoSignature> fSignatures = format.getFidoSignature();
+		for (FidoSignature fSignature : fSignatures) {
+			if (fSignature.getFidoSignatureID().equals(id)) {
+				theFidoSignature = fSignature;
+				patternTrigger = true;
+			}
+		}
+		
+	}
+	
+	public void onSelectedFromEditSequence(String id) {
+		for (InternalSignatureHolder ish : _internalSignatureHolders) {
+			InternalSignature signature = ish.getInternalSignature();
+			if (ish.isNew()) {
+				format.getInternalSignature().add(signature);
+			} else if (ish.isDeleted()) {
+				format.getInternalSignature().remove(signature);
+			}
+		}
+		_internalSignatureHolders.clear();
+		List<InternalSignature> signatures = format.getInternalSignature();
+		for (InternalSignature signature : signatures) {
+			if (signature.getSignatureID().equals(id)) {
+				theInternalSignature = signature;
+				sequenceTrigger = true;
+			}
+		}
+	}
+	
     public Object onSuccess() {
 		for (FileFormatIdentifierHolder ffih : _fileFormatIdentifierHolders) {
 			FileFormatIdentifier identifer = ffih.getFileFormatIdentifier();
@@ -175,7 +202,21 @@ public class EditFormat {
 			}
 		}   	
         formatDAO.save(format);
-        return viewFormat.initialize(format.getFormatID());
+        if (patternTrigger) {
+    		if (theFidoSignature!=null) {
+    			editFidoPattern.initialize(format, theFidoSignature);
+    			return editFidoPattern;
+    		}
+    		return this;        
+        } else if (sequenceTrigger) {
+    		if (theInternalSignature!=null) {
+    			editByteSequence.initialize(format, theInternalSignature);
+    			return editByteSequence;
+    		}
+    		return this;
+        } else {
+        	return viewFormat.initialize(format.getFormatID());
+        }
     }
     
     FileFormatIdentifierHolder onAddRowFromFileIdentifiers() {
@@ -276,7 +317,7 @@ public class EditFormat {
 					}
 				}
 				throw new IllegalArgumentException("Received key \"" + key
-						+ "\" which has no counterpart in this collection: " + _fileFormatIdentifierHolders);
+						+ "\" which has no counterpart in this collection: " + _relatedFormatHolders);
 			}
 		};
 	}
@@ -381,6 +422,7 @@ public class EditFormat {
     FidoSignatureHolder onAddRowFromFidoSignatures() {
     	FidoSignature newFs = new FidoSignature();
     	newFs.setFidoSignatureID(formatDAO.getNewFidoSignatureID());
+    	newFs.setFidoPrioritize(true);
     	FidoSignatureHolder newFsHolder = new FidoSignatureHolder(newFs, true, 0 - System.nanoTime());
     	_fidoSignatureHolders.add(newFsHolder);
 		return newFsHolder;

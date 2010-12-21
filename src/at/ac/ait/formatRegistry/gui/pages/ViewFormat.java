@@ -48,6 +48,10 @@ public class ViewFormat {
     	}
     }
     
+    String onPassivate() {
+    	return formatID;
+    }
+    
     public String getFormatID() {
     	return formatID;
     }

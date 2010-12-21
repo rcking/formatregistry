@@ -391,7 +391,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 						rfd.getFileFormat().add(format);
 						report.getReportFormatDetail().add(rfd);
 						reportHash.put(newID, report);
-						String desc = "Imported from a Fido format_extensions.xml.";
+						String desc = "Imported from " + fidoFile.getName() + ".";
 						String oid = fidoFormat.getPuid();
 						if (!oid.equals("")) {
 							desc += " Previous working ID: " + oid;
@@ -570,5 +570,23 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		} catch (Exception e) {
 			// handle exception
 		}
+	}
+
+	public FileFormat getNewFormat() {
+		PRONOMReport report = new PRONOMReport();
+		ReportFormatDetail rfd = new ReportFormatDetail();
+		FileFormat format = new FileFormat();
+		String formatID = this.getNewFormatID();
+		String pronomID = this.getNewPronomID();
+		format.setFormatID(formatID);
+		FileFormatIdentifier ffi = new FileFormatIdentifier();
+		ffi.setIdentifierType(IdentifierTypes.PUID);
+		ffi.setIdentifier(pronomID);
+		format.getFileFormatIdentifier().add(ffi);
+		rfd.getFileFormat().add(format);
+		report.getReportFormatDetail().add(rfd);
+		formatHash.put(formatID, format);
+		reportHash.put(formatID, report);
+		return format;
 	}
 }
