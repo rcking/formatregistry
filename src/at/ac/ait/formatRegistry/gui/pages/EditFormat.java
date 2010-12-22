@@ -180,6 +180,11 @@ public class EditFormat {
 		for (RelatedFormatHolder rfh : _relatedFormatHolders) {
 			RelatedFormat relatedFormat = rfh.getRelatedFormat();
 			if (rfh.isNew()) {
+				FileFormat rfl = formatDAO.findFormatByName(relatedFormat.getRelatedFormatName());
+				if (rfl!=null) {
+					relatedFormat.setRelatedFormatID(rfl.getFormatID());
+					relatedFormat.setRelatedFormatVersion(rfl.getFormatVersion());
+				}
 				format.getRelatedFormat().add(relatedFormat);
 			} else if (rfh.isDeleted()) {
 				format.getRelatedFormat().remove(relatedFormat);
@@ -494,6 +499,10 @@ public class EditFormat {
 
 		for (String formatName : formatDAO.getFormatNamesSet()) {
 			if (formatName.startsWith(partial)) {
+				matches.add(formatName);
+			}
+			String lowerFormatName = formatName.toLowerCase();
+			if (lowerFormatName.startsWith(partial)) {
 				matches.add(formatName);
 			}
 		}

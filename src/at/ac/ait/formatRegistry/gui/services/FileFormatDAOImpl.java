@@ -587,6 +587,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		report.getReportFormatDetail().add(rfd);
 		formatHash.put(formatID, format);
 		reportHash.put(formatID, report);
+		puidFormatHash.put(pronomID, format);
 		return format;
 	}
 }
