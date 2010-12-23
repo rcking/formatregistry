@@ -4,25 +4,19 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.tapestry5.ComponentResources;
 import org.apache.tapestry5.ValueEncoder;
 import org.apache.tapestry5.annotations.InjectPage;
-import org.apache.tapestry5.annotations.PageActivationContext;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
-import uk.gov.nationalarchives.pronom.PRONOMReport.IdentifierTypes;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat;
-import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.CompressionType;
-import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.Document;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.ExternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FidoSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.FileFormatIdentifier;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature;
 import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.RelatedFormat;
-import uk.gov.nationalarchives.pronom.PRONOMReport.ReportFormatDetail.FileFormat.InternalSignature.ByteSequence;
-import at.ac.ait.formatRegistry.gui.pages.EditByteSequence.ByteSequenceHolder;
+import uk.gov.nationalarchives.pronom.PRONOMReport.SignatureTypes;
 import at.ac.ait.formatRegistry.gui.services.FileFormatDAO;
 
 public class EditFormat {
@@ -57,6 +51,10 @@ public class EditFormat {
 
 	@Property
 	@Persist
+	private List<ExternalSignatureHolder> _externalSignatureHolders;
+
+	@Property
+	@Persist
 	private List<FidoSignatureHolder> _fidoSignatureHolders;
 
 	@Property
@@ -67,6 +65,9 @@ public class EditFormat {
 	
 	@Property
 	private InternalSignatureHolder _internalSignatureHolder;
+	
+	@Property
+	private ExternalSignatureHolder _externalSignatureHolder;
 	
 	@Property
 	private FidoSignatureHolder _fidoSignatureHolder;
@@ -93,6 +94,7 @@ public class EditFormat {
     	_fileFormatIdentifierHolders = new ArrayList<FileFormatIdentifierHolder>();
     	_relatedFormatHolders = new ArrayList<RelatedFormatHolder>();
     	_internalSignatureHolders = new ArrayList<InternalSignatureHolder>();
+    	_externalSignatureHolders = new ArrayList<ExternalSignatureHolder>();
     	_fidoSignatureHolders = new ArrayList<FidoSignatureHolder>();
     	if (formatID!=null) {
     		if (!formatID.equals("")) {
@@ -116,6 +118,11 @@ public class EditFormat {
 		    		while (it4.hasNext()) {
 		    			FidoSignature fS = it4.next();
 		    			_fidoSignatureHolders.add(new FidoSignatureHolder(fS, false, 0 - System.nanoTime()));
+		    		}
+		    		Iterator<ExternalSignature> it5 = format.getExternalSignature().iterator();
+		    		while (it5.hasNext()) {
+		    			ExternalSignature eS = it5.next();
+		    			_externalSignatureHolders.add(new ExternalSignatureHolder(eS, false, 0 - System.nanoTime()));
 		    		}
 		    	}
     		}
@@ -196,6 +203,15 @@ public class EditFormat {
 				format.getInternalSignature().add(signature);
 			} else if (ish.isDeleted()) {
 				format.getInternalSignature().remove(signature);
+			}
+		}   	
+		for (ExternalSignatureHolder esh : _externalSignatureHolders) {
+			ExternalSignature eSignature = esh.getExternalSignature();
+			if (esh.isNew()) {
+				eSignature.setSignatureType(SignatureTypes.File_extension);
+				format.getExternalSignature().add(eSignature);
+			} else if (esh.isDeleted()) {
+				format.getExternalSignature().remove(eSignature);
 			}
 		}   	
 		for (FidoSignatureHolder fsh : _fidoSignatureHolders) {
@@ -406,6 +422,73 @@ public class EditFormat {
 		}
 		public InternalSignature getInternalSignature() {
 			return _is;
+		}
+		public Long getKey() {
+			return _key;
+		}
+		public boolean isNew() {
+			return _new;
+		}
+
+		public boolean setDeleted(boolean deleted) {
+			return _deleted = deleted;
+		}
+
+		public boolean isDeleted() {
+			return _deleted;
+		}
+
+	}
+
+    ExternalSignatureHolder onAddRowFromExternalSignatures() {
+    	ExternalSignature newEs = new ExternalSignature();
+    	ExternalSignatureHolder newEsHolder = new ExternalSignatureHolder(newEs, true, 0 - System.nanoTime());
+    	_externalSignatureHolders.add(newEsHolder);
+		return newEsHolder;
+	}
+
+	void onRemoveRowFromExternalSignatures(ExternalSignatureHolder externalSignature) {
+		if (externalSignature.isNew()) {
+			_externalSignatureHolders.remove(externalSignature);;
+		}
+		else {
+			externalSignature.setDeleted(true);
+		}
+	}
+	
+	public ValueEncoder<ExternalSignatureHolder> getExternalSignatureEncoder() {
+		return new ValueEncoder<ExternalSignatureHolder>() {
+
+			public String toClient(ExternalSignatureHolder value) {
+				Long key = value.getKey();
+				return key.toString();
+			}
+
+			public ExternalSignatureHolder toValue(String keyAsString) {
+				Long key = new Long(keyAsString);
+				for (ExternalSignatureHolder holder : _externalSignatureHolders) {
+					if (holder.getKey().equals(key)) {
+						return holder;
+					}
+				}
+				throw new IllegalArgumentException("Received key \"" + key
+						+ "\" which has no counterpart in this collection: " + _externalSignatureHolders);
+			}
+		};
+	}
+	
+	public class ExternalSignatureHolder {
+		private ExternalSignature _es;
+		private Long _key;
+		private boolean _new;
+		private boolean _deleted;
+		ExternalSignatureHolder(ExternalSignature es, boolean isNew, Long key) {
+			_es = es;
+			_key = key;	    			
+			_new = isNew;
+		}
+		public ExternalSignature getExternalSignature() {
+			return _es;
 		}
 		public Long getKey() {
 			return _key;

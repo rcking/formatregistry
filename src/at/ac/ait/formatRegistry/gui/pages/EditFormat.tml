@@ -34,6 +34,29 @@
 			</tbody>
 	 	</table>
 
+		<h3>External Signatures (file extensions)</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Extension</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr t:id="externalSignatures" t:type="AjaxFormLoop" t:source="externalSignatureHolders" t:value="externalSignatureHolder" t:encoder="externalSignatureEncoder">
+					<t:submitnotifier>
+						<td><input t:type="TextField" t:id="exten" t:value="externalSignatureHolder.externalSignature.signature" /></td>
+						<td><t:removerowlink>remove</t:removerowlink></td>
+					</t:submitnotifier>
+					<p:addRow>
+						<td colspan="2" style="text-align: right">
+							<t:addrowlink>Add an extension</t:addrowlink>
+						</td>
+					</p:addRow>
+				</tr>
+			</tbody>
+	 	</table>
+
 		<h3>Fido Signatures</h3>
 		<table>
 			<thead>
