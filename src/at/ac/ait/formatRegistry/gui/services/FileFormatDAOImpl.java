@@ -231,6 +231,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	}
 
 	public List<FileFormat> findFormatsByExtension(String fragment) {
+		if (fragment==null) return null;
 		ArrayList<FileFormat> results = new ArrayList<FileFormat>();
 		Iterator<FileFormat> it = formatHash.values().iterator();
 		while (it.hasNext()) {
@@ -243,6 +244,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	}
 
 	public List<FileFormat> findFormatsByName(String fragment) {
+		if (fragment==null) return null;
 		ArrayList<FileFormat> results = new ArrayList<FileFormat>();
 		Iterator<FileFormat> it = formatHash.values().iterator();
 		while (it.hasNext()) {
@@ -255,6 +257,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 	}
 
 	public List<FileFormat> findFormatsByPronomId(String fragment) {
+		if (fragment==null) return null;
 		ArrayList<FileFormat> results = new ArrayList<FileFormat>();
 		Iterator<FileFormat> it = formatHash.values().iterator();
 		while (it.hasNext()) {
