@@ -12,6 +12,10 @@ package at.ac.ait.formatRegistry;
  * or registered trademarks of Sun Microsystems, Inc. in the U.S. and
  * other countries.
  *
+ * Modified for Prototype Format Registry
+ * Ross King
+ * 14 Nov 2010
+ * 
 */
 
 import javax.xml.parsers.DocumentBuilder;
@@ -41,8 +45,7 @@ public class PronomTransformer {
         //factory.setValidating(true);
 
         try {
-            File stylesheet = new File("C:\\development\\eclipse-workspace\\registry\\WebContent\\WEB-INF\\dat\\pronom-transform.xslt");
-
+            InputStream stylesheet = PronomTransformer.class.getResourceAsStream("pronom-transform.xslt");
             DocumentBuilder builder = factory.newDocumentBuilder();
             document = builder.parse(datafile);
 

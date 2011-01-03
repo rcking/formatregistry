@@ -62,10 +62,25 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			outputXMLpath = registryResources.getString("outputxmlpath");
 			downloadPath = registryResources.getString("downloadpath");
 		}
+
+		File outputDir = new File(outputXMLpath);
+		if (!outputDir.exists()) {
+			System.out
+					.println("Improper property configuration, outputxmlpath property is missing or directory does not exist: "
+							+ outputXMLpath);
+		}
+
+		File downloadDir = new File(downloadPath);
+		if (!downloadDir.exists()) {
+			System.out
+					.println("Improper property configuration, downloadpath property is missing or  directory does not exist: "
+							+ downloadPath);
+		}
+
 		pronomXMLDir = new File(formatXMLpath);
 		if (!pronomXMLDir.exists()) {
 			System.out
-					.println("Improper property configuration, directory does not exist: "
+					.println("Improper property configuration, formatxmlpath property is missing or directory does not exist: "
 							+ formatXMLpath);
 		} else {
 			loadFormatData();
@@ -88,46 +103,46 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			for (int i = 0; i < pronomXMLs.length; i++) {
 				// for (int i = 0; i < 10; i++) {
 				File theFile = pronomXMLs[i];
-				// System.out.println("\n\nFile found: " + theFile +
-				// "\nNumber: " + i);
-				PRONOMReport report = (PRONOMReport) unmarshaller
-						.unmarshal(new FileReader(theFile));
-				List<PRONOMReport.ReportFormatDetail> listOfDetails = report
-						.getReportFormatDetail();
-				for (PRONOMReport.ReportFormatDetail item : listOfDetails) {
-					List<PRONOMReport.ReportFormatDetail.FileFormat> listOfFormats = item
-							.getFileFormat();
-					for (PRONOMReport.ReportFormatDetail.FileFormat format : listOfFormats) {
-						String formID = format.getFormatID();
-						int intID = new Integer(formID).intValue();
-						if (intID > highestFormatID)
-							highestFormatID = intID;
-						formatHash.put(formID, format);
-						reportHash.put(formID, report);
-						String puid = format.getPronomID();
-						if (puid.startsWith("o-")) {
-							int puidInt = new Integer(puid.substring(puid
-									.lastIndexOf("/") + 1)).intValue();
-							if (puidInt > highestPronomOID)
-								highestPronomOID = puidInt;
-						}
-						puidFormatHash.put(puid, format);
-						_formatNames.add(format.getFormatName());
-						List<InternalSignature> internalSignatures = format
-								.getInternalSignature();
-						for (InternalSignature signature : internalSignatures) {
-							int sigID = new Integer(signature.getSignatureID())
-									.intValue();
-							if (sigID > highestSignatureID)
-								highestSignatureID = sigID;
-						}
-						List<FidoSignature> fidoSignatures = format
-								.getFidoSignature();
-						for (FidoSignature fSignature : fidoSignatures) {
-							int fSigID = new Integer(
-									fSignature.getFidoSignatureID()).intValue();
-							if (fSigID > highestFidoSignatureID)
-								highestFidoSignatureID = fSigID;
+				if ( (!theFile.isDirectory()) && (theFile.getName().endsWith("xml"))) {
+					PRONOMReport report = (PRONOMReport) unmarshaller
+							.unmarshal(new FileReader(theFile));
+					List<PRONOMReport.ReportFormatDetail> listOfDetails = report
+							.getReportFormatDetail();
+					for (PRONOMReport.ReportFormatDetail item : listOfDetails) {
+						List<PRONOMReport.ReportFormatDetail.FileFormat> listOfFormats = item
+								.getFileFormat();
+						for (PRONOMReport.ReportFormatDetail.FileFormat format : listOfFormats) {
+							String formID = format.getFormatID();
+							int intID = new Integer(formID).intValue();
+							if (intID > highestFormatID)
+								highestFormatID = intID;
+							formatHash.put(formID, format);
+							reportHash.put(formID, report);
+							String puid = format.getPronomID();
+							if (puid.startsWith("o-")) {
+								int puidInt = new Integer(puid.substring(puid
+										.lastIndexOf("/") + 1)).intValue();
+								if (puidInt > highestPronomOID)
+									highestPronomOID = puidInt;
+							}
+							puidFormatHash.put(puid, format);
+							_formatNames.add(format.getFormatName());
+							List<InternalSignature> internalSignatures = format
+									.getInternalSignature();
+							for (InternalSignature signature : internalSignatures) {
+								int sigID = new Integer(signature.getSignatureID())
+										.intValue();
+								if (sigID > highestSignatureID)
+									highestSignatureID = sigID;
+							}
+							List<FidoSignature> fidoSignatures = format
+									.getFidoSignature();
+							for (FidoSignature fSignature : fidoSignatures) {
+								int fSigID = new Integer(
+										fSignature.getFidoSignatureID()).intValue();
+								if (fSigID > highestFidoSignatureID)
+									highestFidoSignatureID = fSigID;
+							}
 						}
 					}
 				}
@@ -140,8 +155,6 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			e.printStackTrace();
 		}
 		dataLoaded = true;
-		// importFromFido(new File
-		// ("C:/development/eclipse-workspace/registry/WebContent/WEB-INF/dat/test/formats.xml"));
 	}
 
 	public String getNewFormatID() {
@@ -149,26 +162,35 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		return Integer.toString(highestFormatID);
 	}
 
-	@Override
 	public void delete(FileFormat format) {
-		// TODO Auto-generated method stub
-
+		String id = format.getFormatID();
+		String outputID = format.getPronomID();
+		formatHash.remove(id);
+		reportHash.remove(id);
+		puidFormatHash.remove(outputID);
+		outputID = outputID.replaceAll("/", ".");
+		File datafile = new File(formatXMLpath + "/" + "puid." + outputID
+				+ ".xml");
+		if (datafile.delete()) {
+			System.out.println("Successfully deleted format with ID: " + id + " and Pronom ID: " + outputID);;
+		} else {
+			System.out.println("Unable to delete format with ID: " + id + " and Pronom ID: " + outputID);;
+		}
 	}
 
-	@Override
 	public FileFormat find(String id) {
-		// TODO Auto-generated method stub
 		return formatHash.get(id);
 	}
 
-	@Override
 	public List<FileFormat> findAllFormats() {
-		// TODO Auto-generated method stub
-		return (List<FileFormat>) Collections
+		if (formatHash!=null) {
+			return (List<FileFormat>) Collections
 				.synchronizedList(new ArrayList<FileFormat>(formatHash.values()));
+		} else {
+			return null;
+		}
 	}
 
-	@Override
 	public FileFormat findFormatByName(String name) {
 		FileFormat retFormat = null;
 		for (Enumeration<FileFormat> e = formatHash.elements(); e
@@ -183,7 +205,6 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		return retFormat;
 	}
 
-	@Override
 	public void save(FileFormat format) {
 		String formID = format.getFormatID();
 		String outputID = format.getPronomID();
@@ -194,7 +215,7 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			context = JAXBContext.newInstance(PRONOMReport.class);
 			Marshaller marshaller = context.createMarshaller();
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			marshaller.marshal(report, new FileWriter(outputXMLpath + "/"
+			marshaller.marshal(report, new FileWriter(formatXMLpath + "/"
 					+ "puid." + outputID + ".xml"));
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
@@ -341,9 +362,9 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 			marshaller.setProperty(
 					Marshaller.JAXB_NO_NAMESPACE_SCHEMA_LOCATION,
 					"fido-formats.xsd");
-			
+
 			marshaller.marshal(fidoFormats, new FileWriter(outputFile));
-			//marshaller.marshal(fidoFormats, response);
+			// marshaller.marshal(fidoFormats, response);
 		} catch (JAXBException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -391,7 +412,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 						rfd.getFileFormat().add(format);
 						report.getReportFormatDetail().add(rfd);
 						reportHash.put(newID, report);
-						String desc = "Imported from " + fidoFile.getName() + ".";
+						String desc = "Imported from " + fidoFile.getName()
+								+ ".";
 						String oid = fidoFormat.getPuid();
 						if (!oid.equals("")) {
 							desc += " Previous working ID: " + oid;
@@ -524,7 +546,8 @@ public class FileFormatDAOImpl implements FileFormatDAO {
 		}
 
 		try {
-			ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(downloadFile));
+			ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(
+					downloadFile));
 			zipDir(outputXMLpath, zos);
 			// close the stream
 			zos.close();
